@@ -1,31 +1,72 @@
+import { useState, useEffect } from "react";
 import heroIndustrial from "@/assets/hero-industrial.jpg";
 import heroKitchen from "@/assets/hero-kitchen.jpg";
 
 const Hero = () => {
+  const [showKitchen, setShowKitchen] = useState(false);
+
+  // Mobile: alternate between images every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowKitchen((prev) => !prev);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex">
-      {/* Left Image - Industrial */}
-      <div className="w-1/2 relative overflow-hidden">
-        <img
-          src={heroIndustrial}
-          alt="Endüstriyel Mekanik Tesisat"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/40" />
+      {/* Desktop: Split Screen Layout */}
+      <div className="hidden md:flex w-full">
+        {/* Left Image - Industrial */}
+        <div className="w-1/2 relative overflow-hidden">
+          <img
+            src={heroIndustrial}
+            alt="Endüstriyel Mekanik Tesisat"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/40" />
+        </div>
+
+        {/* Right Image - Kitchen */}
+        <div className="w-1/2 relative overflow-hidden">
+          <img
+            src={heroKitchen}
+            alt="Modern Mutfak Tasarımı"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-primary/70 to-primary/30" />
+        </div>
       </div>
 
-      {/* Right Image - Kitchen */}
-      <div className="w-1/2 relative overflow-hidden">
-        <img
-          src={heroKitchen}
-          alt="Modern Mutfak Tasarımı"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-primary/70 to-primary/30" />
+      {/* Mobile: Fullscreen with Fade Animation */}
+      <div className="flex md:hidden w-full relative min-h-screen">
+        {/* Base Image - Industrial (always visible) */}
+        <div className="absolute inset-0">
+          <img
+            src={heroIndustrial}
+            alt="Endüstriyel Mekanik Tesisat"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/40" />
+        </div>
+
+        {/* Overlay Image - Kitchen (fades in/out) */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            showKitchen ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img
+            src={heroKitchen}
+            alt="Modern Mutfak Tasarımı"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/40" />
+        </div>
       </div>
 
       {/* Center Content Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center px-4 animate-slide-up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight">
             Yapıların Geleceğini
