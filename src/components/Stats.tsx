@@ -1,7 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Clock, Building2, CheckCircle, Settings } from "lucide-react";
 
-const stats = [
+interface StatData {
+  icon: React.ElementType;
+  numericValue: number;
+  prefix?: string;
+  suffix: string;
+  label: string;
+  decimals?: number;
+}
+
+const stats: StatData[] = [
   {
     icon: Clock,
     numericValue: 15,
@@ -13,7 +22,7 @@ const stats = [
     numericValue: 1.2,
     suffix: " Milyon m²",
     label: "Mekanik Uygulama",
-    isDecimal: true,
+    decimals: 1,
   },
   {
     icon: CheckCircle,
@@ -29,51 +38,86 @@ const stats = [
   },
 ];
 
-const useCountUp = (end: number, duration: number = 4000, isDecimal: boolean = false, shouldStart: boolean = false) => {
-  const [count, setCount] = useState(0);
+const AnimatedNumber = ({ 
+  value, 
+  decimals = 0, 
+  duration = 2500, 
+  isVisible 
+}: { 
+  value: number; 
+  decimals?: number; 
+  duration?: number; 
+  isVisible: boolean;
+}) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
+
+  const animate = useCallback((timestamp: number) => {
+    if (!startTimeRef.current) startTimeRef.current = timestamp;
+    
+    const elapsed = timestamp - startTimeRef.current;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Smooth easing: easeOutExpo for natural deceleration
+    const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+    
+    const current = eased * value;
+    setDisplayValue(current);
+
+    if (progress < 1) {
+      animationRef.current = requestAnimationFrame(animate);
+    }
+  }, [value, duration]);
 
   useEffect(() => {
-    if (!shouldStart) return;
+    if (!isVisible) {
+      setDisplayValue(0);
+      return;
+    }
 
-    let startTime: number | null = null;
-    let animationFrame: number;
+    startTimeRef.current = null;
+    animationRef.current = requestAnimationFrame(animate);
 
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentValue = easeOutQuart * end;
-      
-      setCount(isDecimal ? parseFloat(currentValue.toFixed(1)) : Math.floor(currentValue));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
       }
     };
+  }, [isVisible, animate]);
 
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration, isDecimal, shouldStart]);
+  const formattedValue = decimals > 0 
+    ? displayValue.toFixed(decimals) 
+    : Math.round(displayValue).toString();
 
-  return count;
+  return <>{formattedValue}</>;
 };
 
-const StatItem = ({ stat, index, isVisible }: { stat: typeof stats[0]; index: number; isVisible: boolean }) => {
-  const count = useCountUp(stat.numericValue, 4000, stat.isDecimal, isVisible);
+const StatItem = ({ stat, index, isVisible }: { stat: StatData; index: number; isVisible: boolean }) => {
+  const Icon = stat.icon;
 
   return (
     <div
-      className="text-center group animate-fade-in"
-      style={{ animationDelay: `${index * 0.1}s` }}
+      className="text-center group"
+      style={{ 
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`
+      }}
     >
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-accent/30 mb-4 group-hover:border-accent/60 transition-colors">
-        <stat.icon className="w-7 h-7 text-accent" />
+        <Icon className="w-7 h-7 text-accent" />
       </div>
-      <div className="flex items-baseline justify-center gap-1">
-        <span className="text-4xl md:text-5xl font-bold text-accent">
-          {stat.isDecimal ? count.toFixed(1) : count}{stat.suffix}
+      <div className="flex items-baseline justify-center">
+        <span className="text-4xl md:text-5xl font-bold text-accent tabular-nums">
+          {stat.prefix}
+          <AnimatedNumber 
+            value={stat.numericValue} 
+            decimals={stat.decimals} 
+            isVisible={isVisible}
+            duration={2500}
+          />
+          {stat.suffix}
         </span>
       </div>
       <p className="mt-2 text-sm md:text-base text-primary-foreground/70">
@@ -95,7 +139,7 @@ const Stats = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
