@@ -1,12 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import tesisatArizaImg from "@/assets/tesisat-ariza.jpg";
+import luxuryInteriorImg from "@/assets/luxury-interior.png";
 
 const blogPosts = [
   {
     title: "Enerji Tasarrufu ve Kombi Çözümleri",
     description: "Doğalgaz faturanızı nasıl %30 düşürebilirsiniz?",
     category: "Enerji",
-    image: null,
+    image: luxuryInteriorImg,
   },
   {
     title: "Tesisat Arıza Rehberi",
@@ -18,7 +19,7 @@ const blogPosts = [
     title: "Tasarım & Fonksiyonellik",
     description: "Modern yaşam alanlarında estetik ve işlevsellik.",
     category: "Tasarım",
-    image: null,
+    image: luxuryInteriorImg,
   },
   {
     title: "Tesisat Arıza Rehberi",
@@ -30,7 +31,7 @@ const blogPosts = [
     title: "Periyodik Bakım Takvimi",
     description: "Tesisat bakımlarınızı planlayın.",
     category: "Bakım",
-    image: null,
+    image: luxuryInteriorImg,
   },
 ];
 
