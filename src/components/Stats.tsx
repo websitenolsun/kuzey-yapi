@@ -105,11 +105,14 @@ const StatItem = ({ stat, index, isVisible }: { stat: StatData; index: number; i
         transition: `opacity 0.6s ease-out ${index * 0.15}s, transform 0.6s ease-out ${index * 0.15}s`
       }}
     >
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-accent/30 mb-4 group-hover:border-accent/60 transition-colors">
-        <Icon className="w-7 h-7 text-accent" />
+      {/* Icon with sophisticated glow */}
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 border border-accent/25 mb-5 group-hover:border-accent/50 transition-all duration-300">
+        <Icon className="w-7 h-7 text-accent glow-gold" />
       </div>
+      
+      {/* Number */}
       <div className="flex items-baseline justify-center">
-        <span className="text-4xl md:text-5xl font-bold text-accent tabular-nums">
+        <span className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent tabular-nums tracking-tight">
           {stat.prefix}
           <AnimatedNumber 
             value={stat.numericValue} 
@@ -120,7 +123,9 @@ const StatItem = ({ stat, index, isVisible }: { stat: StatData; index: number; i
           {stat.suffix}
         </span>
       </div>
-      <p className="mt-2 text-sm md:text-base text-primary-foreground/70">
+      
+      {/* Label - Serif font for elegance */}
+      <p className="mt-3 text-sm md:text-base font-serif text-primary-foreground/70 italic">
         {stat.label}
       </p>
     </div>
@@ -150,16 +155,35 @@ const Stats = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 overflow-hidden">
-      {/* Background with gradient overlay */}
+    <section ref={sectionRef} className="relative py-24 overflow-hidden">
+      {/* Dark background with blueprint pattern */}
       <div className="absolute inset-0 bg-slate-dark" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/90" />
+      <div className="absolute inset-0 bg-blueprint opacity-60" />
       
-      {/* Decorative lines */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-px bg-gradient-to-r from-transparent to-accent opacity-50" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-px bg-gradient-to-l from-transparent to-accent opacity-50" />
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-dark/50 via-transparent to-slate-dark/50" />
+      
+      {/* Decorative accent lines */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-40 h-px bg-gradient-to-l from-transparent via-accent/40 to-transparent" />
+      
+      {/* Corner accents */}
+      <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-accent/20" />
+      <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2 border-accent/20" />
+      <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-accent/20" />
+      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-accent/20" />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <p className="text-accent font-display text-sm uppercase tracking-[0.25em] mb-3">
+            Rakamlarla Biz
+          </p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-primary-foreground">
+            Güven ve Deneyimin Kanıtı
+          </h2>
+        </div>
+        
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <StatItem key={index} stat={stat} index={index} isVisible={isVisible} />

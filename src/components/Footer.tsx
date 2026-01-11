@@ -6,19 +6,19 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-background border-t border-border">
+    <footer id="contact" className="bg-slate-dark text-primary-foreground">
       {/* Contact Bar */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 py-10">
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-destructive" />
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-accent/10 border border-accent/20">
+              <MapPin className="w-5 h-5 text-accent" />
             </div>
             <div>
-              <h4 className="font-semibold text-destructive uppercase tracking-wide mb-1">
-                ADRES
+              <h4 className="font-display font-semibold text-accent uppercase tracking-wider text-sm mb-2">
+                Adres
               </h4>
-              <p className="text-foreground">
+              <p className="font-serif text-primary-foreground/80 leading-relaxed">
                 Abbasağa Mah. Yıldız Cd. No:13
                 <br />
                 34353 Beşiktaş - İSTANBUL
@@ -26,34 +26,34 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-3">
-            <div className="w-6 h-6 flex items-center justify-center">
-              <Phone className="w-5 h-5 text-destructive" />
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-accent/10 border border-accent/20">
+              <Phone className="w-5 h-5 text-accent" />
             </div>
             <div>
-              <h4 className="font-semibold text-destructive uppercase tracking-wide mb-1">
-                TELEFON
+              <h4 className="font-display font-semibold text-accent uppercase tracking-wider text-sm mb-2">
+                Telefon
               </h4>
-              <a href="tel:+902122365743" className="text-foreground hover:text-accent transition-colors">
+              <a href="tel:+902122365743" className="font-serif text-primary-foreground/80 hover:text-accent transition-colors">
                 (0212) 236 57 43
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-destructive uppercase tracking-wide mb-2">
-              SOSYAL MEDYA
+            <h4 className="font-display font-semibold text-accent uppercase tracking-wider text-sm mb-4">
+              Sosyal Medya
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-foreground/20 hover:border-accent hover:text-accent transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-sm bg-accent/10 border border-accent/20 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-foreground/20 hover:border-accent hover:text-accent transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-sm bg-accent/10 border border-accent/20 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
@@ -62,91 +62,98 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Divider */}
+      <div className="container mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      </div>
+
       {/* Main Footer */}
-      <div className="border-t border-border">
-        <div className="container mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Brand */}
-            <div className="md:col-span-1 md:border-r border-border md:pr-8">
-              <h2 className="text-2xl font-display font-bold text-foreground mb-4">
+      <div className="container mx-auto px-6 py-14">
+        <div className="grid md:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 border-2 border-accent flex items-center justify-center">
+                <span className="text-accent font-display font-bold text-lg">K</span>
+              </div>
+              <h2 className="text-xl font-display font-bold tracking-[0.1em]">
                 KUZEY YAPI
               </h2>
-              <p className="text-muted-foreground">
-                Mekanik Tesisat Ve İç Tasarımda Güvenilir Çözüm Ortağınız
-              </p>
             </div>
+            <p className="font-serif text-primary-foreground/70 italic leading-relaxed">
+              Mekanik Tesisat Ve İç Tasarımda Güvenilir Çözüm Ortağınız
+            </p>
+          </div>
 
-            {/* Kurumsal */}
-            <div>
-              <h4 className="font-semibold text-foreground uppercase tracking-wide underline underline-offset-4 mb-4">
-                KURUMSAL
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Hakkımızda
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Projelerimiz
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    İletişim
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Kurumsal */}
+          <div>
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-3">
+              <span className="w-8 h-0.5 bg-accent" />
+              Kurumsal
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Hakkımızda
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Projelerimiz
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  İletişim
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            {/* Hizmetlerimiz */}
-            <div>
-              <h4 className="font-semibold text-foreground uppercase tracking-wide mb-4">
-                HİZMETLERİMİZ
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Mekanik Tesisat
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Doğalgaz Sistemleri
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Mimari Tasarım & Dekorasyon
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Blog
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Hizmetlerimiz */}
+          <div>
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-3">
+              <span className="w-8 h-0.5 bg-accent" />
+              Hizmetlerimiz
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Mekanik Tesisat
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Doğalgaz Sistemleri
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Mimari Tasarım
+                </a>
+              </li>
+              <li>
+                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            {/* Çalışma Saatleri */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-4">
-                Çalışma Saatleri
-              </h4>
-              <div className="space-y-2 text-muted-foreground">
-                <p>
-                  <span className="font-medium text-foreground">Hafta İçi:</span>
-                  <br />
-                  08:00-18:00
-                </p>
-                <p>
-                  <span className="font-medium text-foreground">Hafta Sonu:</span>
-                  <br />
-                  Cumartesi
-                  <br />
-                  09:00-18:00
-                </p>
+          {/* Çalışma Saatleri */}
+          <div>
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-3">
+              <span className="w-8 h-0.5 bg-accent" />
+              Çalışma Saatleri
+            </h4>
+            <div className="space-y-4 font-serif text-primary-foreground/70">
+              <div>
+                <p className="font-display font-medium text-primary-foreground text-sm mb-1">Hafta İçi</p>
+                <p>08:00 - 18:00</p>
+              </div>
+              <div>
+                <p className="font-display font-medium text-primary-foreground text-sm mb-1">Cumartesi</p>
+                <p>09:00 - 18:00</p>
               </div>
             </div>
           </div>
@@ -154,27 +161,27 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-display text-primary-foreground/50 uppercase tracking-wider">
+              <a href="#" className="hover:text-accent transition-colors">
                 Kişisel Verilerin Korunması
               </a>
-              <a href="#" className="hover:text-foreground transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 Çerez Politikaları
               </a>
-              <a href="#" className="hover:text-foreground transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 Gizlilik Ayarları
               </a>
             </div>
 
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-2 text-primary-foreground/50 hover:text-accent transition-colors group"
             >
-              <ArrowUp className="w-4 h-4" />
-              <span className="text-sm">Başa dönün</span>
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+              <span className="text-xs font-display uppercase tracking-wider">Başa Dön</span>
             </button>
           </div>
         </div>

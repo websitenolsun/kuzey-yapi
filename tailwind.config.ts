@@ -65,10 +65,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        royal: {
+          DEFAULT: "hsl(var(--royal))",
+          foreground: "hsl(var(--royal-foreground))",
+        },
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["Montserrat", "sans-serif"],
+        body: ["Lora", "serif"],
+        serif: ["Lora", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
