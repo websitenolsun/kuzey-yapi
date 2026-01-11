@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ArrowRight, Building2, Layers } from "lucide-react";
 import heroIndustrial from "@/assets/hero-industrial.jpg";
 import heroKitchen from "@/assets/hero-kitchen.jpg";
 
@@ -18,23 +19,47 @@ const Hero = () => {
       {/* Desktop: Split Screen Layout */}
       <div className="hidden md:flex w-full">
         {/* Left Image - Industrial */}
-        <div className="w-1/2 relative overflow-hidden">
+        <div className="w-1/2 relative overflow-hidden group">
           <img
             src={heroIndustrial}
             alt="Endüstriyel Mekanik Tesisat"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-dark/85 via-slate-dark/70 to-slate-dark/50" />
+          
+          {/* Left CTA */}
+          <div className="absolute bottom-12 left-8 right-8 z-20">
+            <a
+              href="#kurumsal"
+              className="inline-flex items-center gap-3 px-6 py-3.5 bg-accent text-accent-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm hover:bg-accent/90 transition-all duration-300 hover:gap-4 shadow-lg"
+            >
+              <Building2 className="w-5 h-5" />
+              Kurumsal Çözümler
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
         {/* Right Image - Kitchen */}
-        <div className="w-1/2 relative overflow-hidden">
+        <div className="w-1/2 relative overflow-hidden group">
           <img
             src={heroKitchen}
             alt="Modern Mutfak Tasarımı"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-primary/70 to-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-l from-slate-dark/85 via-slate-dark/70 to-slate-dark/50" />
+          
+          {/* Right CTA */}
+          <div className="absolute bottom-12 left-8 right-8 z-20 text-right">
+            <a
+              href="#projeler"
+              className="inline-flex items-center gap-3 px-6 py-3.5 bg-transparent border-2 border-primary-foreground/80 text-primary-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm hover:bg-primary-foreground/10 transition-all duration-300 hover:gap-4"
+            >
+              <Layers className="w-5 h-5" />
+              Projelerimiz
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -47,7 +72,7 @@ const Hero = () => {
             alt="Endüstriyel Mekanik Tesisat"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-dark/75 via-slate-dark/60 to-slate-dark/80" />
         </div>
 
         {/* Overlay Image - Kitchen (fades in/out) */}
@@ -61,19 +86,49 @@ const Hero = () => {
             alt="Modern Mutfak Tasarımı"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-primary/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-dark/75 via-slate-dark/60 to-slate-dark/80" />
+        </div>
+
+        {/* Mobile CTAs */}
+        <div className="absolute bottom-24 left-0 right-0 z-20 px-6 flex flex-col gap-3">
+          <a
+            href="#kurumsal"
+            className="flex items-center justify-center gap-3 px-6 py-3.5 bg-accent text-accent-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm"
+          >
+            <Building2 className="w-5 h-5" />
+            Kurumsal Çözümler
+          </a>
+          <a
+            href="#projeler"
+            className="flex items-center justify-center gap-3 px-6 py-3.5 bg-transparent border-2 border-primary-foreground/80 text-primary-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm"
+          >
+            <Layers className="w-5 h-5" />
+            Projelerimiz
+          </a>
         </div>
       </div>
 
-      {/* Center Content Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center px-4 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight">
-            Yapıların Geleceğini
-            <br />
-            Tasarlıyoruz.
-          </h2>
+      {/* Center Content Overlay - Glassmorphism */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div className="text-center px-4 animate-slide-up pointer-events-auto">
+          <div className="glass px-8 py-10 md:px-16 md:py-14 rounded-lg">
+            <p className="text-accent font-display text-sm md:text-base uppercase tracking-[0.3em] mb-4">
+              Premium Mühendislik
+            </p>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight">
+              Yapıların Geleceğini
+              <br />
+              <span className="text-accent">Tasarlıyoruz.</span>
+            </h1>
+            <div className="mt-6 w-24 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
+          </div>
         </div>
+      </div>
+
+      {/* Image indicators for mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:hidden">
+        <div className={`w-2 h-2 rounded-full transition-all duration-300 ${!showKitchen ? 'bg-accent w-6' : 'bg-primary-foreground/40'}`} />
+        <div className={`w-2 h-2 rounded-full transition-all duration-300 ${showKitchen ? 'bg-accent w-6' : 'bg-primary-foreground/40'}`} />
       </div>
 
       {/* WhatsApp Button */}
