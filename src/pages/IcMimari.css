@@ -3,9 +3,12 @@
 
 /* Değişkenler */
 :root {
-    --color-bg-dark: #0a0a0a;
+    --color-bg-dark: #1a1a1a;
+    --color-bg-anthracite: #252525;
+    --color-bg-charcoal: #2d2d2d;
     --color-text-primary: #ffffff;
     --color-text-secondary: #cccccc;
+    --color-accent: #D4AF37;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -160,8 +163,8 @@
 
 .philosophy-section {
     padding: 120px 0;
-    /* Simsiyah'tan Koyu Gri/Taş rengine yumuşak geçiş */
-    background: linear-gradient(to bottom, var(--color-bg-dark) 0%, #141414 100%);
+    /* Koyu antrasit tonlarında yumuşak geçiş - daha ferah */
+    background: linear-gradient(to bottom, var(--color-bg-anthracite) 0%, var(--color-bg-charcoal) 100%);
     position: relative;
     z-index: 2;
 }
@@ -263,8 +266,8 @@
 
 .services-section {
     padding: 120px 0;
-    /* Felsefemiz bölümünden (Koyu Gri) Taş Rengine geçiş */
-    background-color: #1a1a1a; 
+    /* Ferah antrasit arka plan */
+    background: linear-gradient(to bottom, var(--color-bg-charcoal) 0%, #2a2a2a 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -274,98 +277,134 @@
     gap: 30px;
 }
 
+/* YENİ: Görsel Ağırlıklı Kart Yapısı */
 .service-card {
-    background: #111111; /* Kart rengi daha koyu */
-    padding: 40px;
-    border-radius: 2px; /* Keskin, mimari hatlar */
     position: relative;
-    overflow: hidden; /* Taşmaları gizle */
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 450px;
     transition: var(--transition-smooth);
-    border-left: 1px solid rgba(255,255,255,0.1); /* Sol tarafta ince teknik çizgi */
+    cursor: pointer;
 }
 
 .service-card:hover {
-    background: #161616;
-    border-left-color: var(--color-accent); /* Hover olunca çizgi altın rengi olsun */
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-.service-number {
-    font-family: var(--font-serif);
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.03); /* Çok silik arka plan numarası */
+/* Arka Plan Görseli */
+.service-bg-image {
     position: absolute;
-    top: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-bg-image {
+    transform: scale(1.08);
+}
+
+/* Gradient Overlay - Okunabilirlik için */
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    z-index: 1;
+}
+
+/* Numara Badge */
+.service-number {
+    position: absolute;
+    top: 20px;
     right: 20px;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
     font-weight: 700;
-    pointer-events: none;
+    color: var(--color-accent);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 2;
+}
+
+/* İçerik - Görselin Altında */
+.service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    z-index: 2;
 }
 
 .service-content h3 {
     font-family: var(--font-serif);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
     color: var(--color-text-primary);
 }
 
 .service-slogan {
     font-style: italic;
     color: var(--color-accent);
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.95;
 }
 
 .service-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .service-list li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
+    padding-left: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-/* Liste maddelerinin başına estetik bir kare koyalım */
+/* Liste maddelerinin başına altın kare */
 .service-list li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
+    top: 7px;
     width: 6px;
     height: 6px;
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 1px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
 }
 
-.service-card:hover .service-list li::before {
-    background-color: var(--color-accent); /* Hover'da kareler altın olsun */
-}
-
-/* HOVER İLE ÇIKAN TEKNİK ETİKET */
+/* Teknik Etiket */
 .tech-tag {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-family: monospace; /* Teknik kod görünümü */
+    display: inline-block;
+    margin-top: 15px;
+    font-family: monospace;
     font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color-text-primary);
-    padding: 5px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--color-accent);
+    padding: 6px 12px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 4px;
-    
-    /* Başlangıçta gizli */
-    opacity: 0;
-    transform: translateY(10px);
-    transition: var(--transition-smooth);
-}
-
-.service-card:hover .tech-tag {
-    opacity: 1;
-    transform: translateY(0);
+    backdrop-filter: blur(5px);
 }
 
 /* Mobil */
@@ -373,18 +412,22 @@
     .services-grid {
         grid-template-columns: 1fr;
     }
+    
+    .service-card {
+        min-height: 400px;
+    }
 }
 
 /* --- BÖLÜM 4: SÜREÇ CSS KODLARI --- */
 
 .process-section {
     padding: 100px 0;
-    background-color: #121212; /* Arka planı hafifçe koyulaştırıp odaklayalım */
+    background-color: var(--color-bg-anthracite); /* Antrasit tonu */
     position: relative;
     /* Teknik bir his için silik ızgara deseni */
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
 }
 
@@ -471,7 +514,7 @@
 
 .portfolio-section {
     padding: 100px 0;
-    background-color: #0a0a0a; /* Tekrar siyaha dönüş */
+    background-color: var(--color-bg-dark); /* Koyu gri tonu */
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -654,8 +697,8 @@
 
 .faq-section {
     padding: 100px 0;
-    /* Portfolyodan (Siyah) hafif bir griye dönüş */
-    background-color: #111; 
+    /* Antrasit geçiş - ferah */
+    background: linear-gradient(to bottom, var(--color-bg-charcoal) 0%, var(--color-bg-anthracite) 100%);
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
