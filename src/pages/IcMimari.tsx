@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './IcMimari.css';
+import serviceConceptImg from '@/assets/service-concept.jpg';
+import serviceConstructionImg from '@/assets/service-construction.jpg';
+import serviceRenovationImg from '@/assets/service-renovation.jpg';
 
 const IcMimari = () => {
   // 1. Slider için State
@@ -107,7 +110,14 @@ const IcMimari = () => {
                 <p className="section-subtitle">Teknik Estetik & Kapsam</p>
             </div>
             <div className="services-grid">
+                {/* Kart 1: Konsept & Proje Tasarımı */}
                 <div className="service-card">
+                    <img 
+                      src={serviceConceptImg} 
+                      alt="Mimari Proje Çizimleri" 
+                      className="service-bg-image"
+                    />
+                    <div className="service-overlay"></div>
                     <div className="service-number">01</div>
                     <div className="service-content">
                         <h3>Konsept & Proje Tasarımı</h3>
@@ -117,10 +127,18 @@ const IcMimari = () => {
                             <li>Fotogerçekçi 3D Görselleştirme (Render)</li>
                             <li>Mekanik & Elektrik Entegreli Mimari Planlar</li>
                         </ul>
+                        <div className="tech-tag">AutoCAD & 3ds Max</div>
                     </div>
-                    <div className="tech-tag">AutoCAD & 3ds Max</div>
                 </div>
+
+                {/* Kart 2: Anahtar Teslim Uygulama */}
                 <div className="service-card">
+                    <img 
+                      src={serviceConstructionImg} 
+                      alt="Lüks İç Mekan İnşaat Süreci" 
+                      className="service-bg-image"
+                    />
+                    <div className="service-overlay"></div>
                     <div className="service-number">02</div>
                     <div className="service-content">
                         <h3>Anahtar Teslim Uygulama</h3>
@@ -130,10 +148,18 @@ const IcMimari = () => {
                             <li>Özel Mobilya Tasarımı ve Üretimi</li>
                             <li>Akıllı Ev Sistemleri Entegrasyonu</li>
                         </ul>
+                        <div className="tech-tag">VRF & KNX Systems</div>
                     </div>
-                    <div className="tech-tag">VRF & KNX Systems</div>
                 </div>
+
+                {/* Kart 3: Renovasyon & Dönüşüm */}
                 <div className="service-card">
+                    <img 
+                      src={serviceRenovationImg} 
+                      alt="Modern Ev Renovasyonu" 
+                      className="service-bg-image"
+                    />
+                    <div className="service-overlay"></div>
                     <div className="service-number">03</div>
                     <div className="service-content">
                         <h3>Renovasyon & Dönüşüm</h3>
@@ -143,8 +169,8 @@ const IcMimari = () => {
                             <li>Fonksiyonel Mekan Kurgusu</li>
                             <li>Enerji Verimliliği Odaklı Yenileme</li>
                         </ul>
+                        <div className="tech-tag">Laser Scan Survey</div>
                     </div>
-                    <div className="tech-tag">Laser Scan Survey</div>
                 </div>
             </div>
         </div>
