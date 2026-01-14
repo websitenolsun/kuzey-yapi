@@ -85,6 +85,7 @@ const Header = () => {
               <div className="py-2 border-t-2 border-[#D4AF37]">
                 <DropdownItem href="/uzmanliklar/mekanik" text="Mekanik Sistemler" />
                 <DropdownItem href="/uzmanliklar/ic-mimari" text="İç Mimari & Tasarım" />
+                <DropdownItem href="/yapi-dekorasyon" text="Yapı & Dekorasyon" />
                 <DropdownItem href="/uzmanliklar/endustriyel" text="Endüstriyel Çözümler" />
               </div>
             </div>
@@ -143,6 +144,7 @@ const Header = () => {
               <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold">Uzmanlıklar</span>
               <a href="/uzmanliklar/mekanik" className="block text-gray-300 pl-4">Mekanik Sistemler</a>
               <a href="/uzmanliklar/ic-mimari" className="block text-gray-300 pl-4">İç Mimari</a>
+              <a href="/yapi-dekorasyon" className="block text-gray-300 pl-4">Yapı & Dekorasyon</a>
               <a href="/uzmanliklar/endustriyel" className="block text-gray-300 pl-4">Endüstriyel</a>
             </div>
 
