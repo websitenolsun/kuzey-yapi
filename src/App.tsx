@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import MekanikSistemler from "./pages/MekanikSistemler";
 import IcMimari from "./pages/IcMimari";
 import YapiDekorasyon from "./pages/YapiDekorasyon";
+import Hakkimizda from "./pages/Hakkimizda";
+import ISGPolitikamiz from "./pages/ISGPolitikamiz";
+import KalitePolitikamiz from "./pages/KalitePolitikamiz";
+import ElektrikSistemleri from "./pages/ElektrikSistemleri";
+import DogalgazSistemleri from "./pages/DogalgazSistemleri";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +37,15 @@ const App = () => (
 
           {/* Yapı & Dekorasyon Landing Page */}
           <Route path="/yapi-dekorasyon" element={<YapiDekorasyon />} />
+
+          {/* Kurumsal Sayfalar */}
+          <Route path="/hakkimizda" element={<Hakkimizda />} />
+          <Route path="/isg-politikamiz" element={<ISGPolitikamiz />} />
+          <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
+
+          {/* Hizmet Sayfaları */}
+          <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
+          <Route path="/hizmetler/dogalgaz" element={<DogalgazSistemleri />} />
 
         </Routes>
 
