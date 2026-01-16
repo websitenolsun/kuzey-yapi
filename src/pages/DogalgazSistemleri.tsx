@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
+import dogalgazTesisat from "@/assets/dogalgaz-tesisat.jpg";
 
 const DogalgazSistemleri = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const DogalgazSistemleri = () => {
   const { data: subServices, isLoading } = useSubServices('dogalgaz');
 
   const subServiceImages = [
-    "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format",
+    dogalgazTesisat,
     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format",
     "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
     "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"
