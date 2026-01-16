@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Building2, Layers } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroIndustrial from "@/assets/hero-industrial.jpg";
 import heroKitchen from "@/assets/hero-kitchen.jpg";
 const Hero = () => {
@@ -52,17 +52,6 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-dark/75 via-slate-dark/60 to-slate-dark/80" />
         </div>
 
-        {/* Mobile CTAs */}
-        <div className="absolute bottom-24 left-0 right-0 z-20 px-6 flex flex-col gap-3">
-          <a href="#kurumsal" className="flex items-center justify-center gap-3 px-6 py-3.5 bg-accent text-accent-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm">
-            <Building2 className="w-5 h-5" />
-            Kurumsal Çözümler
-          </a>
-          <a href="#projeler" className="flex items-center justify-center gap-3 px-6 py-3.5 bg-transparent border-2 border-primary-foreground/80 text-primary-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm">
-            <Layers className="w-5 h-5" />
-            Projelerimiz
-          </a>
-        </div>
       </div>
 
       {/* Center Content Overlay - Glassmorphism */}
