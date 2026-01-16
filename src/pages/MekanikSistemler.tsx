@@ -40,7 +40,7 @@ const MekanikSistemler = () => {
   }];
 
   // Images for sub-services alternating layout
-  const subServiceImages = ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format", yanginTesisati, "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format"];
+  const subServiceImages = ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format", "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format", yanginTesisati, "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format"];
   return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
       
