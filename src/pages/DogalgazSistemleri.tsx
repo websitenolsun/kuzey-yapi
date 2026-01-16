@@ -1,36 +1,23 @@
 import { useEffect } from "react";
-import { Flame, Gauge, Wrench, FileCheck, ArrowRight, Phone } from "lucide-react";
+import { Flame, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
+import useSubServices from "@/hooks/useSubServices";
+import DynamicIcon from "@/components/DynamicIcon";
+
 const DogalgazSistemleri = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const services = [{
-    id: 1,
-    icon: <Flame size={40} strokeWidth={1.5} />,
-    title: "Doğalgaz Tesisatı",
-    desc: "Konut ve işyerleri için güvenli doğalgaz altyapısı kurulumu.",
-    detail: "Boru • Bağlantı • Vana • Sayaç"
-  }, {
-    id: 2,
-    icon: <Gauge size={40} strokeWidth={1.5} />,
-    title: "Kombi & Kazan Sistemleri",
-    desc: "Yüksek verimli ısıtma sistemleri montajı ve devreye alma.",
-    detail: "Kombi • Kazan • Radyatör • Yerden Isıtma"
-  }, {
-    id: 3,
-    icon: <Wrench size={40} strokeWidth={1.5} />,
-    title: "Bakım & Onarım",
-    desc: "Periyodik bakım, arıza tespit ve onarım hizmetleri.",
-    detail: "Servis • Bakım • Kaçak Tespiti"
-  }, {
-    id: 4,
-    icon: <FileCheck size={40} strokeWidth={1.5} />,
-    title: "Proje & Ruhsat",
-    desc: "Doğalgaz projeleri ve ruhsat başvuru süreçleri.",
-    detail: "Proje • Ruhsat • Denetim • Onay"
-  }];
+
+  const { data: subServices, isLoading } = useSubServices('dogalgaz');
+
+  const subServiceImages = [
+    "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format",
+    "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
+    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"
+  ];
   return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Doğalgaz Sistemleri" description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri." canonical="/hizmetler/dogalgaz" jsonLd={createServiceSchema("Doğalgaz Sistemleri", "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları", "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz")} />
       
@@ -66,7 +53,7 @@ const DogalgazSistemleri = () => {
             proje ve uygulama hizmetleri sunuyoruz.
           </motion.p>
 
-          <motion.a href="tel:+905551234567" className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" initial={{
+          <motion.a href="/iletisim" className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -76,7 +63,6 @@ const DogalgazSistemleri = () => {
           delay: 0.4
         }}>
             <span className="relative z-10 font-medium tracking-widest text-sm uppercase group-hover:text-[#EAB308] transition-colors flex items-center gap-2">
-              <Phone size={16} />
               Teklif Alın
             </span>
           </motion.a>
@@ -118,56 +104,69 @@ const DogalgazSistemleri = () => {
       </section>
 
 
-      {/* --- 3. TEKNİK YAKLAŞIM (SPLIT SCREEN) --- */}
-      
+      {/* --- 3. DETAYLI HİZMET DÖKÜMÜ --- */}
+      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-[#080808]">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div className="text-center mb-20" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
+              <span className="text-[#EAB308] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
+                Uzmanlık Alanlarımız
+              </span>
+              <h2 className="text-3xl md:text-5xl font-light text-white">
+                Detaylı Hizmet <span className="font-medium text-[#EAB308]">Portföyü</span>
+              </h2>
+            </motion.div>
 
-
-      {/* --- 4. HİZMET KARTLARI --- */}
-      <section className="pt-20 pb-32 bg-[#050505] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#EAB308]/5 blur-[80px] rounded-full pointer-events-none"></div>
-
-            <div className="relative z-10 text-center flex flex-col items-center">
-                <span className="block text-[#EAB308] text-xs font-bold tracking-[0.3em] uppercase mb-4 opacity-80">
-                  Hizmet Alanlarımız
-                </span>
-                <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
-                  Doğalgaz <span className="font-semibold text-white">Hizmetleri</span>
-                  <span className="text-[#EAB308]">.</span>
-                </h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map(service => <motion.div key={service.id} className="group relative bg-[#0a0a0a] p-10 rounded-sm border border-white/5 transition-all duration-500 hover:border-[#EAB308]/30 hover:bg-[#0c0c0c] hover:-translate-y-1" initial={{
+            <div className="space-y-32">
+              {subServices.map((service, i) => <motion.div key={service.id} className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`} initial={{
             opacity: 0,
-            y: 30
+            y: 50
           }} whileInView={{
             opacity: 1,
             y: 0
           }} viewport={{
             once: true
           }} transition={{
-            delay: service.id * 0.1
+            duration: 0.8
           }}>
-                <div className="text-gray-600 mb-8 group-hover:text-[#EAB308] transition-colors duration-500">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-medium text-white mb-4 group-hover:text-[#EAB308] transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-6 group-hover:text-gray-400 transition-colors">
-                  {service.desc}
-                </p>
-                <div className="text-xs text-gray-600 font-mono pt-6 border-t border-white/5 group-hover:border-[#EAB308]/20 group-hover:text-[#EAB308]/80 transition-all">
-                  {service.detail}
-                </div>
-              </motion.div>)}
-          </div>
+                  <div className="w-full lg:w-1/2 relative group">
+                    <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
+                    <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
+                      <img src={subServiceImages[i % subServiceImages.length]} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-[#EAB308] flex items-center justify-center rounded-sm">
+                            <DynamicIcon name={service.icon_name} size={24} className="text-black" />
+                          </div>
+                          <span className="text-white font-mono text-sm tracking-widest uppercase">{String(i + 1).padStart(2, '0')}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-        </div>
-      </section>
+                  <div className="w-full lg:w-1/2">
+                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                      {service.description}
+                    </p>
+                    <a href="/iletisim" className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
+                      Detaylı Bilgi Al <ArrowRight size={18} />
+                    </a>
+                  </div>
+                </motion.div>)}
+            </div>
+          </div>
+        </section>}
 
 
       {/* --- 5. GÜVENLİK VURGUSU --- */}
