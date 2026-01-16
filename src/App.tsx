@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Index from "./pages/Index";
 import MekanikSistemler from "./pages/MekanikSistemler";
@@ -17,41 +18,43 @@ import DogalgazSistemleri from "./pages/DogalgazSistemleri";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        {/* Navigasyon barı (Header) her sayfada görünsün diye buraya koyduk */}
-        <Header />
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          {/* Navigasyon barı (Header) her sayfada görünsün diye buraya koyduk */}
+          <Header />
 
-        <Routes>
-          {/* Ana Sayfa */}
-          <Route path="/" element={<Index />} />
-          
-          {/* Mekanik Sistemler Sayfası */}
-          <Route path="/uzmanliklar/mekanik" element={<MekanikSistemler />} />
-          
-          {/* İç Mimari Sayfası */}
-          <Route path="/uzmanliklar/ic-mimari" element={<IcMimari />} />
+          <Routes>
+            {/* Ana Sayfa */}
+            <Route path="/" element={<Index />} />
+            
+            {/* Mekanik Sistemler Sayfası */}
+            <Route path="/uzmanliklar/mekanik" element={<MekanikSistemler />} />
+            
+            {/* İç Mimari Sayfası */}
+            <Route path="/uzmanliklar/ic-mimari" element={<IcMimari />} />
 
-          {/* Yapı & Dekorasyon Landing Page */}
-          <Route path="/yapi-dekorasyon" element={<YapiDekorasyon />} />
+            {/* Yapı & Dekorasyon Landing Page */}
+            <Route path="/yapi-dekorasyon" element={<YapiDekorasyon />} />
 
-          {/* Kurumsal Sayfalar */}
-          <Route path="/hakkimizda" element={<Hakkimizda />} />
-          <Route path="/isg-politikamiz" element={<ISGPolitikamiz />} />
-          <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
+            {/* Kurumsal Sayfalar */}
+            <Route path="/hakkimizda" element={<Hakkimizda />} />
+            <Route path="/isg-politikamiz" element={<ISGPolitikamiz />} />
+            <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
 
-          {/* Hizmet Sayfaları */}
-          <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
-          <Route path="/hizmetler/dogalgaz" element={<DogalgazSistemleri />} />
+            {/* Hizmet Sayfaları */}
+            <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
+            <Route path="/hizmetler/dogalgaz" element={<DogalgazSistemleri />} />
 
-        </Routes>
+          </Routes>
 
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

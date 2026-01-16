@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
 import './IcMimari.css';
 import serviceConceptImg from '@/assets/service-concept.jpg';
 import serviceConstructionImg from '@/assets/service-construction.jpg';
 import serviceRenovationImg from '@/assets/service-renovation.jpg';
+import SEOHead, { createServiceSchema } from '@/components/SEOHead';
+import useSubServices from '@/hooks/useSubServices';
+import DynamicIcon from '@/components/DynamicIcon';
 
 const IcMimari = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const { data: subServices, isLoading } = useSubServices('mimari');
+
   // 1. Slider için State
   const [sliderPosition, setSliderPosition] = useState(50);
 
   // 2. SSS (FAQ) Açılır/Kapanır Menü için State
-  const [activeFaq, setActiveFaq] = useState<number | null>(0); // 0: İlk soru açık gelsin
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSliderPosition(Number(e.target.value));
   };
 
   const toggleFaq = (index: number) => {
-    // Zaten açıksa kapat, değilse aç
     setActiveFaq(activeFaq === index ? null : index);
   };
 
@@ -36,8 +46,25 @@ const IcMimari = () => {
     }
   ];
 
+  // Images for alternating layout
+  const subServiceImages = [
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format",
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format"
+  ];
+
   return (
     <div className="ic-mimari-page">
+      <SEOHead
+        title="Mimari & Dekorasyon"
+        description="Estetikle fonksiyonelliği buluşturan bütüncül mimari ve iç mekan tasarım hizmetleri. Konsept tasarım, anahtar teslim uygulama ve renovasyon."
+        canonical="/uzmanliklar/ic-mimari"
+        jsonLd={createServiceSchema(
+          "Mimari & Dekorasyon",
+          "Estetikle fonksiyonelliği buluşturan bütüncül mimari ve iç mekan tasarım hizmetleri",
+          "https://kuzey-yapi.lovable.app/uzmanliklar/ic-mimari"
+        )}
+      />
       
       {/* --- BÖLÜM 1: HERO SECTION --- */}
       <section className="hero-section">
@@ -59,9 +86,9 @@ const IcMimari = () => {
               Biz mekanları sadece süslemiyoruz; ışığı, akustiği ve iklimi yöneterek, 
               içinde yaşamaktan keyif alacağınız "çalışan sanat eserleri" tasarlıyoruz.
           </p>
-          <a href="#iletisim" className="cta-button">
-              Projeyi Başlat
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <a href="tel:+905551234567" className="cta-button">
+              <Phone size={18} />
+              Hemen Arayın
           </a>
         </div>
       </section>
@@ -102,11 +129,82 @@ const IcMimari = () => {
         </div>
       </section>
 
+      {/* --- YENİ BÖLÜM: DETAYLI HİZMET DÖKÜMÜ (CMS'DEN GELİYOR) --- */}
+      {!isLoading && subServices && subServices.length > 0 && (
+        <section className="py-32 bg-[#080808]">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div 
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
+                Detaylı Hizmetler
+              </span>
+              <h2 className="text-3xl md:text-5xl font-light text-white">
+                Mimari & Dekorasyon <span className="font-medium text-[#D4AF37]">Portföyü</span>
+              </h2>
+            </motion.div>
+
+            <div className="space-y-32">
+              {subServices.map((service, i) => (
+                <motion.div 
+                  key={service.id}
+                  className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  {/* Görsel */}
+                  <div className="w-full lg:w-1/2 relative group">
+                    <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
+                    <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
+                      <img 
+                        src={subServiceImages[i % subServiceImages.length]}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-[#D4AF37] flex items-center justify-center rounded-sm">
+                            <DynamicIcon name={service.icon_name} size={24} className="text-black" />
+                          </div>
+                          <span className="text-white font-mono text-sm tracking-widest uppercase">{String(i + 1).padStart(2, '0')}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* İçerik */}
+                  <div className="w-full lg:w-1/2">
+                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                      {service.description}
+                    </p>
+                    <a 
+                      href="tel:+905551234567"
+                      className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:gap-4 transition-all duration-300"
+                    >
+                      Detaylı Bilgi Al <ArrowRight size={18} />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* --- BÖLÜM 3: HİZMETLERİMİZ --- */}
       <section className="services-section">
         <div className="container">
             <div className="section-header text-center">
-                <h2 className="section-title">Hizmetlerimiz</h2>
+                <h2 className="section-title">Hizmet Kategorileri</h2>
                 <p className="section-subtitle">Teknik Estetik & Kapsam</p>
             </div>
             <div className="services-grid">
@@ -225,7 +323,7 @@ const IcMimari = () => {
             <div className="portfolio-layout">
                 <div className="comparison-container">
                     <div className="image-wrapper before">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop" alt="İnşaat Hali" />
+                        <img src="https://images.unsplash.com/photo-503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop" alt="İnşaat Hali" />
                         <span className="label-badge label-before">ÖNCESİ</span>
                     </div>
                     <div 
@@ -264,14 +362,14 @@ const IcMimari = () => {
                             <p><strong>Yapılan İş:</strong> Zemin ve duvar renovasyonu, VRF Klima gizleme ve akustik ahşap panel uygulaması.</p>
                             <p className="highlight-result"><strong>Sonuç:</strong> Mekanik altyapı tamamen gizlenerek, %30 daha fazla kullanım alanı ve görsel ferahlık sağlandı.</p>
                         </div>
-                        <a href="#detay" className="portfolio-link">Projeyi İncele &rarr;</a>
+                        <a href="tel:+905551234567" className="portfolio-link">Projeniz İçin Arayın &rarr;</a>
                     </div>
                 </div>
             </div>
         </div>
       </section>
 
-      {/* --- BÖLÜM 6: SOSYAL KANIT & SSS (YENİ EKLENDİ) --- */}
+      {/* --- BÖLÜM 6: SOSYAL KANIT & SSS --- */}
       <section className="faq-section" id="iletisim">
         <div className="container">
             
@@ -279,7 +377,7 @@ const IcMimari = () => {
                 {/* Sol Taraf: Müşteri Yorumu */}
                 <div className="testimonial-col">
                     <div className="testimonial-card">
-                        <div className="quote-icon">“</div>
+                        <div className="quote-icon">"</div>
                         <p className="testimonial-text">
                             "Tasarımcıların estetik kaygısı ile ustaların teknik gerçekleri arasında kalmaktan korkuyordum. Kuzey Yapı, hem gözüme hitap eden o harika salonu tasarladı hem de yıllardır çözülemeyen ısınma sorunumu çözdü."
                         </p>
@@ -316,6 +414,38 @@ const IcMimari = () => {
                 </div>
             </div>
 
+        </div>
+      </section>
+
+      {/* --- CTA SECTION --- */}
+      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
+            Hayalinizdeki mekanı <span className="font-normal text-[#D4AF37]">birlikte tasarlayalım.</span>
+          </h2>
+          
+          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+            Ücretsiz keşif görüşmesi için hemen iletişime geçin.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="tel:+905551234567"
+              className="inline-flex items-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-white hover:shadow-lg"
+            >
+              <Phone size={20} />
+              Hemen Arayın
+            </a>
+            <a 
+              href="https://wa.me/905551234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-green-500"
+            >
+              <MessageCircle size={20} />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
