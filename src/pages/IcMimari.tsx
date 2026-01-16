@@ -77,7 +77,7 @@ const IcMimari = () => {
                 <p className="section-subtitle">Bütüncül Tasarım (Design & Build)</p>
             </div>
             <div className="philosophy-grid">
-                <div className="philosophy-card">
+                <div className="philosophy-card card-architect">
                     <div className="card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                     </div>
@@ -85,7 +85,7 @@ const IcMimari = () => {
                     <p className="card-motto">Ferahlık & Sanat</p>
                     <p className="card-desc">Renk paletlerinden doku uyumuna, mekanın ruhunu ve karakterini yansıtan zamansız çizgiler.</p>
                 </div>
-                <div className="philosophy-card">
+                <div className="philosophy-card card-engineer">
                     <div className="card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>
                     </div>
@@ -93,7 +93,7 @@ const IcMimari = () => {
                     <p className="card-motto">Otorite & Güven</p>
                     <p className="card-desc">Görünmeyen konfor. Asma tavanın içine gizlenmiş sessiz havalandırma, doğru hesaplanmış aydınlatma ve kusursuz akustik.</p>
                 </div>
-                <div className="philosophy-card">
+                <div className="philosophy-card card-unified">
                     <div className="card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-1.42-1.42l.88-.88a5 5 0 0 1 7.07 0l2.12 2.12a3 3 0 0 1 0 4.24l-8 8a2 2 0 1 1-2.83-2.83l1.42-1.42" /><path d="m12 12 4-4" /><path d="M8 8v1a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2t2-2Z" /></svg>
                     </div>
