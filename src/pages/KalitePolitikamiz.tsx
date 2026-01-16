@@ -161,14 +161,14 @@ const KalitePolitikamiz = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-t from-[#0a0a0a] to-[#050505]">
+      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-6">
-            Kalite standartlarımızı <span className="text-[#D4AF37]">projelerinizde</span> deneyimleyin.
+          <h2 className="text-3xl md:text-4xl font-light text-white mb-12">
+            Kalite standartlarımızı <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">projelerinizde</span> deneyimleyin.
           </h2>
           <a 
             href="/iletisim"
-            className="inline-block bg-[#D4AF37] text-black px-10 py-4 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-white hover:shadow-lg"
+            className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105"
           >
             Teklif Alın
           </a>

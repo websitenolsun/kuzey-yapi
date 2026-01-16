@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import './IcMimari.css';
 import serviceConceptImg from '@/assets/service-concept.jpg';
 import serviceConstructionImg from '@/assets/service-construction.jpg';
@@ -309,23 +309,16 @@ const IcMimari = () => {
       <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
-            Hayalinizdeki mekanı <span className="font-normal text-[#D4AF37]">birlikte tasarlayalım.</span>
+            Hayalinizdeki mekanı <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">birlikte tasarlayalım.</span>
           </h2>
           
           <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
             Ücretsiz keşif görüşmesi için hemen iletişime geçin.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+905551234567" className="inline-flex items-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-white hover:shadow-lg">
-              <Phone size={20} />
-              Hemen Arayın
-            </a>
-            <a href="https://wa.me/905551234567" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-green-500">
-              <MessageCircle size={20} />
-              WhatsApp
-            </a>
-          </div>
+          <a href="/iletisim" className="inline-flex items-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105">
+            Mimarlarımıza Hayalinizdeki Evi Anlatın
+          </a>
         </div>
       </section>
 
