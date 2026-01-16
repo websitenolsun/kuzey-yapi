@@ -199,21 +199,151 @@
     gap: 40px;
 }
 
-/* Kart Tasarımı */
+/* Kart Tasarımı - Temel */
 .philosophy-card {
-    background: rgba(255, 255, 255, 0.03); /* Çok hafif transparan beyaz */
-    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px 30px;
     border-radius: 4px;
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Hover Efekti: Kartın üzerine gelince çerçeve belirginleşsin */
+/* --- Mimar Gözü: Ferah, sanatsal krem tonu --- */
+.philosophy-card.card-architect {
+    background: linear-gradient(145deg, 
+        rgba(250, 243, 224, 0.12) 0%, 
+        rgba(235, 222, 195, 0.08) 50%,
+        rgba(220, 200, 165, 0.05) 100%);
+    border: 1px solid rgba(250, 243, 224, 0.25);
+    box-shadow: 
+        0 8px 32px rgba(235, 222, 195, 0.08),
+        inset 0 1px 0 rgba(255, 250, 240, 0.15);
+}
+
+.philosophy-card.card-architect:hover {
+    background: linear-gradient(145deg, 
+        rgba(250, 243, 224, 0.18) 0%, 
+        rgba(235, 222, 195, 0.12) 50%,
+        rgba(220, 200, 165, 0.08) 100%);
+    border-color: rgba(250, 243, 224, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 16px 48px rgba(235, 222, 195, 0.15),
+        inset 0 1px 0 rgba(255, 250, 240, 0.2);
+}
+
+.philosophy-card.card-architect .card-icon {
+    color: #F5E6C8;
+}
+
+.philosophy-card.card-architect:hover .card-icon {
+    color: #FAF3E0;
+}
+
+/* --- Mühendis Aklı: Otorite ve güven veren mavi --- */
+.philosophy-card.card-engineer {
+    background: linear-gradient(145deg, 
+        rgba(30, 58, 95, 0.35) 0%, 
+        rgba(25, 50, 85, 0.28) 50%,
+        rgba(20, 42, 75, 0.22) 100%);
+    border: 1px solid rgba(59, 130, 180, 0.25);
+    box-shadow: 
+        0 8px 32px rgba(30, 58, 95, 0.2),
+        inset 0 1px 0 rgba(100, 150, 200, 0.1);
+}
+
+.philosophy-card.card-engineer:hover {
+    background: linear-gradient(145deg, 
+        rgba(30, 58, 95, 0.45) 0%, 
+        rgba(25, 50, 85, 0.38) 50%,
+        rgba(20, 42, 75, 0.32) 100%);
+    border-color: rgba(59, 130, 180, 0.45);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 16px 48px rgba(30, 58, 95, 0.35),
+        inset 0 1px 0 rgba(100, 150, 200, 0.15);
+}
+
+.philosophy-card.card-engineer .card-icon {
+    color: #6BA3D6;
+}
+
+.philosophy-card.card-engineer:hover .card-icon {
+    color: #8FC1E8;
+}
+
+/* --- Tek Muhatap: Krem ve Mavi gradient - Kompleks, güçlü, tatmin edici --- */
+.philosophy-card.card-unified {
+    background: 
+        linear-gradient(135deg, 
+            rgba(250, 243, 224, 0.15) 0%, 
+            rgba(200, 190, 160, 0.08) 25%,
+            rgba(80, 100, 130, 0.12) 50%,
+            rgba(30, 58, 95, 0.25) 75%,
+            rgba(25, 50, 85, 0.35) 100%);
+    border: 1px solid;
+    border-image: linear-gradient(135deg, 
+        rgba(250, 243, 224, 0.4) 0%,
+        rgba(180, 170, 140, 0.3) 30%,
+        rgba(80, 130, 180, 0.35) 70%,
+        rgba(59, 130, 180, 0.45) 100%) 1;
+    box-shadow: 
+        0 8px 40px rgba(30, 58, 95, 0.15),
+        0 4px 20px rgba(235, 222, 195, 0.08),
+        inset 0 1px 0 rgba(255, 250, 240, 0.12),
+        inset 0 -1px 0 rgba(100, 150, 200, 0.08);
+    position: relative;
+}
+
+.philosophy-card.card-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 0% 0%, rgba(250, 243, 224, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 100%, rgba(59, 130, 180, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+    opacity: 0.8;
+    transition: var(--transition-smooth);
+}
+
+.philosophy-card.card-unified:hover {
+    background: 
+        linear-gradient(135deg, 
+            rgba(250, 243, 224, 0.2) 0%, 
+            rgba(200, 190, 160, 0.12) 25%,
+            rgba(80, 100, 130, 0.18) 50%,
+            rgba(30, 58, 95, 0.32) 75%,
+            rgba(25, 50, 85, 0.42) 100%);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 60px rgba(30, 58, 95, 0.25),
+        0 8px 30px rgba(235, 222, 195, 0.12),
+        inset 0 1px 0 rgba(255, 250, 240, 0.18),
+        inset 0 -1px 0 rgba(100, 150, 200, 0.12);
+}
+
+.philosophy-card.card-unified:hover::before {
+    opacity: 1;
+}
+
+.philosophy-card.card-unified .card-icon {
+    color: #C5B896;
+}
+
+.philosophy-card.card-unified:hover .card-icon {
+    color: #D4AF37;
+}
+
+/* Hover Efekti: Varsayılan kartlar için */
 .philosophy-card:hover {
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px); /* Hafifçe yukarı kalkma */
+    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -225,7 +355,6 @@
 }
 
 .philosophy-card:hover .card-icon {
-    color: var(--color-accent); /* İkon altına dönsün */
     opacity: 1;
 }
 
@@ -243,12 +372,25 @@
     color: var(--color-text-secondary);
     margin-bottom: 20px;
     font-weight: 500;
-    opacity: 0.6;
+    opacity: 0.7;
+}
+
+/* Kart bazlı motto renkleri */
+.philosophy-card.card-architect .card-motto {
+    color: #E8DCC8;
+}
+
+.philosophy-card.card-engineer .card-motto {
+    color: #8FC1E8;
+}
+
+.philosophy-card.card-unified .card-motto {
+    color: #D4AF37;
 }
 
 .card-desc {
     font-size: 0.95rem;
-    color: #a0a0a0; /* Koyu gri üzerinde okunaklı gri */
+    color: #a0a0a0;
     line-height: 1.7;
 }
 
