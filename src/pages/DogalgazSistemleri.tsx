@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Flame, Gauge, Wrench, FileCheck, ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { Flame, Gauge, Wrench, FileCheck, ArrowRight, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 
@@ -284,24 +284,12 @@ const DogalgazSistemleri = () => {
             tüm ihtiyaçlarınız için yanınızdayız.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="tel:+905551234567"
-              className="inline-flex items-center gap-3 bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105"
-            >
-              <Phone size={20} />
-              Ücretsiz Keşif Talep Edin
-            </a>
-            <a 
-              href="https://wa.me/905551234567"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-green-500"
-            >
-              <MessageCircle size={20} />
-              WhatsApp
-            </a>
-          </div>
+          <a 
+            href="/iletisim"
+            className="inline-flex items-center gap-3 bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105"
+          >
+            Ücretsiz Keşif Talep Edin
+          </a>
         </div>
       </section>
 
