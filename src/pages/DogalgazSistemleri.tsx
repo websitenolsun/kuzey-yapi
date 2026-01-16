@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { Flame, Gauge, Wrench, FileCheck, ArrowRight } from "lucide-react";
+import { Flame, Gauge, Wrench, FileCheck, ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 
 const DogalgazSistemleri = () => {
   useEffect(() => {
@@ -39,11 +41,19 @@ const DogalgazSistemleri = () => {
 
   return (
     <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+      <SEOHead
+        title="Doğalgaz Sistemleri"
+        description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri."
+        canonical="/hizmetler/dogalgaz"
+        jsonLd={createServiceSchema(
+          "Doğalgaz Sistemleri",
+          "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları",
+          "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz"
+        )}
+      />
       
       {/* --- 1. HERO ALANI --- */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        
-        {/* Arka Plan */}
         <div className="absolute inset-0 z-0">
            <img 
              src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format" 
@@ -53,28 +63,40 @@ const DogalgazSistemleri = () => {
            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-[#050505]"></div>
         </div>
 
-        {/* İçerik */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1] mb-8 text-white">
+          <motion.h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1] mb-8 text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
             Güvenli, Verimli <br />
             <span className="font-medium text-[#EAB308]">Doğalgaz Çözümleri</span>.
-          </h1>
+          </motion.h1>
           
-          <p className="text-lg md:text-xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto leading-relaxed mb-12">
+          <motion.p 
+            className="text-lg md:text-xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto leading-relaxed mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
             Yönetmeliklere uygun, yüksek verimli doğalgaz<br className="hidden md:block"/>
             proje ve uygulama hizmetleri sunuyoruz.
-          </p>
+          </motion.p>
 
-          <button className="group relative px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10">
+          <motion.a 
+            href="tel:+905551234567"
+            className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             <span className="relative z-10 font-medium tracking-widest text-sm uppercase group-hover:text-[#EAB308] transition-colors flex items-center gap-2">
-              Teklif Alın <ArrowRight size={16} />
+              <Phone size={16} />
+              Teklif Alın
             </span>
-          </button>
-
+          </motion.a>
         </div>
 
-        {/* Scroll İkonu */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
           <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white to-transparent"></div>
         </div>
@@ -110,9 +132,12 @@ const DogalgazSistemleri = () => {
       <section className="py-32 bg-[#080808] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-20">
-            
-            {/* SOL: Görsel */}
-            <div className="w-full lg:w-1/2 relative group">
+            <motion.div 
+              className="w-full lg:w-1/2 relative group"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
               <div className="relative z-10 h-[500px] bg-[#1a1a1a] rounded-sm overflow-hidden">
                   <img 
@@ -127,10 +152,14 @@ const DogalgazSistemleri = () => {
                      </div>
                   </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* SAĞ: İçerik */}
-            <div className="w-full lg:w-1/2">
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <span className="text-[#EAB308] font-bold tracking-[0.2em] text-xs uppercase mb-4 block opacity-80">
                 Uzmanlığımız
               </span>
@@ -159,7 +188,7 @@ const DogalgazSistemleri = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -168,57 +197,43 @@ const DogalgazSistemleri = () => {
       {/* --- 4. HİZMET KARTLARI --- */}
       <section className="pt-20 pb-32 bg-[#050505] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          
-          {/* BAŞLIK ALANI */}
           <div className="mb-20 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#EAB308]/5 blur-[80px] rounded-full pointer-events-none"></div>
 
             <div className="relative z-10 text-center flex flex-col items-center">
-                
                 <span className="block text-[#EAB308] text-xs font-bold tracking-[0.3em] uppercase mb-4 opacity-80">
                   Hizmet Alanlarımız
                 </span>
-
                 <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
                   Doğalgaz <span className="font-semibold text-white">Hizmetleri</span>
                   <span className="text-[#EAB308]">.</span>
                 </h2>
-
-                <div className="mt-6 flex items-center gap-3 opacity-20">
-                   <div className="h-[1px] w-10 bg-gradient-to-r from-transparent to-white"></div>
-                   <div className="w-1 h-1 rounded-full bg-[#EAB308]"></div>
-                   <div className="h-[1px] w-10 bg-gradient-to-l from-transparent to-white"></div>
-                </div>
             </div>
           </div>
 
-          {/* KARTLAR GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service) => (
-              <div 
+              <motion.div 
                 key={service.id} 
                 className="group relative bg-[#0a0a0a] p-10 rounded-sm border border-white/5 transition-all duration-500 hover:border-[#EAB308]/30 hover:bg-[#0c0c0c] hover:-translate-y-1"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: service.id * 0.1 }}
               >
-                {/* İkon */}
                 <div className="text-gray-600 mb-8 group-hover:text-[#EAB308] transition-colors duration-500">
                   {service.icon}
                 </div>
-                
-                {/* Başlık */}
                 <h3 className="text-xl font-medium text-white mb-4 group-hover:text-[#EAB308] transition-colors duration-300">
                   {service.title}
                 </h3>
-                
-                {/* Açıklama */}
                 <p className="text-sm text-gray-500 leading-relaxed mb-6 group-hover:text-gray-400 transition-colors">
                   {service.desc}
                 </p>
-                
-                {/* Detay */}
                 <div className="text-xs text-gray-600 font-mono pt-6 border-t border-white/5 group-hover:border-[#EAB308]/20 group-hover:text-[#EAB308]/80 transition-all">
                   {service.detail}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -229,7 +244,12 @@ const DogalgazSistemleri = () => {
       {/* --- 5. GÜVENLİK VURGUSU --- */}
       <section className="py-24 bg-[#080808] border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-orange-500/10 to-transparent p-12 rounded-sm border border-orange-500/20">
+          <motion.div 
+            className="bg-gradient-to-br from-orange-500/10 to-transparent p-12 rounded-sm border border-orange-500/20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <div className="flex flex-col lg:flex-row items-center gap-10">
               <div className="flex-shrink-0">
                 <div className="w-20 h-20 bg-[#EAB308] rounded-full flex items-center justify-center">
@@ -247,7 +267,7 @@ const DogalgazSistemleri = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -255,7 +275,6 @@ const DogalgazSistemleri = () => {
       {/* --- 6. CTA --- */}
       <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
             Doğalgaz projeniz için <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">bize ulaşın.</span>
           </h2>
@@ -265,10 +284,24 @@ const DogalgazSistemleri = () => {
             tüm ihtiyaçlarınız için yanınızdayız.
           </p>
           
-          <button className="bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105">
-            Ücretsiz Keşif Talep Edin
-          </button>
-
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="tel:+905551234567"
+              className="inline-flex items-center gap-3 bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105"
+            >
+              <Phone size={20} />
+              Ücretsiz Keşif Talep Edin
+            </a>
+            <a 
+              href="https://wa.me/905551234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-green-500"
+            >
+              <MessageCircle size={20} />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
