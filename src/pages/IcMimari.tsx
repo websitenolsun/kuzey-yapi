@@ -316,9 +316,7 @@ const IcMimari = () => {
             Ücretsiz keşif görüşmesi için hemen iletişime geçin.
           </p>
           
-          <a href="/iletisim" className="inline-flex items-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105">
-            Mimarlarımıza Hayalinizdeki Evi Anlatın
-          </a>
+          <a href="/iletisim" className="inline-flex items-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105">Mimarlarımıza Hayalinizi Anlatın</a>
         </div>
       </section>
 
