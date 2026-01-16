@@ -1,4 +1,5 @@
 import { MapPin, Phone, Instagram, MessageCircle, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -93,19 +94,19 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/hakkimizda" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
                   Hakkımızda
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
-                  Projelerimiz
-                </a>
+                <Link to="/referanslar" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Referanslar
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/iletisim" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
                   İletişim
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -118,24 +119,24 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/uzmanliklar/mekanik" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
                   Mekanik Tesisat
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/hizmetler/dogalgaz" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
                   Doğalgaz Sistemleri
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/uzmanliklar/ic-mimari" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
                   Mimari Tasarım
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
-                  Blog
-                </a>
+                <Link to="/hizmetler/elektrik" className="font-serif text-primary-foreground/70 hover:text-accent transition-colors">
+                  Elektrik Sistemleri
+                </Link>
               </li>
             </ul>
           </div>

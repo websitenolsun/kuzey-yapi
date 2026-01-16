@@ -14,6 +14,8 @@ import ISGPolitikamiz from "./pages/ISGPolitikamiz";
 import KalitePolitikamiz from "./pages/KalitePolitikamiz";
 import ElektrikSistemleri from "./pages/ElektrikSistemleri";
 import DogalgazSistemleri from "./pages/DogalgazSistemleri";
+import Iletisim from "./pages/Iletisim";
+import Referanslar from "./pages/Referanslar";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +46,8 @@ const App = () => (
             <Route path="/hakkimizda" element={<Hakkimizda />} />
             <Route path="/isg-politikamiz" element={<ISGPolitikamiz />} />
             <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
+            <Route path="/referanslar" element={<Referanslar />} />
+            <Route path="/iletisim" element={<Iletisim />} />
 
             {/* Hizmet Sayfaları */}
             <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
