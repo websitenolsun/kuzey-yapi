@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import blueprintHvac from "@/assets/blueprint-hvac.jpg";
 import luxuryLiving from "@/assets/luxury-living.jpg";
 
@@ -92,6 +93,16 @@ const Services = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Referanslar Test Link */}
+      <div className="py-12 bg-background text-center">
+        <Link
+          to="/referanslar"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-display font-semibold text-sm uppercase tracking-wider rounded-sm hover:bg-accent/90 transition-colors"
+        >
+          Referanslarımıza Göz Atın →
+        </Link>
       </div>
     </section>
   );
