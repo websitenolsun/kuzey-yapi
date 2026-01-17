@@ -1,146 +1,168 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Building2, Factory, Home, Hotel, Store, Landmark, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import SEOHead, { organizationSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
-import serviceConcept from "@/assets/service-concept.jpg";
-import serviceConstruction from "@/assets/service-construction.jpg";
-import serviceRenovation from "@/assets/service-renovation.jpg";
+import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+// Partner logos (placeholder companies)
+const partnerLogos = [
+  { name: "Teknik Yapı", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=TEKNIK+YAPI" },
+  { name: "İnşaat Pro", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=INSAAT+PRO" },
+  { name: "Mühendis Group", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=MUHENDIS+GROUP" },
+  { name: "Proje Plus", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=PROJE+PLUS" },
+  { name: "Yapı Merkezi", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=YAPI+MERKEZI" },
+  { name: "Modern Tesisat", logo: "https://via.placeholder.com/200x80/ffffff/1a1a1a?text=MODERN+TESISAT" },
+];
+
+// Projects data with categories
+const projects = [
+  {
+    id: "vadi-istanbul",
+    title: "Vadi İstanbul Evleri",
+    category: "Konut",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format",
+  },
+  {
+    id: "merkez-plaza",
+    title: "Merkez Plaza Yenileme",
+    category: "Ticari",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format",
+  },
+  {
+    id: "marmara-fabrika",
+    title: "Marmara Sanayi Tesisi",
+    category: "Endüstriyel",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format",
+  },
+  {
+    id: "besiktas-residence",
+    title: "Beşiktaş Premium Residence",
+    category: "Konut",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format",
+  },
+  {
+    id: "levent-tower",
+    title: "Levent Business Tower",
+    category: "Ticari",
+    image: "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f?q=80&w=2089&auto=format",
+  },
+  {
+    id: "tuzla-uretim",
+    title: "Tuzla Üretim Merkezi",
+    category: "Endüstriyel",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format",
+  },
+  {
+    id: "nisantasi-konak",
+    title: "Nişantaşı Konak",
+    category: "Konut",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format",
+  },
+  {
+    id: "maslak-ofis",
+    title: "Maslak Ofis Parkı",
+    category: "Ticari",
+    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format",
+  },
+  {
+    id: "gebze-lojistik",
+    title: "Gebze Lojistik Merkezi",
+    category: "Endüstriyel",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format",
+  },
+];
 
 const Referanslar = () => {
+  const [activeTab, setActiveTab] = useState("Tümü");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const projectCategories = [
-    {
-      icon: Factory,
-      title: "Endüstriyel Tesisler",
-      count: "50+",
-      description: "Fabrika, üretim tesisi ve endüstriyel yapılarda mekanik tesisat projeleri"
-    },
-    {
-      icon: Building2,
-      title: "Ticari Projeler",
-      count: "120+",
-      description: "İş merkezi, plaza ve ofis binalarında HVAC ve elektrik sistemleri"
-    },
-    {
-      icon: Hotel,
-      title: "Otel & Konaklama",
-      count: "30+",
-      description: "Otel, rezidans ve butik konaklama tesislerinde komple tesisat çözümleri"
-    },
-    {
-      icon: Home,
-      title: "Konut Projeleri",
-      count: "200+",
-      description: "Villa, daire ve site projelerinde iç mimari ve tesisat uygulamaları"
-    },
-    {
-      icon: Store,
-      title: "Perakende & AVM",
-      count: "45+",
-      description: "Mağaza, AVM ve showroom alanlarında özel tasarım çözümleri"
-    },
-    {
-      icon: Landmark,
-      title: "Kamu Projeleri",
-      count: "25+",
-      description: "Okul, hastane ve resmi binalarda standartlara uygun tesisat projeleri"
-    }
-  ];
-
-  const featuredProjects = [
-    {
-      image: serviceConcept,
-      title: "İstanbul Business Center",
-      category: "Ticari Proje",
-      description: "40 katlı iş merkezinde komple HVAC ve yangın tesisatı uygulaması",
-      services: ["Merkezi Klima", "Yangın Tesisatı", "Havalandırma"]
-    },
-    {
-      image: serviceConstruction,
-      title: "Marmara Sanayi Tesisi",
-      category: "Endüstriyel",
-      description: "25.000 m² üretim alanında endüstriyel havalandırma ve soğutma sistemleri",
-      services: ["Endüstriyel Soğutma", "Duman Tahliye", "Isıtma Sistemleri"]
-    },
-    {
-      image: serviceRenovation,
-      title: "Beşiktaş Residence",
-      category: "Konut",
-      description: "Lüks rezidans projesinde iç mimari tasarım ve mekanik tesisat",
-      services: ["İç Mimari", "VRF Sistemleri", "Akıllı Ev"]
-    }
-  ];
+  const filteredProjects = activeTab === "Tümü" 
+    ? projects 
+    : projects.filter(p => p.category === activeTab);
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Referanslar"
+        title="Referanslarımız | Kuzey Yapı Mühendislik"
         description="Kuzey Yapı'nın tamamladığı 470+ başarılı proje. Endüstriyel tesisler, ticari binalar, oteller ve konut projelerinde mekanik tesisat ve iç mimari referanslarımız."
         canonical="/referanslar"
         jsonLd={organizationSchema}
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-slate-dark overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(197,165,114,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(197,165,114,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=2070&auto=format')"
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
+        {/* Architectural Pattern Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(197,165,114,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(197,165,114,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+
+        {/* Breadcrumb */}
+        <div className="absolute top-28 left-6 md:left-12 z-20">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/" className="text-white/70 hover:text-accent transition-colors font-display text-sm">
+                    Ana Sayfa
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-white/40" />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-accent font-display text-sm">
+                  Referanslarımız
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight"
           >
-            <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 text-accent font-display text-sm uppercase tracking-widest mb-6">
-              Referanslar
-            </span>
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6 leading-tight">
-              15 Yılda
-              <br />
-              <span className="text-accent">470+ Başarılı Proje</span>
-            </h1>
-            <p className="text-xl text-primary-foreground/70 font-serif leading-relaxed">
-              Endüstriyel tesislerden prestijli konut projelerine, 
-              her ölçekte güvenilir mühendislik çözümleri sunduk.
-            </p>
-          </motion.div>
+            Referanslarımız
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-white/80 font-serif italic"
+          >
+            Güven inşa ediyoruz, kalite tasarlıyoruz.
+          </motion.p>
         </div>
+
+        {/* Bottom Gradient Fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-accent">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "470+", label: "Tamamlanan Proje" },
-              { value: "15+", label: "Yıllık Deneyim" },
-              { value: "50+", label: "Kurumsal Müşteri" },
-              { value: "1M+", label: "m² Uygulama Alanı" }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-4xl md:text-5xl font-display font-bold text-accent-foreground mb-2">
-                  {stat.value}
-                </p>
-                <p className="font-serif text-accent-foreground/80 text-sm uppercase tracking-wider">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Categories */}
+      {/* Trusted Brands Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
@@ -151,44 +173,34 @@ const Referanslar = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Proje Kategorileri
+              Çözüm Ortaklarımız
             </h2>
-            <p className="text-muted-foreground font-serif max-w-2xl mx-auto">
-              Farklı sektörlerde edindiğimiz deneyim ve uzmanlık alanlarımız
-            </p>
+            <div className="w-16 h-0.5 bg-accent mx-auto" />
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projectCategories.map((category, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {partnerLogos.map((partner, index) => (
               <motion.div
-                key={category.title}
+                key={partner.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card border border-border rounded-sm p-8 hover:border-accent/30 transition-all duration-300 group"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 flex items-center justify-center bg-accent/10 border border-accent/20 rounded-sm group-hover:bg-accent/20 transition-colors">
-                    <category.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <span className="text-3xl font-display font-bold text-accent">
-                    {category.count}
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-foreground mb-3">
-                  {category.title}
-                </h3>
-                <p className="font-serif text-muted-foreground">
-                  {category.description}
-                </p>
+                <Card className="p-6 flex items-center justify-center h-24 bg-card border border-border/50 hover:border-accent/30 transition-all duration-500 group">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-12 w-auto grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-500"
+                  />
+                </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Project Portfolio Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <motion.div
@@ -196,61 +208,93 @@ const Referanslar = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Öne Çıkan Projeler
+              Tamamlanan Projeler
             </h2>
-            <p className="text-muted-foreground font-serif max-w-2xl mx-auto">
-              Kapsamlı mühendislik çözümleri sunduğumuz seçkin projelerimizden bazıları
-            </p>
+            <div className="w-16 h-0.5 bg-accent mx-auto" />
           </motion.div>
 
-          <div className="space-y-12">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
-              >
-                <div className="lg:w-1/2">
-                  <div className="relative overflow-hidden rounded-sm border border-border">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-80 object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-accent text-accent-foreground font-display text-xs uppercase tracking-wider rounded-sm">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="lg:w-1/2 lg:px-8">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-                    {project.title}
-                  </h3>
-                  <p className="font-serif text-muted-foreground text-lg mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.services.map(service => (
-                      <span
-                        key={service}
-                        className="px-3 py-1.5 bg-accent/10 border border-accent/20 text-accent font-display text-xs uppercase tracking-wider rounded-sm"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Tabs Filter */}
+          <Tabs defaultValue="Tümü" className="w-full" onValueChange={setActiveTab}>
+            <div className="flex justify-center mb-12">
+              <TabsList className="bg-card border border-border">
+                <TabsTrigger 
+                  value="Tümü"
+                  className="font-display text-sm uppercase tracking-wider data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-6"
+                >
+                  Tümü
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="Konut"
+                  className="font-display text-sm uppercase tracking-wider data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-6"
+                >
+                  Konut
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="Ticari"
+                  className="font-display text-sm uppercase tracking-wider data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-6"
+                >
+                  Ticari
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="Endüstriyel"
+                  className="font-display text-sm uppercase tracking-wider data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-6"
+                >
+                  Endüstriyel
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value={activeTab} className="mt-0">
+              {/* Masonry Grid */}
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="break-inside-avoid"
+                  >
+                    <Link to={`/proje-detay/${project.id}`}>
+                      <Card className="overflow-hidden border-0 group cursor-pointer">
+                        <div className="relative overflow-hidden">
+                          {/* Dynamic Heights for Masonry Effect */}
+                          <div 
+                            className={`relative ${
+                              index % 3 === 0 ? 'h-80' : index % 3 === 1 ? 'h-96' : 'h-72'
+                            }`}
+                          >
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                              <span className="text-accent font-display text-xs uppercase tracking-widest mb-2">
+                                {project.category}
+                              </span>
+                              <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-4">
+                                {project.title}
+                              </h3>
+                              <span className="inline-flex items-center gap-2 text-white font-display text-sm uppercase tracking-wider group-hover:gap-3 transition-all">
+                                Detayları İncele
+                                <ArrowRight className="w-4 h-4" />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
