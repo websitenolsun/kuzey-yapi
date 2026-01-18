@@ -8,6 +8,7 @@ import elektrikTesisati from "@/assets/elektrik-tesisati.jpg";
 import aydinlatmaSistemleri from "@/assets/aydinlatma-sistemleri.png";
 import elektrikPanosu from "@/assets/elektrik-panosu.jpg";
 import topraklamaSistemleri from "@/assets/topraklama-sistemleri.png";
+import enerjiVerimliligiLed from "@/assets/enerji-verimliligi-led.jpg";
 
 // Service-based image mapping for consistent image display
 const serviceImageMap: Record<string, string> = {
@@ -16,7 +17,7 @@ const serviceImageMap: Record<string, string> = {
   "Akıllı Ev Sistemleri": "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format",
   "Elektrik Panosu & Güç Dağıtımı": elektrikPanosu,
   "Topraklama Sistemleri": topraklamaSistemleri,
-  "Enerji Verimliliği & LED Dönüşüm": "https://images.unsplash.com/photo-1565465295423-68c959ba4844?q=80&w=2069&auto=format",
+  "Enerji Verimliliği & LED Dönüşüm": enerjiVerimliligiLed,
   "Revizyon & Yenileme": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format",
 };
 
