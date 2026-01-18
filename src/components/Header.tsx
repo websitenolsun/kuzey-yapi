@@ -109,7 +109,7 @@ const Header = () => {
 
           {/* 3. REFERANSLARIMIZ (Tek Link) */}
           <a
-            href="/referanslarimiz"
+            href="/referanslar"
             className="text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase"
           >
             REFERANSLARIMIZ
