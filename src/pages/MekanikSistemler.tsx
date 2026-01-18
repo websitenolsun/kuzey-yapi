@@ -8,6 +8,7 @@ import isiPompasi from "@/assets/isi-pompasi.jpg";
 import sogutmaHvac from "@/assets/sogutma-hvac.png";
 import projeYonetimi from "@/assets/proje-yonetimi.jpg";
 import binaOtomasyon from "@/assets/bina-otomasyon.jpg";
+import projePlanlama from "@/assets/proje-planlama.jpg";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
@@ -47,7 +48,7 @@ const MekanikSistemler = () => {
   }];
 
   // Images for sub-services alternating layout
-  const subServiceImages = [isiPompasi, sogutmaHvac, mekanikOtomasyon, projeYonetimi, yanginTesisati, sihhiTesisat, binaOtomasyon];
+  const subServiceImages = [isiPompasi, sogutmaHvac, mekanikOtomasyon, projeYonetimi, yanginTesisati, sihhiTesisat, projePlanlama, binaOtomasyon];
   return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
       
