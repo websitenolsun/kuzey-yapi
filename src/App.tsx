@@ -16,6 +16,7 @@ import ElektrikSistemleri from "./pages/ElektrikSistemleri";
 import DogalgazSistemleri from "./pages/DogalgazSistemleri";
 import Iletisim from "./pages/Iletisim";
 import Referanslar from "./pages/Referanslar";
+import SubServiceDetail from "./pages/SubServiceDetail";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,9 @@ const App = () => (
             {/* Hizmet Sayfaları */}
             <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
             <Route path="/hizmetler/dogalgaz" element={<DogalgazSistemleri />} />
+
+            {/* Alt Hizmet Detay Sayfaları (SEO Landing Pages) */}
+            <Route path="/hizmetler/:serviceSlug/:subServiceSlug" element={<SubServiceDetail />} />
 
           </Routes>
 

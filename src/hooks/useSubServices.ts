@@ -8,6 +8,7 @@ export interface SubService {
   description: string;
   icon_name: string | null;
   display_order: number;
+  slug: string | null;
 }
 
 export const useSubServices = (serviceSlug: string) => {
