@@ -10,6 +10,7 @@ import useSubServices from '@/hooks/useSubServices';
 import DynamicIcon from '@/components/DynamicIcon';
 import mimariTasarim from '@/assets/mimari-tasarim.jpg';
 import camAluminyum from '@/assets/cam-aluminyum.png';
+import mekansalPlanlama from '@/assets/mekansal-planlama.jpg';
 const IcMimari = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,6 +48,7 @@ const IcMimari = () => {
   const serviceImageMap: Record<string, string> = {
     "Mimari Tasarım": mimariTasarim,
     "Cam & Alüminyum Sistemleri": camAluminyum,
+    "Mekansal Planlama": mekansalPlanlama,
     "Konsept Tasarım": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format",
     "Anahtar Teslim Uygulama": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format",
     "Renovasyon & Tadilat": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format",
