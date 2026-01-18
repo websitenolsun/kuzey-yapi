@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Zap, Lightbulb, Home, LayoutGrid, ArrowRight, Phone } from "lucide-react";
 import { motion } from "framer-motion";
@@ -29,83 +29,91 @@ const getServiceImage = (title: string): string => {
   return serviceImageMap[title] || fallbackImage;
 };
 
-const ElektrikSistemleri = () => {
+const ElektrikSistemleri: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const {
-    data: subServices,
-    isLoading
-  } = useSubServices('elektrik');
-  const services = [{
-    id: 1,
-    icon: <Zap size={40} strokeWidth={1.5} />,
-    title: "Elektrik Tesisatı",
-    desc: "Daire içi elektrik altyapısının kurulumu ve yenilenmesi.",
-    detail: "Kablo • Priz • Anahtar • Topraklama"
-  }, {
-    id: 2,
-    icon: <Lightbulb size={40} strokeWidth={1.5} />,
-    title: "Aydınlatma Sistemleri",
-    desc: "Fonksiyonel ve dekoratif LED aydınlatma çözümleri.",
-    detail: "LED • Spot • Şerit • Dekoratif"
-  }, {
-    id: 3,
-    icon: <Home size={40} strokeWidth={1.5} />,
-    title: "Akıllı Ev Sistemleri",
-    desc: "Aydınlatma, perde ve iklimlendirme için akıllı çözümler.",
-    detail: "Otomasyon • Sensör • Uzaktan Kontrol"
-  }, {
-    id: 4,
-    icon: <LayoutGrid size={40} strokeWidth={1.5} />,
-    title: "Elektrik Panosu & Güç Dağıtımı",
-    desc: "Güvenli pano montajı ve güç dağıtım sistemleri.",
-    detail: "Pano • Sigorta • Kaçak Akım • UPS"
-  }];
-  return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
-      <SEOHead title="Elektrik Sistemleri" description="Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri. Elektrik tesisatı, aydınlatma, akıllı ev sistemleri ve güç dağıtımı." canonical="/hizmetler/elektrik" jsonLd={createServiceSchema("Elektrik Sistemleri", "Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri", "https://kuzey-yapi.lovable.app/hizmetler/elektrik")} />
+
+  const { data: subServices, isLoading } = useSubServices('elektrik');
+
+  const services = [
+    {
+      id: 1,
+      icon: <Zap size={40} strokeWidth={1.5} />,
+      title: "Elektrik Tesisatı",
+      desc: "Daire içi elektrik altyapısının kurulumu ve yenilenmesi.",
+      detail: "Kablo • Priz • Anahtar • Topraklama"
+    },
+    {
+      id: 2,
+      icon: <Lightbulb size={40} strokeWidth={1.5} />,
+      title: "Aydınlatma Sistemleri",
+      desc: "Fonksiyonel ve dekoratif LED aydınlatma çözümleri.",
+      detail: "LED • Spot • Şerit • Dekoratif"
+    },
+    {
+      id: 3,
+      icon: <Home size={40} strokeWidth={1.5} />,
+      title: "Akıllı Ev Sistemleri",
+      desc: "Aydınlatma, perde ve iklimlendirme için akıllı çözümler.",
+      detail: "Otomasyon • Sensör • Uzaktan Kontrol"
+    },
+    {
+      id: 4,
+      icon: <LayoutGrid size={40} strokeWidth={1.5} />,
+      title: "Elektrik Panosu & Güç Dağıtımı",
+      desc: "Güvenli pano montajı ve güç dağıtım sistemleri.",
+      detail: "Pano • Sigorta • Kaçak Akım • UPS"
+    }
+  ];
+
+  return (
+    <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+      <SEOHead 
+        title="Elektrik Sistemleri" 
+        description="Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri. Elektrik tesisatı, aydınlatma, akıllı ev sistemleri ve güç dağıtımı." 
+        canonical="/hizmetler/elektrik" 
+        jsonLd={createServiceSchema("Elektrik Sistemleri", "Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri", "https://kuzey-yapi.lovable.app/hizmetler/elektrik")} 
+      />
       
       {/* --- 1. HERO ALANI --- */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format" alt="Elektrik Sistemleri" className="w-full h-full object-cover opacity-40 grayscale scale-105" />
-           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-[#050505]"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format" 
+            alt="Elektrik Sistemleri" 
+            className="w-full h-full object-cover opacity-40 grayscale scale-105" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-[#050505]"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1] mb-8 text-white" initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }}>
+          <motion.h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1] mb-8 text-white" 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }}
+          >
             Güvenli ve Modern <br />
             <span className="font-medium text-[#EAB308]">Elektrik Çözümleri</span>.
           </motion.h1>
           
-          <motion.p className="text-lg md:text-xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto leading-relaxed mb-12" initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          delay: 0.2
-        }}>
+          <motion.p 
+            className="text-lg md:text-xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto leading-relaxed mb-12" 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ delay: 0.2 }}
+          >
             Daire içi tesisattan akıllı ev sistemlerine,<br className="hidden md:block" />
             yaşam alanlarınıza enerji katıyoruz.
           </motion.p>
 
-          <motion.a href="tel:+905551234567" className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          delay: 0.4
-        }}>
+          <motion.a 
+            href="tel:+905551234567" 
+            className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ delay: 0.4 }}
+          >
             <span className="relative z-10 font-medium tracking-widest text-sm uppercase group-hover:text-[#EAB308] transition-colors flex items-center gap-2">
               <Phone size={16} />
               Teklif Alın
@@ -118,24 +126,17 @@ const ElektrikSistemleri = () => {
         </div>
       </section>
 
-
       {/* --- 2. İSTATİSTİK BANDI --- */}
       <section className="py-20 border-b border-white/5 bg-[#050505]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-            {[{
-            num: "500+",
-            label: "Elektrik Projesi"
-          }, {
-            num: "50+",
-            label: "Akıllı Ev Kurulumu"
-          }, {
-            num: "%100",
-            label: "Güvenlik Standardı"
-          }, {
-            num: "24/7",
-            label: "Teknik Destek"
-          }].map((stat, i) => <div key={i} className="flex flex-col items-center group cursor-default">
+            {[
+              { num: "500+", label: "Elektrik Projesi" },
+              { num: "50+", label: "Akıllı Ev Kurulumu" },
+              { num: "%100", label: "Güvenlik Standardı" },
+              { num: "24/7", label: "Teknik Destek" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center group cursor-default">
                 <span className="text-5xl font-light text-white mb-4 tracking-tighter group-hover:text-gray-300 transition-colors">
                   {stat.num}
                 </span>
@@ -143,24 +144,22 @@ const ElektrikSistemleri = () => {
                 <span className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
                   {stat.label}
                 </span>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ --- */}
-      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-[#080808]">
+      {!isLoading && subServices && subServices.length > 0 && (
+        <section className="py-32 bg-[#080808]">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div className="text-center mb-20" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }}>
+            <motion.div 
+              className="text-center mb-20" 
+              initial={{ opacity: 0, y: 30 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+            >
               <span className="text-[#EAB308] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
                 Uzmanlık Alanlarımız
               </span>
@@ -170,21 +169,23 @@ const ElektrikSistemleri = () => {
             </motion.div>
 
             <div className="space-y-32">
-              {subServices.map((service, i) => <motion.div key={service.id} className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`} initial={{
-            opacity: 0,
-            y: 50
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.8
-          }}>
+              {subServices.map((service, i) => (
+                <motion.div 
+                  key={service.id} 
+                  className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`} 
+                  initial={{ opacity: 0, y: 50 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ duration: 0.8 }}
+                >
                   <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
-                      <img src={getServiceImage(service.title)} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <img 
+                        src={getServiceImage(service.title)} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" 
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-3">
@@ -204,19 +205,19 @@ const ElektrikSistemleri = () => {
                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
-                    <Link to={`/hizmetler/elektrik/${service.slug}`} className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
+                    <Link 
+                      to={`/hizmetler/elektrik/${service.slug}`} 
+                      className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300"
+                    >
                       Detaylı Bilgi Al <ArrowRight size={18} />
                     </Link>
                   </div>
-                </motion.div>)}
+                </motion.div>
+              ))}
             </div>
           </div>
-        </section>}
-
-
-      {/* --- 4. HİZMET KARTLARI --- */}
-      
-
+        </section>
+      )}
 
       {/* --- 5. CTA --- */}
       <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
@@ -230,12 +231,16 @@ const ElektrikSistemleri = () => {
             uzman ekibimizle iletişime geçin.
           </p>
           
-          <a href="/iletisim" className="inline-flex items-center gap-3 bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105">
+          <a 
+            href="/iletisim" 
+            className="inline-flex items-center gap-3 bg-[#EAB308] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#dca600] hover:shadow-[0_0_40px_-10px_rgba(234,179,8,0.3)] hover:scale-105"
+          >
             Ücretsiz Keşif Talep Edin
           </a>
         </div>
       </section>
-
-    </div>;
+    </div>
+  );
 };
+
 export default ElektrikSistemleri;
