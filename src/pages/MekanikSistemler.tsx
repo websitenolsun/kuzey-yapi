@@ -48,8 +48,22 @@ const MekanikSistemler = () => {
     detail: "BMS • Enerji İzleme • Uzaktan Kontrol"
   }];
 
-  // Images for sub-services alternating layout
-  const subServiceImages = [isiPompasi, sogutmaHvac, mekanikOtomasyon, mekanikTesisat, projeYonetimi, yanginTesisati, sihhiTesisat, projePlanlama, binaOtomasyon];
+  // Service-based image mapping - prevents index shifting issues
+  const serviceImageMap: Record<string, string> = {
+    "Isı Pompası Sistemleri": isiPompasi,
+    "Soğutma & HVAC": sogutmaHvac,
+    "Havalandırma Sistemleri": mekanikOtomasyon,
+    "Sıhhi Tesisat": sihhiTesisat,
+    "Yangın Tesisatı": yanginTesisati,
+    "Kazan Dairesi & Isı Merkezleri": mekanikTesisat,
+    "Projelendirme Mühendislik": projeYonetimi,
+    "Bina Otomasyon Sistemleri": binaOtomasyon,
+  };
+
+  // Fallback image for services not in the map
+  const getServiceImage = (title: string): string => {
+    return serviceImageMap[title] || projePlanlama;
+  };
   return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
       
@@ -185,7 +199,7 @@ const MekanikSistemler = () => {
                   <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
-                      <img src={subServiceImages[i % subServiceImages.length]} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <img src={getServiceImage(service.title)} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-3">
