@@ -14,6 +14,7 @@ import mekansalPlanlama from '@/assets/mekansal-planlama.jpg';
 import santiyeYonetimi from '@/assets/santiye-yonetimi.png';
 import boyaYuzey from '@/assets/boya-yuzey.jpg';
 import marangozAhsap from '@/assets/marangoz-ahsap.jpg';
+import zeminKaplama from '@/assets/zemin-kaplama.png';
 const IcMimari = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,6 +56,7 @@ const IcMimari = () => {
     "Mimari Uygulama & Şantiye Yönetimi": santiyeYonetimi,
     "Boya & Yüzey İşleri": boyaYuzey,
     "Marangoz & Ahşap İşleri": marangozAhsap,
+    "Zemin & Kaplama": zeminKaplama,
     "Konsept Tasarım": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format",
     "Anahtar Teslim Uygulama": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format",
     "Renovasyon & Tadilat": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format",
