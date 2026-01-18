@@ -4,6 +4,23 @@ import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
+// Service-based image mapping for consistent image display
+const serviceImageMap: Record<string, string> = {
+  "Elektrik Tesisatı (Daire İçi)": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format",
+  "Aydınlatma Sistemleri": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format",
+  "Akıllı Ev Sistemleri": "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format",
+  "Elektrik Panosu & Güç Dağıtımı": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format",
+  "Topraklama Sistemleri": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
+  "Enerji Verimliliği & LED Dönüşüm": "https://images.unsplash.com/photo-1565465295423-68c959ba4844?q=80&w=2069&auto=format",
+  "Revizyon & Yenileme": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format",
+};
+
+const fallbackImage = "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format";
+
+const getServiceImage = (title: string): string => {
+  return serviceImageMap[title] || fallbackImage;
+};
+
 const ElektrikSistemleri = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,7 +54,6 @@ const ElektrikSistemleri = () => {
     desc: "Güvenli pano montajı ve güç dağıtım sistemleri.",
     detail: "Pano • Sigorta • Kaçak Akım • UPS"
   }];
-  const subServiceImages = ["https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format", "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format"];
   return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Elektrik Sistemleri" description="Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri. Elektrik tesisatı, aydınlatma, akıllı ev sistemleri ve güç dağıtımı." canonical="/hizmetler/elektrik" jsonLd={createServiceSchema("Elektrik Sistemleri", "Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri", "https://kuzey-yapi.lovable.app/hizmetler/elektrik")} />
       
@@ -160,7 +176,7 @@ const ElektrikSistemleri = () => {
                   <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
-                      <img src={subServiceImages[i % subServiceImages.length]} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <img src={getServiceImage(service.title)} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-3">
