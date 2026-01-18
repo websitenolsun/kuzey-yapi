@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -107,13 +108,13 @@ const Header = () => {
             </div>
           </div>
 
-          {/* 3. REFERANSLARIMIZ (Tek Link) */}
-          <a
-            href="/referanslar"
-            className="text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase"
-          >
-            REFERANSLARIMIZ
-          </a>
+          {/* 3. REFERANSLAR (Tek Link) */}
+          <Link 
+  to="/referanslar" 
+  className="text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase"
+>
+  REFERANSLAR
+</Link>
 
           {/* 4. İLETİŞİM (Sade Link) */}
           <a
