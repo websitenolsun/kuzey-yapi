@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Wind, Droplets, Flame, Cpu, ArrowRight, Phone } from "lucide-react";
 import yanginTesisati from "@/assets/yangin-tesisati.jpg";
 import mekanikIklimlendirme from "@/assets/mekanik-iklimlendirme.png";
-import sihhiTesisat from "@/assets/sihhi-tesisat.jpg";
+import sihhiTesisatNew from "@/assets/sihhi-tesisat-new.jpg";
 import mekanikOtomasyon from "@/assets/mekanik-otomasyon.png";
 import isiPompasi from "@/assets/isi-pompasi.jpg";
 import sogutmaHvac from "@/assets/sogutma-hvac.png";
@@ -54,7 +54,7 @@ const MekanikSistemler = () => {
     "Isı Pompası Sistemleri": isiPompasi,
     "Soğutma & HVAC": sogutmaHvac,
     "Havalandırma Sistemleri": havalandirmaSistemleri,
-    "Sıhhi Tesisat": sihhiTesisat,
+    "Sıhhi Tesisat": sihhiTesisatNew,
     "Yangın Tesisatı": yanginTesisati,
     "Kazan Dairesi & Isı Merkezleri": mekanikTesisat,
     "Projelendirme Mühendislik": projeYonetimi,
