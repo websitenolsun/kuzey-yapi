@@ -16,6 +16,7 @@ import boyaYuzey from '@/assets/boya-yuzey.jpg';
 import marangozAhsap from '@/assets/marangoz-ahsap.jpg';
 import zeminKaplama from '@/assets/zemin-kaplama.png';
 import anahtarTeslimDekorasyon from '@/assets/anahtar-teslim-dekorasyon.jpg';
+import donusumOncesi from '@/assets/donusum-oncesi.png';
 const IcMimari = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -252,7 +253,7 @@ const IcMimari = () => {
             <div className="portfolio-layout">
                 <div className="comparison-container">
                     <div className="image-wrapper before">
-                        <img src="https://images.unsplash.com/photo-503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop" alt="İnşaat Hali" />
+                        <img src={donusumOncesi} alt="İnşaat Hali" />
                         <span className="label-badge label-before">ÖNCESİ</span>
                     </div>
                     <div className="image-wrapper after" style={{
