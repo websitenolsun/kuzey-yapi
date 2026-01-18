@@ -1,8 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, MapPin, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { useSubServiceDetail, useRelatedSubServices } from "@/hooks/useSubServiceDetail";
 import DynamicIcon from "@/components/DynamicIcon";
