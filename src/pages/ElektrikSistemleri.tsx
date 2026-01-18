@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
+import elektrikTesisati from "@/assets/elektrik-tesisati.jpg";
+
 // Service-based image mapping for consistent image display
 const serviceImageMap: Record<string, string> = {
-  "Elektrik Tesisatı (Daire İçi)": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format",
+  "Elektrik Tesisatı (Daire İçi)": elektrikTesisati,
   "Aydınlatma Sistemleri": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format",
   "Akıllı Ev Sistemleri": "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format",
   "Elektrik Panosu & Güç Dağıtımı": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format",
