@@ -41,8 +41,21 @@ const IcMimari = () => {
     answer: "Bu, projenin kapsamına göre değişir. Ancak 'Süreç' bölümünde belirttiğimiz gibi, işe başlamadan önce size gün-gün işleyen bir 'İş Programı' (Gantt Şeması) sunarız ve buna sadık kalırız."
   }];
 
-  // Images for alternating layout
-  const subServiceImages = ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format"];
+  // Service title to image mapping
+  const serviceImageMap: Record<string, string> = {
+    "Konsept Tasarım": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format",
+    "Anahtar Teslim Uygulama": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format",
+    "Renovasyon & Tadilat": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format",
+    "İç Mekan Tasarımı": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format",
+    "Mimari Projelendirme": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format",
+    "3D Görselleştirme": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format",
+  };
+
+  const defaultImage = "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format";
+  
+  const getServiceImage = (title: string): string => {
+    return serviceImageMap[title] || defaultImage;
+  };
   return <div className="ic-mimari-page">
       <SEOHead title="Mimari & Dekorasyon" description="Estetikle fonksiyonelliği buluşturan bütüncül mimari ve iç mekan tasarım hizmetleri. Konsept tasarım, anahtar teslim uygulama ve renovasyon." canonical="/uzmanliklar/ic-mimari" jsonLd={createServiceSchema("Mimari & Dekorasyon", "Estetikle fonksiyonelliği buluşturan bütüncül mimari ve iç mekan tasarım hizmetleri", "https://kuzey-yapi.lovable.app/uzmanliklar/ic-mimari")} />
       
@@ -141,7 +154,7 @@ const IcMimari = () => {
                   <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
-                      <img src={subServiceImages[i % subServiceImages.length]} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <img src={getServiceImage(service.title)} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-3">
