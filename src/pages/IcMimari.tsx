@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone } from 'lucide-react';
 import './IcMimari.css';
@@ -192,9 +193,9 @@ const IcMimari = () => {
                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
-                    <a href="tel:+905551234567" className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:gap-4 transition-all duration-300">
+                    <Link to={`/hizmetler/mimari/${service.slug}`} className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:gap-4 transition-all duration-300">
                       Detaylı Bilgi Al <ArrowRight size={18} />
-                    </a>
+                    </Link>
                   </div>
                 </motion.div>)}
             </div>

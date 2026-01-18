@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Wind, Droplets, Flame, Cpu, ArrowRight, Phone } from "lucide-react";
 import yanginTesisati from "@/assets/yangin-tesisati.jpg";
 import mekanikIklimlendirme from "@/assets/mekanik-iklimlendirme.png";
@@ -223,9 +224,9 @@ const MekanikSistemler = () => {
                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
-                    <a href="tel:+905551234567" className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
+                    <Link to={`/hizmetler/mekanik/${service.slug}`} className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
                       Detaylı Bilgi Al <ArrowRight size={18} />
-                    </a>
+                    </Link>
                   </div>
                 </motion.div>)}
             </div>}

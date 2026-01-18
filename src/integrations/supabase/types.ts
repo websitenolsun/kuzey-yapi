@@ -85,9 +85,16 @@ export type Database = {
           created_at: string
           description: string
           display_order: number | null
+          faqs: Json | null
           icon_name: string | null
           id: string
+          long_description: string | null
+          seo_description: string | null
+          seo_keywords: string[] | null
+          seo_title: string | null
+          service_areas: string[] | null
           service_id: string
+          slug: string | null
           title: string
           updated_at: string
         }
@@ -95,9 +102,16 @@ export type Database = {
           created_at?: string
           description: string
           display_order?: number | null
+          faqs?: Json | null
           icon_name?: string | null
           id?: string
+          long_description?: string | null
+          seo_description?: string | null
+          seo_keywords?: string[] | null
+          seo_title?: string | null
+          service_areas?: string[] | null
           service_id: string
+          slug?: string | null
           title: string
           updated_at?: string
         }
@@ -105,9 +119,16 @@ export type Database = {
           created_at?: string
           description?: string
           display_order?: number | null
+          faqs?: Json | null
           icon_name?: string | null
           id?: string
+          long_description?: string | null
+          seo_description?: string | null
+          seo_keywords?: string[] | null
+          seo_title?: string | null
+          service_areas?: string[] | null
           service_id?: string
+          slug?: string | null
           title?: string
           updated_at?: string
         }
