@@ -12,6 +12,7 @@ import projePlanlama from "@/assets/proje-planlama.jpg";
 import mekanikTesisat from "@/assets/mekanik-tesisat.jpg";
 import havalandirmaSistemleri from "@/assets/havalandirma-sistemleri.png";
 import kazanDairesi from "@/assets/kazan-dairesi.jpg";
+import projelendirmeMuhendislik from "@/assets/projelendirme-muhendislik.jpg";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
@@ -58,7 +59,7 @@ const MekanikSistemler = () => {
     "Sıhhi Tesisat": sihhiTesisatNew,
     "Yangın Tesisatı": yanginTesisati,
     "Kazan Dairesi & Isı Merkezleri": kazanDairesi,
-    "Projelendirme Mühendislik": projeYonetimi,
+    "Projelendirme Mühendislik": projelendirmeMuhendislik,
     "Bina Otomasyon Sistemleri": binaOtomasyon,
   };
 
