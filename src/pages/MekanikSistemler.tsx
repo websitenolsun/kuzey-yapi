@@ -10,6 +10,7 @@ import projeYonetimi from "@/assets/proje-yonetimi.jpg";
 import binaOtomasyon from "@/assets/bina-otomasyon.jpg";
 import projePlanlama from "@/assets/proje-planlama.jpg";
 import mekanikTesisat from "@/assets/mekanik-tesisat.jpg";
+import havalandirmaSistemleri from "@/assets/havalandirma-sistemleri.png";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
@@ -52,7 +53,7 @@ const MekanikSistemler = () => {
   const serviceImageMap: Record<string, string> = {
     "Isı Pompası Sistemleri": isiPompasi,
     "Soğutma & HVAC": sogutmaHvac,
-    "Havalandırma Sistemleri": mekanikOtomasyon,
+    "Havalandırma Sistemleri": havalandirmaSistemleri,
     "Sıhhi Tesisat": sihhiTesisat,
     "Yangın Tesisatı": yanginTesisati,
     "Kazan Dairesi & Isı Merkezleri": mekanikTesisat,
