@@ -31,7 +31,7 @@ const ISGPolitikamiz = () => {
   ];
 
   return (
-    <div className="bg-[#050505] min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
+    <div className="bg-white min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
       
       {/* HERO ALANI */}
       <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
@@ -60,7 +60,7 @@ const ISGPolitikamiz = () => {
       </section>
 
       {/* POLİTİKA MADDELERİ */}
-      <section className="py-24 bg-[#080808]">
+      <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           
           {/* Başlık */}
@@ -122,7 +122,7 @@ const ISGPolitikamiz = () => {
       </section>
 
       {/* EK BİLGİ BÖLÜMÜ */}
-      <section className="py-20 bg-[#050505] border-t border-white/5">
+      <section className="py-20 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div 
             className="bg-gradient-to-br from-[#D4AF37]/10 to-transparent p-10 rounded-sm border border-[#D4AF37]/20"
@@ -154,7 +154,7 @@ const ISGPolitikamiz = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
             İSG politikamız hakkında <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">daha fazla bilgi</span> almak ister misiniz?

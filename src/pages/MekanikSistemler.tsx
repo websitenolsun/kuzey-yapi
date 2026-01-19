@@ -68,7 +68,7 @@ const MekanikSistemler = () => {
   const getServiceImage = (title: string): string => {
     return serviceImageMap[title] || projePlanlama;
   };
-  return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+  return <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
       
       {/* --- 1. HERO ALANI: SESSİZ GÜÇ --- */}
@@ -136,7 +136,7 @@ const MekanikSistemler = () => {
 
 
       {/* --- 2. İSTATİSTİK BANDI: MİMARİ DİSİPLİN --- */}
-      <section className="py-20 border-b border-white/5 bg-[#050505]">
+      <section className="py-20 border-b border-white/5 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             {[{
@@ -166,7 +166,7 @@ const MekanikSistemler = () => {
 
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ (ALTERNATING LAYOUT) --- */}
-      <section className="py-32 bg-[#080808]">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{
           opacity: 0,
@@ -239,7 +239,7 @@ const MekanikSistemler = () => {
 
 
       {/* --- 5. CTA: SOFİSTİKE KAPANIŞ --- */}
-      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">

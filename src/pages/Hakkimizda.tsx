@@ -19,7 +19,7 @@ const Hakkimizda = () => {
   };
 
   return (
-    <div className="bg-[#050505] min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
+    <div className="bg-white min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
       <SEOHead
         title="Hakkımızda"
         description="Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki estetik arayışıyla birleştiriyor. Mekanik Tesisat, Doğalgaz, Mimari Tasarım."
@@ -60,7 +60,7 @@ const Hakkimizda = () => {
       </section>
 
       {/* ANA İÇERİK */}
-      <section className="py-24 bg-[#080808]">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -136,7 +136,7 @@ const Hakkimizda = () => {
       </section>
 
       {/* BİZİ BİZ YAPAN İLKELER - BENTO GRİD */}
-      <section className="py-32 bg-[#050505] border-t border-white/5">
+      <section className="py-32 bg-white border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             className="text-center mb-20"
@@ -207,7 +207,7 @@ const Hakkimizda = () => {
       </section>
 
       {/* CTA - DOĞRUDAN İLETİŞİM */}
-      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
             Projeleriniz için <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">yanınızdayız.</span>
