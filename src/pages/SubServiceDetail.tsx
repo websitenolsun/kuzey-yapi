@@ -213,7 +213,7 @@ const SubServiceDetail = () => {
           </motion.p>
 
           <motion.a 
-            href="tel:+905551234567" 
+            href="tel:+902122365743" 
             className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all"
             style={{ 
               '--hover-border-color': `${accentColor}50`,
@@ -485,7 +485,7 @@ const SubServiceDetail = () => {
                 Ücretsiz Keşif Talep Edin
               </a>
               <a 
-                href="tel:+905551234567" 
+                href="tel:+902122365743" 
                 className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold tracking-wide border border-white/20 text-white hover:bg-white/5 transition-all duration-300"
               >
                 <Phone size={18} />

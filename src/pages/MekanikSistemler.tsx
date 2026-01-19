@@ -110,7 +110,7 @@ const MekanikSistemler = () => {
             yapının mimarisiyle uyumlu bir sanat eseri gibi tasarlarız.
           </motion.p>
 
-          <motion.a href="tel:+905551234567" className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" initial={{
+          <motion.a href="tel:+902122365743" className="group relative inline-flex items-center gap-2 px-10 py-4 overflow-hidden rounded-full bg-white/5 border border-white/10 text-white transition-all hover:border-[#EAB308]/50 hover:bg-[#EAB308]/10" initial={{
           opacity: 0,
           y: 20
         }} animate={{
