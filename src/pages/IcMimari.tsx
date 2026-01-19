@@ -93,7 +93,7 @@ const IcMimari = () => {
               Biz mekanları sadece süslemiyoruz; ışığı, akustiği ve iklimi yöneterek, 
               içinde yaşamaktan keyif alacağınız "çalışan sanat eserleri" tasarlıyoruz.
           </p>
-          <a href="tel:+905551234567" className="cta-button">
+          <a href="tel:+902122365743" className="cta-button">
               <Phone size={18} />
               Hemen Arayın
           </a>
