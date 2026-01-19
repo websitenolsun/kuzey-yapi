@@ -68,7 +68,7 @@ const ElektrikSistemleri: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+    <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead 
         title="Elektrik Sistemleri" 
         description="Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri. Elektrik tesisatı, aydınlatma, akıllı ev sistemleri ve güç dağıtımı." 
@@ -127,7 +127,7 @@ const ElektrikSistemleri: React.FC = () => {
       </section>
 
       {/* --- 2. İSTATİSTİK BANDI --- */}
-      <section className="py-20 border-b border-white/5 bg-[#050505]">
+      <section className="py-20 border-b border-white/5 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             {[
@@ -152,7 +152,7 @@ const ElektrikSistemleri: React.FC = () => {
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ --- */}
       {!isLoading && subServices && subServices.length > 0 && (
-        <section className="py-32 bg-[#080808]">
+        <section className="py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div 
               className="text-center mb-20" 
@@ -220,7 +220,7 @@ const ElektrikSistemleri: React.FC = () => {
       )}
 
       {/* --- 5. CTA --- */}
-      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
             Elektrik projenizi birlikte <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">planlayalım.</span>

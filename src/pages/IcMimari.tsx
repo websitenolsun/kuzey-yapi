@@ -137,7 +137,7 @@ const IcMimari = () => {
       </section>
 
       {/* --- YENİ BÖLÜM: DETAYLI HİZMET DÖKÜMÜ (CMS'DEN GELİYOR) --- */}
-      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-[#080808]">
+      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-20" initial={{
           opacity: 0,

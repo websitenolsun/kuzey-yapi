@@ -20,7 +20,7 @@ const DogalgazSistemleri = () => {
     "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
     "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"
   ];
-  return <div className="bg-[#050505] min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+  return <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
       <SEOHead title="Doğalgaz Sistemleri" description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri." canonical="/hizmetler/dogalgaz" jsonLd={createServiceSchema("Doğalgaz Sistemleri", "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları", "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz")} />
       
       {/* --- 1. HERO ALANI --- */}
@@ -77,7 +77,7 @@ const DogalgazSistemleri = () => {
 
 
       {/* --- 2. İSTATİSTİK BANDI --- */}
-      <section className="py-20 border-b border-white/5 bg-[#050505]">
+      <section className="py-20 border-b border-white/5 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             {[{
@@ -107,7 +107,7 @@ const DogalgazSistemleri = () => {
 
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ --- */}
-      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-[#080808]">
+      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-20" initial={{
           opacity: 0,
@@ -172,7 +172,7 @@ const DogalgazSistemleri = () => {
 
 
       {/* --- 5. GÜVENLİK VURGUSU --- */}
-      <section className="py-24 bg-[#080808] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div className="bg-gradient-to-br from-orange-500/10 to-transparent p-12 rounded-sm border border-orange-500/20" initial={{
           opacity: 0,
@@ -206,7 +206,7 @@ const DogalgazSistemleri = () => {
 
 
       {/* --- 6. CTA --- */}
-      <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
+      <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
             Doğalgaz projeniz için <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">bize ulaşın.</span>
