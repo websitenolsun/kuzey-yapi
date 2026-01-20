@@ -27,7 +27,7 @@ const ISGPolitikamiz = () => {
       {/* HERO ALANI */}
       <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-[#050505] text-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-[#050505] bg-white text-black"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full"></div>
         </div>
 
