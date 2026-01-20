@@ -172,7 +172,7 @@ const Hakkimizda = () => {
                     </h3>
                     
                     {/* Description */}
-                    <p className={`text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300
+                    <p className={`text-white leading-relaxed transition-colors duration-300
                       ${i === 0 ? 'text-lg' : 'text-base'}`}>
                       {value.description}
                     </p>
