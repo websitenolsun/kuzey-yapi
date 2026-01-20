@@ -94,23 +94,7 @@ const Hakkimizda = () => {
               </p>
 
               {/* İstatistikler */}
-              <div className="grid grid-cols-3 gap-8 mb-12">
-                {[{
-                num: "2011",
-                label: "Kuruluş"
-              }, {
-                num: "200+",
-                label: "Proje"
-              }, {
-                num: "1.2M",
-                label: "m² Alan"
-              }].map((stat, i) => (
-                  <div key={i} className="text-center border-l border-[#D4AF37]/20 first:border-l-0 pl-6 first:pl-0">
-                    <span className="text-3xl font-light text-gray-900 block mb-2">{stat.num}</span>
-                    <span className="text-xs text-gray-500 uppercase tracking-widest">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
+              
             </motion.div>
           </div>
         </div>
