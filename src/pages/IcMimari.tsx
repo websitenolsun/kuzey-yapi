@@ -66,11 +66,9 @@ const IcMimari = () => {
     "Renovasyon & Tadilat": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format",
     "İç Mekan Tasarımı": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format",
     "Mimari Projelendirme": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format",
-    "3D Görselleştirme": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format",
+    "3D Görselleştirme": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000&auto=format"
   };
-
   const defaultImage = "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format";
-  
   const getServiceImage = (title: string): string => {
     return serviceImageMap[title] || defaultImage;
   };
@@ -295,46 +293,7 @@ const IcMimari = () => {
       </section>
 
       {/* --- BÖLÜM 6: SOSYAL KANIT & SSS --- */}
-      <section className="faq-section" id="iletisim">
-        <div className="container">
-            
-            <div className="faq-layout">
-                {/* Sol Taraf: Müşteri Yorumu */}
-                <div className="testimonial-col">
-                    <div className="testimonial-card">
-                        <div className="quote-icon">"</div>
-                        <p className="testimonial-text">
-                            "Tasarımcıların estetik kaygısı ile ustaların teknik gerçekleri arasında kalmaktan korkuyordum. Kuzey Yapı, hem gözüme hitap eden o harika salonu tasarladı hem de yıllardır çözülemeyen ısınma sorunumu çözdü."
-                        </p>
-                        <div className="testimonial-author">
-                            <div className="author-avatar">Z</div>
-                            <div className="author-info">
-                                <span className="author-name">Zeynep Y.</span>
-                                <span className="author-title">Ev Sahibi, Sarıyer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Sağ Taraf: Sıkça Sorulan Sorular */}
-                <div className="faq-col">
-                    <h2 className="faq-title">Merak Edilenler</h2>
-                    <div className="accordion">
-                        {faqs.map((faq, index) => <div key={index} className={`accordion-item ${activeFaq === index ? 'active' : ''}`} onClick={() => toggleFaq(index)}>
-                                <div className="accordion-header">
-                                    <span className="question">{faq.question}</span>
-                                    <span className="icon">+</span>
-                                </div>
-                                <div className="accordion-body">
-                                    <p>{faq.answer}</p>
-                                </div>
-                            </div>)}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-      </section>
+      
 
       {/* --- CTA SECTION --- */}
       <section className="py-24 bg-gradient-to-t from-[#0a0a0a] to-[#050505] border-t border-white/5">
