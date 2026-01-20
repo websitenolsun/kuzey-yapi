@@ -25,10 +25,9 @@ const ISGPolitikamiz = () => {
   return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       
       {/* HERO ALANI */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
+      <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16 bg-white">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-[#050505] bg-white text-black"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/10 blur-[120px] rounded-full"></div>
         </div>
 
         <motion.div className="relative z-10 max-w-4xl mx-auto px-6 text-center" initial={{
@@ -43,10 +42,10 @@ const ISGPolitikamiz = () => {
           <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-6 block">
             Kurumsal
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6 text-black">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6 text-gray-900">
             İSG Politikamız
           </h1>
-          <p className="text-lg max-w-2xl mx-auto text-black">
+          <p className="text-lg max-w-2xl mx-auto text-gray-600">
             İş Sağlığı ve Güvenliği, Kuzey Yapı'nın temel değerlerinin ayrılmaz bir parçasıdır.
           </p>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-8"></div>
@@ -79,7 +78,7 @@ const ISGPolitikamiz = () => {
 
           {/* Maddeler Listesi */}
           <div className="space-y-6">
-            {policies.map((policy, i) => <motion.div key={i} className="group relative bg-[#0a0a0a] p-8 rounded-sm border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500" initial={{
+            {policies.map((policy, i) => <motion.div key={i} className="group relative bg-gray-50 p-8 rounded-sm border border-gray-200 hover:border-[#D4AF37]/50 transition-all duration-500" initial={{
             opacity: 0,
             x: -30
           }} whileInView={{
@@ -94,7 +93,7 @@ const ISGPolitikamiz = () => {
                 <div className="flex items-start gap-6">
                   
                   {/* İkon */}
-                  <div className="flex-shrink-0 w-16 h-16 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all duration-500">
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#D4AF37]/10 rounded-sm flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500">
                     {policy.icon}
                   </div>
 
@@ -103,7 +102,7 @@ const ISGPolitikamiz = () => {
                     <h3 className="text-xl font-medium text-[#D4AF37] mb-3 transition-colors duration-300">
                       {policy.title}
                     </h3>
-                    <p className="text-white leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                       {policy.description}
                     </p>
                   </div>
@@ -122,7 +121,7 @@ const ISGPolitikamiz = () => {
       </section>
 
       {/* EK BİLGİ BÖLÜMÜ */}
-      <section className="py-20 bg-white border-t border-white/5">
+      <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div className="bg-gradient-to-br from-[#D4AF37]/10 to-transparent p-10 rounded-sm border border-[#D4AF37]/20" initial={{
           opacity: 0,
@@ -158,7 +157,7 @@ const ISGPolitikamiz = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-white border-t border-white/5">
+      <section className="py-24 bg-white border-t border-gray-100">
         
       </section>
     </div>;
