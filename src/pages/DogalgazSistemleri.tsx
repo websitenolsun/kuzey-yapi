@@ -6,6 +6,7 @@ import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
 import dogalgazTesisat from "@/assets/dogalgaz-tesisat.jpg";
+import dogalgazHero from "@/assets/dogalgaz-hero.jpg";
 const DogalgazSistemleri = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +22,7 @@ const DogalgazSistemleri = () => {
       {/* --- 1. HERO ALANI --- */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format" alt="Doğalgaz Sistemleri" className="w-full h-full object-cover opacity-40 grayscale scale-105" />
+           <img src={dogalgazHero} alt="Doğalgaz Sistemleri" className="w-full h-full object-cover opacity-40 grayscale scale-105" />
            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-[#050505]"></div>
         </div>
 
