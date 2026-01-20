@@ -61,7 +61,7 @@ const MekanikSistemler = () => {
     "Yangın Tesisatı": yanginTesisati,
     "Kazan Dairesi & Isı Merkezleri": kazanDairesi,
     "Projelendirme Mühendislik": projelendirmeMuhendislik,
-    "Bina Otomasyon Sistemleri": binaOtomasyon
+    "Bina Otomasyon Sistemleri": binaOtomasyon,
   };
 
   // Fallback image for services not in the map
@@ -136,7 +136,33 @@ const MekanikSistemler = () => {
 
 
       {/* --- 2. İSTATİSTİK BANDI: MİMARİ DİSİPLİN --- */}
-      
+      <section className="py-20 border-b border-white/5 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            {[{
+            num: "15+",
+            label: "Yıllık Deneyim"
+          }, {
+            num: "200+",
+            label: "Tamamlanan Proje"
+          }, {
+            num: "%30",
+            label: "Enerji Verimliliği"
+          }, {
+            num: "1.2M",
+            label: "m² Uygulama"
+          }].map((stat, i) => <div key={i} className="flex flex-col items-center group cursor-default">
+                <span className="text-5xl font-light text-gray-900 mb-4 tracking-tighter group-hover:text-gray-700 transition-colors">
+                  {stat.num}
+                </span>
+                <div className="w-12 h-[1px] bg-[#EAB308] opacity-30 mb-4 group-hover:w-24 group-hover:opacity-100 transition-all duration-500"></div>
+                <span className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
+                  {stat.label}
+                </span>
+              </div>)}
+          </div>
+        </div>
+      </section>
 
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ (ALTERNATING LAYOUT) --- */}
