@@ -38,10 +38,9 @@ const KalitePolitikamiz = () => {
     <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       
       {/* HERO ALANI */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
+      <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16 bg-white">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-[#050505]"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/10 blur-[120px] rounded-full"></div>
         </div>
 
         <motion.div 
@@ -53,10 +52,10 @@ const KalitePolitikamiz = () => {
           <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-6 block">
             Kurumsal
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6 text-gray-900">
             Kalite Politikamız
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Mükemmellik arayışımız, her projemizin temelini oluşturur.
           </p>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-8"></div>
@@ -121,7 +120,7 @@ const KalitePolitikamiz = () => {
       </section>
 
       {/* TAAHHÜT BÖLÜMÜ */}
-      <section className="py-20 bg-white border-t border-white/5">
+      <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div 
             className="flex flex-col lg:flex-row items-center gap-12"
@@ -161,7 +160,7 @@ const KalitePolitikamiz = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-white border-t border-white/5">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-12">
             Kalite standartlarımızı <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">projelerinizde</span> deneyimleyin.
