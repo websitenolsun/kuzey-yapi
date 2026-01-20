@@ -30,10 +30,188 @@ const Hakkimizda = () => {
       <SEOHead title="Hakkımızda" description="Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki estetik arayışıyla birleştiriyor. Mekanik Tesisat, Doğalgaz, Mimari Tasarım." canonical="/hakkimizda" jsonLd={organizationSchema} />
       
       {/* BAŞLIK ALANI */}
-      
+      <section className="pt-32 pb-16 bg-white">
+        <motion.div className="max-w-5xl mx-auto px-6 text-center" initial={{
+        opacity: 0,
+        y: 30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.8
+      }}>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-14 h-14 bg-[#D4AF37] flex items-center justify-center font-bold text-black text-2xl rounded-sm">
+              K
+            </div>
+            <div className="text-left">
+              <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">KUZEY YAPI</h1>
+              <span className="text-sm text-gray-500 tracking-widest uppercase">Mühendislik & Tasarım</span>
+            </div>
+          </div>
+        </motion.div>
+      </section>
 
       {/* ANA İÇERİK */}
-      
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Sol: Görsel */}
+            <motion.div className="relative group" initial={{
+            opacity: 0,
+            x: -50
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8
+          }}>
+              <div className="absolute -inset-4 border border-white/5 rounded-sm group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
+              <div className="relative h-[600px] bg-[#1a1a1a] rounded-sm overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format" alt="Kuzey Yapı Mühendislik" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 right-10">
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-[#D4AF37] flex items-center justify-center font-bold text-black text-2xl rounded-sm">
+                      K
+                    </div>
+                    <div>
+                      <span className="text-white font-semibold text-xl block">KUZEY YAPI</span>
+                      <span className="text-gray-400 text-sm tracking-widest uppercase">Mühendislik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Sağ: İçerik */}
+            <motion.div initial={{
+            opacity: 0,
+            x: 50
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8,
+            delay: 0.2
+          }}>
+              <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-6 block">
+                Hikayemiz
+              </span>
+              
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki 
+                estetik arayışıyla birleştiriyor.
+              </p>
+              <p className="text-gray-500 text-base leading-relaxed mb-12">
+                Asıl uzmanlık alanımız olan <span className="text-gray-900">Mekanik Tesisat</span> ve <span className="text-gray-900">Doğal Gaz Sistemleri</span> başta olmak üzere;
+                mimari tasarım ve dekorasyon süreçlerinde entegre, güvenli ve yüksek verimli çözümler sunuyoruz.
+              </p>
+
+              {/* İstatistikler */}
+              <div className="grid grid-cols-3 gap-8 mb-12">
+                {[{
+                num: "2011",
+                label: "Kuruluş"
+              }, {
+                num: "200+",
+                label: "Proje"
+              }, {
+                num: "1.2M",
+                label: "m² Alan"
+              }].map((stat, i) => {})}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section><section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Sol: Görsel */}
+            <motion.div className="relative group" initial={{
+            opacity: 0,
+            x: -50
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8
+          }}>
+              <div className="absolute -inset-4 border border-white/5 rounded-sm group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
+              <div className="relative h-[600px] bg-[#1a1a1a] rounded-sm overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format" alt="Kuzey Yapı Mühendislik" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 right-10">
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-[#D4AF37] flex items-center justify-center font-bold text-black text-2xl rounded-sm">
+                      K
+                    </div>
+                    <div>
+                      <span className="text-white font-semibold text-xl block">KUZEY YAPI</span>
+                      <span className="text-gray-400 text-sm tracking-widest uppercase">Mühendislik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Sağ: İçerik */}
+            <motion.div initial={{
+            opacity: 0,
+            x: 50
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8,
+            delay: 0.2
+          }}>
+              <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-6 block">
+                Hikayemiz
+              </span>
+              <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8 leading-tight">
+                Karmaşık Problemlere,<br />
+                <span className="font-medium text-[#D4AF37]">Zarif Çözümler.</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki 
+                estetik arayışıyla birleştiriyor.
+              </p>
+              <p className="text-gray-500 text-base leading-relaxed mb-12">
+                Asıl uzmanlık alanımız olan <span className="text-gray-900">Mekanik Tesisat</span> ve <span className="text-gray-900">Doğal Gaz Sistemleri</span> başta olmak üzere;
+                mimari tasarım ve dekorasyon süreçlerinde entegre, güvenli ve yüksek verimli çözümler sunuyoruz.
+              </p>
+
+              {/* İstatistikler */}
+              <div className="grid grid-cols-3 gap-8 mb-12">
+                {[{
+                num: "2011",
+                label: "Kuruluş"
+              }, {
+                num: "200+",
+                label: "Proje"
+              }, {
+                num: "1.2M",
+                label: "m² Alan"
+              }].map((stat, i) => <div key={i} className="text-center border-l border-[#D4AF37]/20 first:border-l-0 pl-6 first:pl-0">
+                    <span className="text-3xl font-light text-gray-900 block mb-2">{stat.num}</span>
+                    <span className="text-xs text-gray-500 uppercase tracking-widest">{stat.label}</span>
+                  </div>)}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* BİZİ BİZ YAPAN İLKELER - BENTO GRİD */}
       <section className="py-32 bg-white border-t border-white/5">
