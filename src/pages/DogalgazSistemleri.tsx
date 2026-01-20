@@ -6,20 +6,15 @@ import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
 import dogalgazTesisat from "@/assets/dogalgaz-tesisat.jpg";
-
 const DogalgazSistemleri = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { data: subServices, isLoading } = useSubServices('dogalgaz');
-
-  const subServiceImages = [
-    dogalgazTesisat,
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format",
-    "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"
-  ];
+  const {
+    data: subServices,
+    isLoading
+  } = useSubServices('dogalgaz');
+  const subServiceImages = [dogalgazTesisat, "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"];
   return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead title="Doğalgaz Sistemleri" description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri." canonical="/hizmetler/dogalgaz" jsonLd={createServiceSchema("Doğalgaz Sistemleri", "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları", "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz")} />
       
@@ -77,33 +72,7 @@ const DogalgazSistemleri = () => {
 
 
       {/* --- 2. İSTATİSTİK BANDI --- */}
-      <section className="py-20 border-b border-white/5 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-            {[{
-            num: "1000+",
-            label: "Doğalgaz Aboneliği"
-          }, {
-            num: "15+",
-            label: "Yıllık Deneyim"
-          }, {
-            num: "%100",
-            label: "Ruhsat Onayı"
-          }, {
-            num: "7/24",
-            label: "Acil Servis"
-          }].map((stat, i) => <div key={i} className="flex flex-col items-center group cursor-default">
-                <span className="text-5xl font-light text-gray-900 mb-4 tracking-tighter group-hover:text-gray-700 transition-colors">
-                  {stat.num}
-                </span>
-                <div className="w-12 h-[1px] bg-[#EAB308] opacity-30 mb-4 group-hover:w-24 group-hover:opacity-100 transition-all duration-500"></div>
-                <span className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
-                  {stat.label}
-                </span>
-              </div>)}
-          </div>
-        </div>
-      </section>
+      
 
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ --- */}
