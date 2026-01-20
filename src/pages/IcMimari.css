@@ -9,6 +9,7 @@
     --color-text-primary: #1f2937;
     --color-text-secondary: #4b5563;
     --color-accent: #D4AF37;
+    --color-card-text: #374151;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -258,11 +259,11 @@
 }
 
 .philosophy-card.card-architect .card-icon {
-    color: #F0E4C8;
+    color: #92400e;
 }
 
 .philosophy-card.card-architect:hover .card-icon {
-    color: #FFF5DC;
+    color: #78350f;
 }
 
 /* --- Mühendis Aklı: Sağ alttan çapraz mavi, geri kalan gri --- */
@@ -311,11 +312,11 @@
 }
 
 .philosophy-card.card-engineer .card-icon {
-    color: #7AB3E0;
+    color: #1e40af;
 }
 
 .philosophy-card.card-engineer:hover .card-icon {
-    color: #9DCAEF;
+    color: #1e3a8a;
 }
 
 /* --- Tek Muhatap: Sol üst krem + Sağ alt mavi birleşimi --- */
@@ -396,11 +397,11 @@
 }
 
 .philosophy-card.card-unified .card-icon {
-    color: #C8B890;
+    color: #b8860b;
 }
 
 .philosophy-card.card-unified:hover .card-icon {
-    color: #D4AF37;
+    color: #92400e;
 }
 
 /* Hover Efekti: Varsayılan kartlar için */
@@ -411,9 +412,9 @@
 }
 
 .card-icon {
-    color: var(--color-text-primary);
+    color: #1f2937;
     margin-bottom: 25px;
-    opacity: 0.8;
+    opacity: 1;
     transition: var(--transition-smooth);
 }
 
@@ -432,28 +433,28 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-text-secondary);
+    color: #6b7280;
     margin-bottom: 20px;
     font-weight: 500;
-    opacity: 0.7;
+    opacity: 1;
 }
 
-/* Kart bazlı motto renkleri */
+/* Kart bazlı motto renkleri - koyu arka plan uyumu */
 .philosophy-card.card-architect .card-motto {
-    color: #F0E4C8;
+    color: #92400e;
 }
 
 .philosophy-card.card-engineer .card-motto {
-    color: #9DCAEF;
+    color: #1e40af;
 }
 
 .philosophy-card.card-unified .card-motto {
-    color: #D4AF37;
+    color: #b8860b;
 }
 
 .card-desc {
     font-size: 0.95rem;
-    color: #b8b8b8;
+    color: #4b5563;
     line-height: 1.7;
 }
 
@@ -719,8 +720,8 @@
 
 .portfolio-section {
     padding: 100px 0;
-    background-color: var(--color-bg-dark); /* Koyu gri tonu */
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--color-bg-dark);
+    border-top: 1px solid #e5e7eb;
 }
 
 .portfolio-layout {
@@ -826,13 +827,14 @@
     font-family: var(--font-serif);
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #fff;
+    color: #1f2937;
 }
 
 .project-card {
-    background: rgba(255,255,255,0.03);
+    background: #f9fafb;
     padding: 30px;
     border-left: 2px solid var(--color-accent);
+    border-radius: 4px;
 }
 
 .project-info-row {
@@ -840,35 +842,35 @@
     justify-content: space-between;
     padding-bottom: 15px;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .info-label {
-    color: var(--color-text-secondary);
+    color: #6b7280;
     font-size: 0.9rem;
     text-transform: uppercase;
 }
 
 .info-value {
-    color: #fff;
+    color: #1f2937;
     font-weight: 500;
     text-align: right;
 }
 
 .project-description {
     margin-top: 20px;
-    color: #a0a0a0;
+    color: #4b5563;
     line-height: 1.6;
     font-size: 0.95rem;
 }
 
 .highlight-result {
     margin-top: 15px;
-    color: #fff;
-    border: 1px dashed rgba(255,255,255,0.2);
+    color: #1f2937;
+    border: 1px dashed #d1d5db;
     padding: 10px;
     border-radius: 4px;
-    background: rgba(255,255,255,0.02);
+    background: #f3f4f6;
 }
 
 .portfolio-link {
