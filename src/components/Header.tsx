@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+
+  // Pages with white background that need dark navbar
+  const darkTextPages = ['/hakkimizda', '/isg-politikamiz', '/kalite-politikamiz'];
+  const useDarkText = darkTextPages.includes(location.pathname) && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +36,15 @@ const Header = () => {
   );
 
   // Sosyal Medya İkon Bileşeni (Dış linkler olduğu için <a> kalmalı)
+
+  // Sosyal Medya İkon Bileşeni (Dış linkler olduğu için <a> kalmalı)
   const SocialIcon = ({ href, children, label }: { href: string; children: React.ReactNode; label: string }) => (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 flex items-center justify-center rounded-full border border-white/20 text-white/70 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300"
+      className={`w-9 h-9 flex items-center justify-center rounded-full border hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300 ${useDarkText ? 'border-gray-300 text-gray-600' : 'border-white/20 text-white/70'}`}
     >
       {children}
     </a>
@@ -57,7 +64,9 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
           ? "bg-black/80 backdrop-blur-md border-b border-white/10 shadow-sm py-4"
-          : "bg-transparent py-6"
+          : useDarkText
+            ? "bg-transparent py-6"
+            : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -70,10 +79,10 @@ const Header = () => {
           </div>
           {/* Yazı Alanı */}
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-wide text-white group-hover:text-[#D4AF37] transition-colors duration-300">
+            <span className={`text-xl font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300 ${useDarkText ? 'text-gray-900' : 'text-white'}`}>
               KUZEY YAPI
             </span>
-            <span className="text-[10px] tracking-[0.2em] text-gray-300 uppercase">
+            <span className={`text-[10px] tracking-[0.2em] uppercase ${useDarkText ? 'text-gray-600' : 'text-gray-300'}`}>
               Mühendislik & Tasarım
             </span>
           </div>
@@ -84,7 +93,7 @@ const Header = () => {
           
           {/* 1. KURUMSAL (Dropdown) */}
           <div className="relative group">
-            <button className="flex items-center text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none">
+            <button className={`flex items-center text-sm font-medium hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none ${useDarkText ? 'text-gray-900' : 'text-white'}`}>
               KURUMSAL
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
@@ -99,7 +108,7 @@ const Header = () => {
 
           {/* 2. HİZMETLERİMİZ (Dropdown) */}
           <div className="relative group">
-            <button className="flex items-center text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none">
+            <button className={`flex items-center text-sm font-medium hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none ${useDarkText ? 'text-gray-900' : 'text-white'}`}>
               HİZMETLERİMİZ
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
@@ -116,7 +125,7 @@ const Header = () => {
           {/* 3. REFERANSLAR (Tek Link - Düzeltildi) */}
           <Link 
             to="/referanslar" 
-            className="text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase"
+            className={`text-sm font-medium hover:text-[#D4AF37] tracking-wider transition-colors uppercase ${useDarkText ? 'text-gray-900' : 'text-white'}`}
           >
             REFERANSLAR
           </Link>
@@ -124,13 +133,13 @@ const Header = () => {
           {/* 4. İLETİŞİM (Link'e çevrildi) */}
           <Link
             to="/iletisim"
-            className="text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase"
+            className={`text-sm font-medium hover:text-[#D4AF37] tracking-wider transition-colors uppercase ${useDarkText ? 'text-gray-900' : 'text-white'}`}
           >
             İLETİŞİM
           </Link>
 
           {/* SOSYAL MEDYA İKONLARI */}
-          <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-white/20">
+          <div className={`flex items-center space-x-3 ml-4 pl-4 border-l ${useDarkText ? 'border-gray-300' : 'border-white/20'}`}>
             {/* Facebook */}
             <SocialIcon href="https://www.facebook.com/profile.php?id=100081296332346&mibextid=rS40aB7S9Ucbxw6v" label="Facebook">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -158,7 +167,7 @@ const Header = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-white hover:text-[#D4AF37] transition-colors"
+            className={`hover:text-[#D4AF37] transition-colors ${useDarkText ? 'text-gray-900' : 'text-white'}`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
