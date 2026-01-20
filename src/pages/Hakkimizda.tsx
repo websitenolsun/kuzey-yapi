@@ -27,35 +27,23 @@ const Hakkimizda = () => {
         jsonLd={organizationSchema}
       />
       
-      {/* HERO ALANI - MANİFESTO STYLE */}
-      <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-[#050505]"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D4AF37]/5 blur-[200px] rounded-full"></div>
-        </div>
-
+      {/* BAŞLIK ALANI */}
+      <section className="pt-32 pb-16 bg-white">
         <motion.div 
-          className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+          className="max-w-5xl mx-auto px-6 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-[#D4AF37] font-bold tracking-[0.4em] text-xs uppercase mb-8 block">
-            2011'den Beri
-          </span>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tight leading-[1.05] mb-10">
-            Mühendislik
-            <span className="block font-medium text-[#D4AF37] mt-2">Tecrübesi.</span>
-            <span className="block text-gray-500 text-4xl md:text-5xl lg:text-6xl mt-4">Estetik Arayış.</span>
-          </h1>
-          
-          <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mb-10"></div>
-          
-          <p className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed">
-            Kuzey Yapı, mühendislik tecrübesini yapı sektöründeki estetik arayışıyla birleştirerek; 
-            <span className="text-white"> entegre, güvenli ve yüksek verimli çözümler</span> sunuyor.
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-14 h-14 bg-[#D4AF37] flex items-center justify-center font-bold text-black text-2xl rounded-sm">
+              K
+            </div>
+            <div className="text-left">
+              <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">KUZEY YAPI</h1>
+              <span className="text-sm text-gray-500 tracking-widest uppercase">Mühendislik & Tasarım</span>
+            </div>
+          </div>
         </motion.div>
       </section>
 
