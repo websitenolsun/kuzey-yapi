@@ -65,7 +65,7 @@
     font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeUp 1s ease forwards 0.5s;
@@ -78,16 +78,18 @@
     margin-bottom: 30px;
     opacity: 0;
     animation: fadeUp 1s ease forwards 0.7s;
+    color: #f8f5f0;
 }
 
 .italic-accent {
     font-style: italic;
     font-weight: 400;
+    color: #f8f5f0;
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.85);
     max-width: 600px;
     margin-bottom: 40px;
     font-weight: 300;
