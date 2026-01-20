@@ -15,7 +15,7 @@ const DogalgazSistemleri = () => {
     data: subServices,
     isLoading
   } = useSubServices('dogalgaz');
-  const subServiceImages = [dogalgazTesisat, "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format", "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"];
+  
   return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead title="Doğalgaz Sistemleri" description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri." canonical="/hizmetler/dogalgaz" jsonLd={createServiceSchema("Doğalgaz Sistemleri", "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları", "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz")} />
       
@@ -92,12 +92,12 @@ const DogalgazSistemleri = () => {
                 Uzmanlık Alanlarımız
               </span>
               <h2 className="text-3xl md:text-5xl font-light text-gray-900">
-                Detaylı Hizmet <span className="font-medium text-[#EAB308]">Portföyü</span>
+                Doğalgaz <span className="font-medium text-[#EAB308]">Hizmetlerimiz</span>
               </h2>
             </motion.div>
 
             <div className="space-y-32">
-              {subServices.map((service, i) => <motion.div key={service.id} className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`} initial={{
+              {subServices.slice(0, 1).map((service, i) => <motion.div key={service.id} className="flex flex-col lg:flex-row items-center gap-16" initial={{
             opacity: 0,
             y: 50
           }} whileInView={{
@@ -111,14 +111,14 @@ const DogalgazSistemleri = () => {
                   <div className="w-full lg:w-1/2 relative group">
                     <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#EAB308]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
-                      <img src={subServiceImages[i % subServiceImages.length]} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
+                      <img src={dogalgazTesisat} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 bg-[#EAB308] flex items-center justify-center rounded-sm">
                             <DynamicIcon name={service.icon_name} size={24} className="text-black" />
                           </div>
-                          <span className="text-white font-mono text-sm tracking-widest uppercase">{String(i + 1).padStart(2, '0')}</span>
+                          <span className="text-white font-mono text-sm tracking-widest uppercase">01</span>
                         </div>
                       </div>
                     </div>
