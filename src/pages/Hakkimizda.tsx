@@ -31,7 +31,25 @@ const Hakkimizda = () => {
       
       {/* BAŞLIK ALANI */}
       <section className="pt-32 pb-16 bg-white">
-        
+        <motion.div className="max-w-5xl mx-auto px-6 text-center" initial={{
+        opacity: 0,
+        y: 30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.8
+      }}>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-14 h-14 bg-[#D4AF37] flex items-center justify-center font-bold text-black text-2xl rounded-sm">
+              K
+            </div>
+            <div className="text-left">
+              <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">KUZEY YAPI</h1>
+              <span className="text-sm text-gray-500 tracking-widest uppercase">Mühendislik & Tasarım</span>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ANA İÇERİK */}
