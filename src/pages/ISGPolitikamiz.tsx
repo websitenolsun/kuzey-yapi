@@ -1,37 +1,28 @@
 import { useEffect } from "react";
 import { Shield, GraduationCap, HardHat, RefreshCw, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-
 const ISGPolitikamiz = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const policies = [
-    {
-      icon: <Shield size={36} strokeWidth={1.5} />,
-      title: "Risk Önleme",
-      description: "İş kazaları ve meslek hastalıklarını önlemek amacıyla riskleri önceden tespit eder, gerekli tedbirleri eksiksiz uygularız."
-    },
-    {
-      icon: <GraduationCap size={36} strokeWidth={1.5} />,
-      title: "Eğitim ve Bilinç",
-      description: "Çalışanlarımızın İSG bilincini artırmak için düzenli eğitimler verir, güvenli çalışma yöntemlerini destekleriz."
-    },
-    {
-      icon: <HardHat size={36} strokeWidth={1.5} />,
-      title: "Ekipman ve Denetim",
-      description: "İş sahalarında uygun ekipman kullanımını ve güvenli çalışma koşullarını sürekli denetleriz."
-    },
-    {
-      icon: <RefreshCw size={36} strokeWidth={1.5} />,
-      title: "Sürekli İyileştirme",
-      description: "Tüm iş süreçlerimizde sürekli iyileştirme anlayışıyla hareket eder, güvenli çalışma kültürünü kalıcı hale getiririz."
-    }
-  ];
-
-  return (
-    <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
+  const policies = [{
+    icon: <Shield size={36} strokeWidth={1.5} />,
+    title: "Risk Önleme",
+    description: "İş kazaları ve meslek hastalıklarını önlemek amacıyla riskleri önceden tespit eder, gerekli tedbirleri eksiksiz uygularız."
+  }, {
+    icon: <GraduationCap size={36} strokeWidth={1.5} />,
+    title: "Eğitim ve Bilinç",
+    description: "Çalışanlarımızın İSG bilincini artırmak için düzenli eğitimler verir, güvenli çalışma yöntemlerini destekleriz."
+  }, {
+    icon: <HardHat size={36} strokeWidth={1.5} />,
+    title: "Ekipman ve Denetim",
+    description: "İş sahalarında uygun ekipman kullanımını ve güvenli çalışma koşullarını sürekli denetleriz."
+  }, {
+    icon: <RefreshCw size={36} strokeWidth={1.5} />,
+    title: "Sürekli İyileştirme",
+    description: "Tüm iş süreçlerimizde sürekli iyileştirme anlayışıyla hareket eder, güvenli çalışma kültürünü kalıcı hale getiririz."
+  }];
+  return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       
       {/* HERO ALANI */}
       <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
@@ -40,16 +31,19 @@ const ISGPolitikamiz = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full"></div>
         </div>
 
-        <motion.div 
-          className="relative z-10 max-w-4xl mx-auto px-6 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div className="relative z-10 max-w-4xl mx-auto px-6 text-center" initial={{
+        opacity: 0,
+        y: 30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.8
+      }}>
           <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-6 block">
             Kurumsal
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6 text-white">
             İSG Politikamız
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -64,13 +58,17 @@ const ISGPolitikamiz = () => {
         <div className="max-w-5xl mx-auto px-6">
           
           {/* Başlık */}
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.8
+        }}>
             <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
               Taahhütlerimiz
             </span>
@@ -81,15 +79,18 @@ const ISGPolitikamiz = () => {
 
           {/* Maddeler Listesi */}
           <div className="space-y-6">
-            {policies.map((policy, i) => (
-              <motion.div 
-                key={i}
-                className="group relative bg-[#0a0a0a] p-8 rounded-sm border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
+            {policies.map((policy, i) => <motion.div key={i} className="group relative bg-[#0a0a0a] p-8 rounded-sm border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500" initial={{
+            opacity: 0,
+            x: -30
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5,
+            delay: i * 0.1
+          }}>
                 <div className="flex items-start gap-6">
                   
                   {/* İkon */}
@@ -115,8 +116,7 @@ const ISGPolitikamiz = () => {
 
                 {/* Alt Çizgi Animasyonu */}
                 <div className="absolute bottom-0 left-0 h-[2px] bg-[#D4AF37] w-0 group-hover:w-full transition-all duration-700"></div>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -124,13 +124,17 @@ const ISGPolitikamiz = () => {
       {/* EK BİLGİ BÖLÜMÜ */}
       <section className="py-20 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6">
-          <motion.div 
-            className="bg-gradient-to-br from-[#D4AF37]/10 to-transparent p-10 rounded-sm border border-[#D4AF37]/20"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div className="bg-gradient-to-br from-[#D4AF37]/10 to-transparent p-10 rounded-sm border border-[#D4AF37]/20" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }}>
             <div className="flex items-start gap-6">
               <div className="flex-shrink-0 w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center">
                 <Shield size={24} className="text-black" />
@@ -162,16 +166,11 @@ const ISGPolitikamiz = () => {
           <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             Güvenli çalışma ortamlarımızı yerinde görün, iş birliği fırsatlarını keşfedin.
           </p>
-          <a 
-            href="/iletisim"
-            className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105"
-          >
+          <a href="/iletisim" className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105">
             İletişime Geçin
           </a>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default ISGPolitikamiz;
