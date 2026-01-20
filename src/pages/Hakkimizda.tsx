@@ -19,7 +19,7 @@ const Hakkimizda = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
+    <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       <SEOHead
         title="Hakkımızda"
         description="Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki estetik arayışıyla birleştiriyor. Mekanik Tesisat, Doğalgaz, Mimari Tasarım."
@@ -104,16 +104,16 @@ const Hakkimizda = () => {
               <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-6 block">
                 Hikayemiz
               </span>
-              <h2 className="text-3xl md:text-4xl font-light text-white mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8 leading-tight">
                 Karmaşık Problemlere,<br />
                 <span className="font-medium text-[#D4AF37]">Zarif Çözümler.</span>
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki 
                 estetik arayışıyla birleştiriyor.
               </p>
-              <p className="text-gray-400 text-base leading-relaxed mb-12">
-                Asıl uzmanlık alanımız olan <span className="text-white">Mekanik Tesisat</span> ve <span className="text-white">Doğal Gaz Sistemleri</span> başta olmak üzere; 
+              <p className="text-gray-500 text-base leading-relaxed mb-12">
+                Asıl uzmanlık alanımız olan <span className="text-gray-900">Mekanik Tesisat</span> ve <span className="text-gray-900">Doğal Gaz Sistemleri</span> başta olmak üzere;
                 mimari tasarım ve dekorasyon süreçlerinde entegre, güvenli ve yüksek verimli çözümler sunuyoruz.
               </p>
 
@@ -125,7 +125,7 @@ const Hakkimizda = () => {
                   { num: "1.2M", label: "m² Alan" }
                 ].map((stat, i) => (
                   <div key={i} className="text-center border-l border-[#D4AF37]/20 first:border-l-0 pl-6 first:pl-0">
-                    <span className="text-3xl font-light text-white block mb-2">{stat.num}</span>
+                    <span className="text-3xl font-light text-gray-900 block mb-2">{stat.num}</span>
                     <span className="text-xs text-gray-500 uppercase tracking-widest">{stat.label}</span>
                   </div>
                 ))}
@@ -148,7 +148,7 @@ const Hakkimizda = () => {
             <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-6 block">
               Değerlerimiz
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900">
               Bizi Biz Yapan <span className="font-medium text-[#D4AF37]">İlkeler</span>
             </h2>
           </motion.div>
@@ -188,13 +188,13 @@ const Hakkimizda = () => {
                     </div>
                     
                     {/* Title */}
-                    <h3 className={`font-medium text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300
+                    <h3 className={`font-medium text-gray-900 mb-4 group-hover:text-[#D4AF37] transition-colors duration-300
                       ${i === 0 ? 'text-3xl' : 'text-2xl'}`}>
                       {value.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className={`text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300
+                    <p className={`text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300
                       ${i === 0 ? 'text-lg' : 'text-base'}`}>
                       {value.description}
                     </p>
@@ -209,10 +209,10 @@ const Hakkimizda = () => {
       {/* CTA - DOĞRUDAN İLETİŞİM */}
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6">
             Projeleriniz için <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">yanınızdayız.</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             Mekanik sistemlerden mimari tasarıma, tüm ihtiyaçlarınız için bize ulaşın.
           </p>
           

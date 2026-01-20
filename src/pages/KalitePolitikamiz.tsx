@@ -35,7 +35,7 @@ const KalitePolitikamiz = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
+    <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       
       {/* HERO ALANI */}
       <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
@@ -78,7 +78,7 @@ const KalitePolitikamiz = () => {
             <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
               Değerlerimiz
             </span>
-            <h2 className="text-3xl md:text-4xl font-light text-white">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900">
               Kaliteyi <span className="font-medium text-[#D4AF37]">Tanımlayan</span> İlkeler
             </h2>
           </motion.div>
@@ -104,10 +104,10 @@ const KalitePolitikamiz = () => {
 
                 {/* İçerik */}
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-medium text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
+                  <h3 className="text-2xl font-medium text-gray-900 mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
                     {value.description}
                   </p>
                 </div>
@@ -138,10 +138,10 @@ const KalitePolitikamiz = () => {
 
             {/* Sağ: İçerik */}
             <div className="flex-1 text-center lg:text-left">
-              <h3 className="text-2xl md:text-3xl font-light text-white mb-6">
+              <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-6">
                 Kalite, bizim için <span className="text-[#D4AF37]">seçenek değil, zorunluluktur.</span>
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-600 leading-relaxed mb-6">
                 Her projemizde, müşteri beklentilerini karşılamanın ötesine geçmeyi hedefliyoruz. 
                 Kalite standartlarımız, sektörün en iyileriyle yarışır düzeydedir.
               </p>
@@ -149,7 +149,7 @@ const KalitePolitikamiz = () => {
                 {["ISO 9001", "LEED", "TSE", "CE"].map((cert, i) => (
                   <span 
                     key={i}
-                    className="px-4 py-2 bg-white/5 border border-white/10 rounded-sm text-sm text-gray-400 hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-all duration-300"
+                    className="px-4 py-2 bg-gray-100 border border-gray-200 rounded-sm text-sm text-gray-600 hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-all duration-300"
                   >
                     {cert}
                   </span>
@@ -163,7 +163,7 @@ const KalitePolitikamiz = () => {
       {/* CTA */}
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-white mb-12">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-12">
             Kalite standartlarımızı <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">projelerinizde</span> deneyimleyin.
           </h2>
           <a 

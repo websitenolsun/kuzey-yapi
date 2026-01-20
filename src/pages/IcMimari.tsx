@@ -151,7 +151,7 @@ const IcMimari = () => {
               <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
                 Detaylı Hizmetler
               </span>
-              <h2 className="text-3xl md:text-5xl font-light text-white">
+              <h2 className="text-3xl md:text-5xl font-light text-gray-900">
                 Mimari & Dekorasyon <span className="font-medium text-[#D4AF37]">Portföyü</span>
               </h2>
             </motion.div>
@@ -187,10 +187,10 @@ const IcMimari = () => {
 
                   {/* İçerik */}
                   <div className="w-full lg:w-1/2">
-                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
                     <Link to={`/hizmetler/mimari/${service.slug}`} className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:gap-4 transition-all duration-300">
