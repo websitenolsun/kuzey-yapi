@@ -68,7 +68,7 @@ const MekanikSistemler = () => {
   const getServiceImage = (title: string): string => {
     return serviceImageMap[title] || projePlanlama;
   };
-  return <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+  return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
       
       {/* --- 1. HERO ALANI: SESSİZ GÜÇ --- */}
@@ -152,7 +152,7 @@ const MekanikSistemler = () => {
             num: "1.2M",
             label: "m² Uygulama"
           }].map((stat, i) => <div key={i} className="flex flex-col items-center group cursor-default">
-                <span className="text-5xl font-light text-white mb-4 tracking-tighter group-hover:text-gray-300 transition-colors">
+                <span className="text-5xl font-light text-gray-900 mb-4 tracking-tighter group-hover:text-gray-700 transition-colors">
                   {stat.num}
                 </span>
                 <div className="w-12 h-[1px] bg-[#EAB308] opacity-30 mb-4 group-hover:w-24 group-hover:opacity-100 transition-all duration-500"></div>
@@ -180,7 +180,7 @@ const MekanikSistemler = () => {
             <span className="text-[#EAB308] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
               Uzmanlık Alanlarımız
             </span>
-            <h2 className="text-3xl md:text-5xl font-light text-white">
+            <h2 className="text-3xl md:text-5xl font-light text-gray-900">
               Detaylı Hizmet <span className="font-medium text-[#EAB308]">Portföyü</span>
             </h2>
           </motion.div>
@@ -218,10 +218,10 @@ const MekanikSistemler = () => {
 
                   {/* İçerik */}
                   <div className="w-full lg:w-1/2">
-                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
                     <Link to={`/hizmetler/mekanik/${service.slug}`} className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
@@ -242,11 +242,11 @@ const MekanikSistemler = () => {
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
             Projenizi birlikte <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">değerlendirelim.</span>
           </h2>
           
-          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             İlk teknik görüşmemiz ve ihtiyaç analizi tamamen ücretsizdir. <br />
             Mühendislik standartlarınızı yükseltin.
           </p>

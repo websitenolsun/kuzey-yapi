@@ -68,7 +68,7 @@ const ElektrikSistemleri: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+    <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead 
         title="Elektrik Sistemleri" 
         description="Güvenli ve modern elektrik altyapısı ile akıllı ev çözümleri. Elektrik tesisatı, aydınlatma, akıllı ev sistemleri ve güç dağıtımı." 
@@ -137,7 +137,7 @@ const ElektrikSistemleri: React.FC = () => {
               { num: "24/7", label: "Teknik Destek" }
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center group cursor-default">
-                <span className="text-5xl font-light text-white mb-4 tracking-tighter group-hover:text-gray-300 transition-colors">
+                <span className="text-5xl font-light text-gray-900 mb-4 tracking-tighter group-hover:text-gray-700 transition-colors">
                   {stat.num}
                 </span>
                 <div className="w-12 h-[1px] bg-[#EAB308] opacity-30 mb-4 group-hover:w-24 group-hover:opacity-100 transition-all duration-500"></div>
@@ -163,7 +163,7 @@ const ElektrikSistemleri: React.FC = () => {
               <span className="text-[#EAB308] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
                 Uzmanlık Alanlarımız
               </span>
-              <h2 className="text-3xl md:text-5xl font-light text-white">
+              <h2 className="text-3xl md:text-5xl font-light text-gray-900">
                 Detaylı Hizmet <span className="font-medium text-[#EAB308]">Portföyü</span>
               </h2>
             </motion.div>
@@ -199,10 +199,10 @@ const ElektrikSistemleri: React.FC = () => {
                   </div>
 
                   <div className="w-full lg:w-1/2">
-                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
                     <Link 
@@ -222,11 +222,11 @@ const ElektrikSistemleri: React.FC = () => {
       {/* --- 5. CTA --- */}
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
             Elektrik projenizi birlikte <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">planlayalım.</span>
           </h2>
           
-          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             Güvenli ve modern elektrik sistemleri için <br />
             uzman ekibimizle iletişime geçin.
           </p>

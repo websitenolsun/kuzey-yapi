@@ -31,7 +31,7 @@ const ISGPolitikamiz = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen text-white selection:bg-[#D4AF37]/30 selection:text-white font-sans">
+    <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       
       {/* HERO ALANI */}
       <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
@@ -74,7 +74,7 @@ const ISGPolitikamiz = () => {
             <span className="text-[#D4AF37] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
               Taahhütlerimiz
             </span>
-            <h2 className="text-3xl md:text-4xl font-light text-white">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900">
               Güvenli Çalışma <span className="font-medium text-[#D4AF37]">Kültürü</span>
             </h2>
           </motion.div>
@@ -99,10 +99,10 @@ const ISGPolitikamiz = () => {
 
                   {/* İçerik */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-medium text-white mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">
+                    <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">
                       {policy.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                       {policy.description}
                     </p>
                   </div>
@@ -136,10 +136,10 @@ const ISGPolitikamiz = () => {
                 <Shield size={24} className="text-black" />
               </div>
               <div>
-                <h3 className="text-xl font-medium text-white mb-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-4">
                   Sıfır Kaza Hedefimiz
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   Kuzey Yapı olarak, tüm projelerimizde "sıfır kaza" hedefiyle hareket ediyoruz. 
                   Her çalışanımızın evine sağ salim dönmesi, en büyük önceliğimizdir.
                 </p>
@@ -156,10 +156,10 @@ const ISGPolitikamiz = () => {
       {/* CTA */}
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6">
             İSG politikamız hakkında <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">daha fazla bilgi</span> almak ister misiniz?
           </h2>
-          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             Güvenli çalışma ortamlarımızı yerinde görün, iş birliği fırsatlarını keşfedin.
           </p>
           <a 

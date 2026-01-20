@@ -20,7 +20,7 @@ const DogalgazSistemleri = () => {
     "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format",
     "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format"
   ];
-  return <div className="bg-white min-h-screen text-white selection:bg-[#EAB308]/30 selection:text-white font-sans pb-0">
+  return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead title="Doğalgaz Sistemleri" description="Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları. Doğalgaz tesisatı, kombi, kazan sistemleri, bakım ve ruhsat hizmetleri." canonical="/hizmetler/dogalgaz" jsonLd={createServiceSchema("Doğalgaz Sistemleri", "Yönetmeliklere uygun, güvenli ve verimli doğalgaz proje ve uygulamaları", "https://kuzey-yapi.lovable.app/hizmetler/dogalgaz")} />
       
       {/* --- 1. HERO ALANI --- */}
@@ -93,7 +93,7 @@ const DogalgazSistemleri = () => {
             num: "7/24",
             label: "Acil Servis"
           }].map((stat, i) => <div key={i} className="flex flex-col items-center group cursor-default">
-                <span className="text-5xl font-light text-white mb-4 tracking-tighter group-hover:text-gray-300 transition-colors">
+                <span className="text-5xl font-light text-gray-900 mb-4 tracking-tighter group-hover:text-gray-700 transition-colors">
                   {stat.num}
                 </span>
                 <div className="w-12 h-[1px] bg-[#EAB308] opacity-30 mb-4 group-hover:w-24 group-hover:opacity-100 transition-all duration-500"></div>
@@ -121,7 +121,7 @@ const DogalgazSistemleri = () => {
               <span className="text-[#EAB308] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
                 Uzmanlık Alanlarımız
               </span>
-              <h2 className="text-3xl md:text-5xl font-light text-white">
+              <h2 className="text-3xl md:text-5xl font-light text-gray-900">
                 Detaylı Hizmet <span className="font-medium text-[#EAB308]">Portföyü</span>
               </h2>
             </motion.div>
@@ -155,10 +155,10 @@ const DogalgazSistemleri = () => {
                   </div>
 
                   <div className="w-full lg:w-1/2">
-                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
                     <Link to={`/hizmetler/dogalgaz/${service.slug}`} className="inline-flex items-center gap-2 text-[#EAB308] font-medium hover:gap-4 transition-all duration-300">
@@ -190,10 +190,10 @@ const DogalgazSistemleri = () => {
                 </div>
               </div>
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
+                <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
                   Güvenliğiniz <span className="text-[#EAB308]">Önceliğimizdir</span>
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   Doğalgaz tesisatı ve sistemleri konusunda tüm çalışmalarımız, 
                   ilgili yönetmeliklere ve güvenlik standartlarına tam uyumlu olarak gerçekleştirilir. 
                   Sertifikalı ekibimiz, periyodik bakım ve denetimlerle güvenliğinizi sürekli takip eder.
@@ -208,11 +208,11 @@ const DogalgazSistemleri = () => {
       {/* --- 6. CTA --- */}
       <section className="py-24 bg-white border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
             Doğalgaz projeniz için <span className="font-normal border-b border-[#EAB308]/30 pb-1 text-[#EAB308]">bize ulaşın.</span>
           </h2>
           
-          <p className="text-gray-400 text-lg font-light mb-12 max-w-xl mx-auto">
+          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
             Proje hazırlığından montaja, bakımdan acil servise<br />
             tüm ihtiyaçlarınız için yanınızdayız.
           </p>
