@@ -159,17 +159,7 @@ const ISGPolitikamiz = () => {
 
       {/* CTA */}
       <section className="py-24 bg-white border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-gray-900 mb-6">
-            İSG politikamız hakkında <span className="font-normal border-b border-[#D4AF37]/30 pb-1 text-[#D4AF37]">daha fazla bilgi</span> almak ister misiniz?
-          </h2>
-          <p className="text-gray-600 text-lg font-light mb-12 max-w-xl mx-auto">
-            Güvenli çalışma ortamlarımızı yerinde görün, iş birliği fırsatlarını keşfedin.
-          </p>
-          <a href="/iletisim" className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-black px-12 py-5 rounded-full font-bold tracking-wide transition-all duration-300 hover:bg-[#c9a430] hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.3)] hover:scale-105">
-            İletişime Geçin
-          </a>
-        </div>
+        
       </section>
     </div>;
 };
