@@ -100,10 +100,10 @@ const ISGPolitikamiz = () => {
 
                   {/* İçerik */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">
+                    <h3 className="text-xl font-medium text-[#D4AF37] mb-3 transition-colors duration-300">
                       {policy.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-white leading-relaxed">
                       {policy.description}
                     </p>
                   </div>
