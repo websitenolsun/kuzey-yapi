@@ -135,7 +135,7 @@ const IcMimari = () => {
       </section>
 
       {/* --- YENİ BÖLÜM: DETAYLI HİZMET DÖKÜMÜ (CMS'DEN GELİYOR) --- */}
-      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-white">
+      {!isLoading && subServices && subServices.length > 0 && <section className="py-32 bg-[#0a0a0a]">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div className="text-center mb-20" initial={{
           opacity: 0,
@@ -149,7 +149,7 @@ const IcMimari = () => {
               <span className="text-[#D4AF37] font-bold tracking-[0.3em] text-xs uppercase mb-4 block">
                 Detaylı Hizmetler
               </span>
-              <h2 className="text-3xl md:text-5xl font-light text-gray-900">
+              <h2 className="text-3xl md:text-5xl font-light text-white">
                 Mimari & Dekorasyon <span className="font-medium text-[#D4AF37]">Portföyü</span>
               </h2>
             </motion.div>
@@ -168,7 +168,7 @@ const IcMimari = () => {
           }}>
                   {/* Görsel */}
                   <div className="w-full lg:w-1/2 relative group">
-                    <div className="absolute -inset-4 border border-white/5 rounded-sm z-0 group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
+                    <div className="absolute -inset-4 border border-white/10 rounded-sm z-0 group-hover:border-[#D4AF37]/20 transition-colors duration-700"></div>
                     <div className="relative z-10 h-[400px] bg-[#1a1a1a] rounded-sm overflow-hidden">
                       <img src={getServiceImage(service.title)} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -185,10 +185,10 @@ const IcMimari = () => {
 
                   {/* İçerik */}
                   <div className="w-full lg:w-1/2">
-                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+                    <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                    <p className="text-white/70 text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
                     <Link to={`/hizmetler/mimari/${service.slug}`} className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:gap-4 transition-all duration-300">
