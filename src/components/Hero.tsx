@@ -28,17 +28,21 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Center Content Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center px-6 animate-slide-up">
-          <h1 
-            className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary-foreground tracking-tight leading-tight"
-            style={{ 
-              textShadow: '0 2px 20px rgba(0, 0, 0, 0.4), 0 4px 40px rgba(0, 0, 0, 0.3)' 
-            }}
-          >
-            Yapıların Geleceğini Tasarlıyoruz
-          </h1>
+      {/* Left-Aligned Content Overlay */}
+      <div className="absolute inset-0 flex items-center z-10">
+        <div className="container mx-auto px-6 lg:px-12 animate-slide-up">
+          <div className="max-w-3xl">
+            <h1 
+              className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary-foreground tracking-wide leading-relaxed"
+              style={{ 
+                textShadow: '0 2px 20px rgba(0, 0, 0, 0.4), 0 4px 40px rgba(0, 0, 0, 0.3)' 
+              }}
+            >
+              Yapıların Geleceğini Tasarlıyoruz
+            </h1>
+            {/* Architectural accent line */}
+            <div className="mt-6 h-1 w-24 sm:w-32 md:w-40 bg-accent rounded-full" />
+          </div>
         </div>
       </div>
 
