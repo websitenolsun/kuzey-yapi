@@ -28,10 +28,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Center Content Overlay - Glassmorphism */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <div className="text-center px-4 animate-slide-up pointer-events-auto">
-          
+      {/* Center Content Overlay */}
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="text-center px-6 animate-slide-up">
+          <h1 
+            className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary-foreground tracking-tight leading-tight"
+            style={{ 
+              textShadow: '0 2px 20px rgba(0, 0, 0, 0.4), 0 4px 40px rgba(0, 0, 0, 0.3)' 
+            }}
+          >
+            Yapıların Geleceğini Tasarlıyoruz
+          </h1>
         </div>
       </div>
 
