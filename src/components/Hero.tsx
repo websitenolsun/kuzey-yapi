@@ -13,33 +13,8 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   return <section className="relative min-h-screen flex">
-      {/* Desktop: Split Screen Layout */}
-      <div className="hidden md:flex w-full">
-        {/* Left Image - Industrial */}
-        <div className="w-1/2 relative overflow-hidden group">
-          <img src={heroIndustrial} alt="Endüstriyel Mekanik Tesisat" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-dark/85 via-slate-dark/70 to-slate-dark/50" />
-          
-          {/* Left CTA */}
-          <div className="absolute bottom-12 left-8 right-8 z-20">
-            
-          </div>
-        </div>
-
-        {/* Right Image - Kitchen */}
-        <div className="w-1/2 relative overflow-hidden group">
-          <img src={heroKitchen} alt="Modern Mutfak Tasarımı" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-l from-slate-dark/85 via-slate-dark/70 to-slate-dark/50" />
-          
-          {/* Right CTA */}
-          <div className="absolute bottom-12 left-8 right-8 z-20 text-right">
-            
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile: Fullscreen with Fade Animation */}
-      <div className="flex md:hidden w-full relative min-h-screen">
+      {/* Fullscreen with Fade Animation - Both Desktop and Mobile */}
+      <div className="flex w-full relative min-h-screen">
         {/* Base Image - Industrial (always visible) */}
         <div className="absolute inset-0">
           <img src={heroIndustrial} alt="Endüstriyel Mekanik Tesisat" className="absolute inset-0 w-full h-full object-cover" />
@@ -51,7 +26,6 @@ const Hero = () => {
           <img src={heroKitchen} alt="Modern Mutfak Tasarımı" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-dark/75 via-slate-dark/60 to-slate-dark/80" />
         </div>
-
       </div>
 
       {/* Center Content Overlay - Glassmorphism */}
