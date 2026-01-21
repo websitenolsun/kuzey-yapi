@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex items-center z-10">
         <div className="container mx-auto px-6 lg:px-12 animate-slide-up">
           <div className="max-w-5xl">
-            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground tracking-wide leading-relaxed xl:text-7xl" style={{
+            <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-primary-foreground tracking-wide leading-tight" style={{
             textShadow: '0 2px 20px rgba(0, 0, 0, 0.4), 0 4px 40px rgba(0, 0, 0, 0.3)'
           }}>Yapıların Geleceğini Tasarlıyoruz</h1>
             {/* Architectural accent line */}
