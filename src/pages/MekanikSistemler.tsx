@@ -136,7 +136,9 @@ const MekanikSistemler = () => {
 
 
       {/* --- 2. İSTATİSTİK BANDI: MİMARİ DİSİPLİN --- */}
-      
+      <section className="py-20 border-b border-white/5 bg-white">
+        
+      </section>
 
 
       {/* --- 3. DETAYLI HİZMET DÖKÜMÜ (ALTERNATING LAYOUT) --- */}
