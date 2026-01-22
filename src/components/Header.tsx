@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import kuzeyLogo from "@/assets/kuzey-logo.svg";
 import kuzeyLogoIcon from "@/assets/kuzey-logo-icon.png";
+import kuzeyLogoDark from "@/assets/kuzey-logo-dark.svg";
 const Header = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,23 +63,26 @@ const Header = () => {
         
         {/* LOGO ALANI */}
         <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
-          {/* Lacivert Zemin + Logo + Metin */}
-          <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
-            {/* Logo İkonu */}
-            <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
-            {/* Yazı Alanı */}
-            <div className="flex flex-col">
-              <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-                KUZEY YAPI
-              </span>
-              <div className="flex items-center gap-1.5">
-                
-                <span className="text-gray-300 text-[9px] tracking-[0.15em] uppercase">
-                  Mühendislik & Tasarım
+          {/* Beyaz arkaplanlı sayfalarda koyu logo, diğerlerinde lacivert zemin + logo */}
+          {useDarkText ? (
+            <img src={kuzeyLogoDark} alt="Kuzey Yapı Logo" className="h-12 w-auto" />
+          ) : (
+            <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
+              {/* Logo İkonu */}
+              <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
+              {/* Yazı Alanı */}
+              <div className="flex flex-col">
+                <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                  KUZEY YAPI
                 </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gray-300 text-[9px] tracking-[0.15em] uppercase">
+                    Mühendislik & Tasarım
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </Link>
 
         {/* DESKTOP MENÜ */}
