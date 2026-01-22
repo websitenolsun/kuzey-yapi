@@ -63,7 +63,7 @@ const Header = () => {
         {/* LOGO ALANI */}
         <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
           {/* Lacivert Zemin + Logo + Metin */}
-          <div className="flex items-center gap-3 bg-[#1a2744] px-4 py-2 rounded-sm">
+          <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
             {/* Logo İkonu */}
             <img 
               src={kuzeyLogoIcon} 
