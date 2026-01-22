@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import kuzeyLogo from "@/assets/kuzey-logo.svg";
 
 const Header = () => {
   const location = useLocation();
@@ -71,20 +72,25 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
-        {/* LOGO ALANI (Link'e çevrildi) */}
-        <Link to="/" className="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
-          {/* Sarı Kutu */}
-          <div className="w-10 h-10 bg-[#D4AF37] flex items-center justify-center font-bold text-black rounded-sm group-hover:bg-white transition-colors duration-300">
-            K
-          </div>
-          {/* Yazı Alanı */}
-          <div className="flex flex-col">
-            <span className={`text-xl font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300 ${useDarkText ? 'text-gray-900' : 'text-white'}`}>
-              KUZEY YAPI
-            </span>
-            <span className={`text-[10px] tracking-[0.2em] uppercase ${useDarkText ? 'text-gray-600' : 'text-gray-300'}`}>
-              Mühendislik & Tasarım
-            </span>
+        {/* LOGO ALANI */}
+        <Link to="/" className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
+          {/* Lacivert Zemin + Logo + Metin */}
+          <div className="flex items-center gap-2 bg-[#1a2744] px-3 py-2 rounded-sm">
+            {/* SVG Logo İkonu */}
+            <img 
+              src={kuzeyLogo} 
+              alt="Kuzey Yapı Logo" 
+              className="h-8 w-auto"
+            />
+            {/* Yazı Alanı */}
+            <div className="flex flex-col">
+              <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                KUZEY YAPI
+              </span>
+              <span className="text-gray-300 text-[9px] tracking-[0.15em] uppercase">
+                Mühendislik & Tasarım
+              </span>
+            </div>
           </div>
         </Link>
 
