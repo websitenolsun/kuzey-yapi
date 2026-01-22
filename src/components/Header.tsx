@@ -65,22 +65,14 @@ const Header = () => {
           {/* Lacivert Zemin + Logo + Metin */}
           <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
             {/* Logo İkonu */}
-            <img 
-              src={kuzeyLogoIcon} 
-              alt="Kuzey Yapı Logo" 
-              className="h-10 w-auto"
-            />
+            <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
             {/* Yazı Alanı */}
             <div className="flex flex-col">
               <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
                 KUZEY YAPI
               </span>
               <div className="flex items-center gap-1.5">
-                <img 
-                  src={kuzeyLogo} 
-                  alt="" 
-                  className="h-3 w-auto"
-                />
+                
                 <span className="text-gray-300 text-[9px] tracking-[0.15em] uppercase">
                   Mühendislik & Tasarım
                 </span>
