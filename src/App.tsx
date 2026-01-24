@@ -18,6 +18,11 @@ import Iletisim from "./pages/Iletisim";
 import Referanslar from "./pages/Referanslar";
 import SubServiceDetail from "./pages/SubServiceDetail";
 
+// YENİ EKLENEN SAYFALAR
+// (Bu dosyaların src/pages klasöründe olduğundan emin ol)
+import KVKK from "./pages/KVKK";
+import Cookies from "./pages/Cookies";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -49,6 +54,10 @@ const App = () => (
             <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
             <Route path="/referanslar" element={<Referanslar />} />
             <Route path="/iletisim" element={<Iletisim />} />
+
+            {/* YASAL SAYFALAR (KVKK & ÇEREZ) - BURASI EKLENDİ */}
+            <Route path="/kvkk" element={<KVKK />} />
+            <Route path="/cerez-politikasi" element={<Cookies />} />
 
             {/* Hizmet Sayfaları */}
             <Route path="/hizmetler/elektrik" element={<ElektrikSistemleri />} />
