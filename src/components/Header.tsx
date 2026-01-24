@@ -1,9 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import kuzeyLogo from "@/assets/kuzey-logo.svg";
-import kuzeyLogoIcon from "@/assets/kuzey-logo-icon.png";
 import kuzeyLogoFull from "@/assets/kuzey-logo-full.jpg";
+import kuzeyLogoHorizontal from "@/assets/kuzey-logo-horizontal.png";
 
 const Header = () => {
   const location = useLocation();
@@ -67,26 +66,11 @@ const Header = () => {
         {/* LOGO ALANI */}
         <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
           {useFullLogo ? (
-            /* Kurumsal sayfalarda scroll olmadan önce - Yeni tam logo */
+            /* Kurumsal sayfalarda scroll olmadan önce - Beyaz zemin için koyu logo */
             <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-20 w-auto" />
           ) : (
-            /* Diğer sayfalarda veya scroll sonrasında - Lacivert zemin üzerine logo */
-            <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
-              {/* Logo İkonu */}
-              <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
-              {/* Yazı Alanı */}
-              <div className="flex flex-col">
-                <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-                  KUZEY YAPI
-                </span>
-                <div className="flex items-center gap-1.5">
-                  
-                  <span className="text-[9px] tracking-[0.15em] uppercase text-white">
-                    Mühendislik & Tasarım
-                  </span>
-                </div>
-              </div>
-            </div>
+            /* Diğer tüm sayfalarda - Yatay logo */
+            <img src={kuzeyLogoHorizontal} alt="Kuzey Yapı" className="h-14 w-auto" />
           )}
         </Link>
 
