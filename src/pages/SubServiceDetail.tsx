@@ -265,11 +265,10 @@ const SubServiceDetail = () => {
             {/* Avantajlar Listesi */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                "Uzman ve sertifikalı teknik kadro",
+              "Uzman ve sertifikalı teknik kadro",
                 "Yönetmeliklere tam uyum",
                 "Kaliteli ve garantili malzemeler",
                 "Zamanında teslimat garantisi",
-                "7/24 teknik destek hattı",
                 "Şeffaf ve detaylı fiyatlandırma"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-gray-300">
