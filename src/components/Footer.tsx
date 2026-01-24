@@ -170,18 +170,16 @@ const Footer = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-display text-primary-foreground/50 uppercase tracking-wider">
-              {/* KVKK LINKI EKLENDI */}
-              <a href="/kvkk.html" className="hover:text-accent transition-colors">
+              {/* HTML yerine React Router Link kullanıldı */}
+              <Link to="/kvkk" className="hover:text-accent transition-colors">
                 Kişisel Verilerin Korunması
-              </a>
-              {/* CEREZ LINKI EKLENDI */}
-              <a href="/cerez-politikasi.html" className="hover:text-accent transition-colors">
+              </Link>
+              <Link to="/cerez-politikasi" className="hover:text-accent transition-colors">
                 Çerez Politikaları
-              </a>
-              {/* GIZLILIK LINKI EKLENDI (Cerezlere yönlendirildi) */}
-              <a href="/cerez-politikasi.html" className="hover:text-accent transition-colors">
+              </Link>
+              <Link to="/cerez-politikasi" className="hover:text-accent transition-colors">
                 Gizlilik Ayarları
-              </a>
+              </Link>
             </div>
 
             <button
