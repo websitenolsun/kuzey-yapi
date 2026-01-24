@@ -68,7 +68,7 @@ const Header = () => {
         <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
           {useFullLogo ? (
             /* Kurumsal sayfalarda scroll olmadan önce - Yeni tam logo */
-            <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-14 w-auto" />
+            <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-20 w-auto" />
           ) : (
             /* Diğer sayfalarda veya scroll sonrasında - Lacivert zemin üzerine logo */
             <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
