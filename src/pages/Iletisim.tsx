@@ -14,7 +14,8 @@ const Iletisim = () => {
       icon: MapPin,
       title: "Adres",
       content: "Abbasağa Mah. Yıldız Cd. No:13\n34353 Beşiktaş - İSTANBUL",
-      link: "https://maps.google.com/?q=Abbasağa+Mah+Yıldız+Cd+No:13+Beşiktaş+İstanbul"
+      // Harita linkini burada da güncelledim ki karta tıklayan da doğru yere gitsin
+      link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.9476217883416!2d29.0058706!3d41.0482745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7a419c76ac5%3A0x429639ccde3b31f5!2sKuzey%20Yap%C4%B1!5e0!3m2!1str!2str!4v1769272783844!5m2!1str!2str"
     },
     {
       icon: Phone,
@@ -165,8 +166,9 @@ const Iletisim = () => {
             viewport={{ once: true }}
             className="relative rounded-sm overflow-hidden border border-border shadow-lg"
           >
+            {/* GÜNCELLENEN HARİTA KODU */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.8427!2d29.0095!3d41.0445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzQwLjIiTiAyOcKwMDAnMzQuMiJF!5e0!3m2!1str!2str!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.9476217883416!2d29.0058706!3d41.0482745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7a419c76ac5%3A0x429639ccde3b31f5!2sKuzey%20Yap%C4%B1!5e0!3m2!1str!2str!4v1769272783844!5m2!1str!2str"
               width="100%"
               height="450"
               style={{ border: 0 }}
