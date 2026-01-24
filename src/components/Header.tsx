@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import kuzeyLogo from "@/assets/kuzey-logo.svg";
 import kuzeyLogoIcon from "@/assets/kuzey-logo-icon.png";
+import kuzeyLogoFull from "@/assets/kuzey-logo-full.jpg";
+
 const Header = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +14,8 @@ const Header = () => {
   // Pages with white background that need dark navbar
   const darkTextPages = ['/hakkimizda', '/isg-politikamiz', '/kalite-politikamiz'];
   const useDarkText = darkTextPages.includes(location.pathname) && !isScrolled;
+  const useFullLogo = darkTextPages.includes(location.pathname) && !isScrolled;
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -62,23 +66,28 @@ const Header = () => {
         
         {/* LOGO ALANI */}
         <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
-          {/* Lacivert Zemin + Logo + Metin */}
-          <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
-            {/* Logo İkonu */}
-            <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
-            {/* Yazı Alanı */}
-            <div className="flex flex-col">
-              <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
-                KUZEY YAPI
-              </span>
-              <div className="flex items-center gap-1.5">
-                
-                <span className="text-[9px] tracking-[0.15em] uppercase text-white">
-                  Mühendislik & Tasarım
+          {useFullLogo ? (
+            /* Kurumsal sayfalarda scroll olmadan önce - Yeni tam logo */
+            <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-14 w-auto" />
+          ) : (
+            /* Diğer sayfalarda veya scroll sonrasında - Lacivert zemin üzerine logo */
+            <div className="flex items-center gap-3 bg-[#092760] px-4 py-2 rounded-sm">
+              {/* Logo İkonu */}
+              <img src={kuzeyLogoIcon} alt="Kuzey Yapı Logo" className="h-10 w-auto" />
+              {/* Yazı Alanı */}
+              <div className="flex flex-col">
+                <span className="text-white text-lg font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                  KUZEY YAPI
                 </span>
+                <div className="flex items-center gap-1.5">
+                  
+                  <span className="text-[9px] tracking-[0.15em] uppercase text-white">
+                    Mühendislik & Tasarım
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </Link>
 
         {/* DESKTOP MENÜ */}
