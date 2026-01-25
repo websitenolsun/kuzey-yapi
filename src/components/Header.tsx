@@ -70,7 +70,7 @@ const Header = () => {
             <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-20 w-auto" />
           ) : (
             /* Diğer tüm sayfalarda - Yatay logo */
-            <img src={kuzeyLogoHorizontal} alt="Kuzey Yapı" className="h-14 w-auto" />
+            <img src={kuzeyLogoHorizontal} alt="Kuzey Yapı" className="h-20 w-auto" />
           )}
         </Link>
 
