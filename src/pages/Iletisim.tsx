@@ -26,8 +26,8 @@ const Iletisim = () => {
     {
       icon: Mail,
       title: "E-posta",
-      content: "info@kuzeyyapi.com.tr",
-      link: "mailto:info@kuzeyyapi.com.tr"
+      content: "info@kuzeyyapi.com",
+      link: "mailto:info@kuzeyyapi.com"
     },
     {
       icon: Clock,
