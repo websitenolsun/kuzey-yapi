@@ -32,14 +32,13 @@ const Header = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-white/10 shadow-sm py-4"
-          : "bg-transparent py-6"
+          ? "bg-black/95 backdrop-blur-md border-b border-white/10 shadow-sm py-4" // Aşağı inince
+          : "bg-black py-6" // En tepedeyken (Burayı 'bg-transparent' yerine 'bg-black' yaptık)
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* LOGO ALANI */}
-        {/* LOGO ALANI - Artık Tıklanabilir ve Anasayfaya Gider */}
         <a href="/" className="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
           {/* Sarı Kutu */}
           <div className="w-10 h-10 bg-[#D4AF37] flex items-center justify-center font-bold text-black rounded-sm group-hover:bg-white transition-colors duration-300">
@@ -59,13 +58,12 @@ const Header = () => {
         {/* DESKTOP MENÜ */}
         <div className="hidden md:flex items-center space-x-8">
           
-          {/* 1. PROJELER (GÜNCELLENDİ: Artık Dropdown Menü) */}
+          {/* 1. PROJELER (Dropdown) */}
           <div className="relative group">
             <button className="flex items-center text-sm font-medium text-white hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none">
               PROJELER
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            {/* Projeler Açılır Menüsü */}
             <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="py-2 border-t-2 border-[#D4AF37]">
                 <DropdownItem href="/projeler" text="Tümü" />
@@ -125,7 +123,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* MOBİL MENÜ İÇERİĞİ (GÜNCELLENDİ) */}
+      {/* MOBİL MENÜ İÇERİĞİ */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-gray-800 h-screen overflow-y-auto">
           <div className="flex flex-col p-8 space-y-6">
