@@ -36,54 +36,46 @@ const Header = () => {
     text: string;
   }) => <Link to={href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200">
       {text}
-    </Link>;
+    </a>
+  );
 
-  // Sosyal Medya İkon Bileşeni (Dış linkler olduğu için <a> kalmalı)
-
-  // Sosyal Medya İkon Bileşeni (Dış linkler olduğu için <a> kalmalı)
-  const SocialIcon = ({
-    href,
-    children,
-    label
-  }: {
-    href: string;
-    children: React.ReactNode;
-    label: string;
-  }) => <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={`w-9 h-9 flex items-center justify-center rounded-full border hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300 ${useDarkText ? 'border-gray-300 text-gray-600' : 'border-white/20 text-white/70'}`}>
-      {children}
-    </a>;
-  const toggleMobileDropdown = (dropdown: string) => {
-    setOpenMobileDropdown(openMobileDropdown === dropdown ? null : dropdown);
-  };
-
-  // Mobilde linke tıklayınca menüyü kapatan fonksiyon
-  const handleMobileLinkClick = () => {
-    setIsMobileMenuOpen(false);
-  };
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10 shadow-sm py-4" : useDarkText ? "bg-transparent py-6" : "bg-transparent py-6"}`}>
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "bg-black/95 backdrop-blur-md border-b border-white/10 shadow-sm py-4" // Aşağı inince
+          : "bg-black py-6" // En tepedeyken (Burayı 'bg-transparent' yerine 'bg-black' yaptık)
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* LOGO ALANI */}
-        <Link to="/" className="flex-shrink-0 flex items-center group cursor-pointer">
-          {useFullLogo ? (
-            /* Kurumsal sayfalarda scroll olmadan önce - Beyaz zemin için koyu logo */
-            <img src={kuzeyLogoFull} alt="Kuzey Yapı" className="h-20 w-auto" />
-          ) : (
-            /* Diğer tüm sayfalarda - Yatay logo */
-            <img src={kuzeyLogoHorizontal} alt="Kuzey Yapı" className="h-20 w-auto" />
-          )}
-        </Link>
+        <a href="/" className="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
+          {/* Sarı Kutu */}
+          <div className="w-10 h-10 bg-[#D4AF37] flex items-center justify-center font-bold text-black rounded-sm group-hover:bg-white transition-colors duration-300">
+            K
+          </div>
+          {/* Yazı Alanı */}
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-wide text-white group-hover:text-[#D4AF37] transition-colors duration-300">
+              KUZEY YAPI
+            </span>
+            <span className="text-[10px] tracking-[0.2em] text-gray-300 uppercase">
+              Mühendislik & Tasarım
+            </span>
+          </div>
+        </a>
 
         {/* DESKTOP MENÜ */}
         <div className="hidden md:flex items-center space-x-8">
           
-          {/* 1. KURUMSAL (Dropdown) */}
+          {/* 1. PROJELER (Dropdown) */}
           <div className="relative group">
             <button className={`flex items-center text-sm font-medium hover:text-[#D4AF37] tracking-wider transition-colors uppercase gap-1 focus:outline-none ${useDarkText ? 'text-gray-900' : 'text-white'}`}>
               KURUMSAL
               <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="py-2 border-t-2 border-[#D4AF37]">
                 <DropdownItem href="/hakkimizda" text="Hakkımızda" />
                 <DropdownItem href="/isg-politikamiz" text="İSG Politikamız" />
@@ -152,8 +144,9 @@ const Header = () => {
       </div>
 
       {/* MOBİL MENÜ İÇERİĞİ */}
-      {isMobileMenuOpen && <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-gray-800 h-screen overflow-y-auto">
-          <div className="flex flex-col p-8 space-y-4">
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-gray-800 h-screen overflow-y-auto">
+          <div className="flex flex-col p-8 space-y-6">
             
             {/* Mobil Kurumsal */}
             <div className="space-y-2">

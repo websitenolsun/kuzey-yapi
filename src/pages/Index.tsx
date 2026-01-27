@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
@@ -83,7 +82,7 @@ const Index = () => {
         jsonLd={homeJsonLd}
       />
       <Hero />
-      <Stats />
+      {/* Stats bileşeni silindi (Fotoğraflı ve sayılı bölüm kalktı) */}
       <WorkProcess />
       <Services />
       <Blog />

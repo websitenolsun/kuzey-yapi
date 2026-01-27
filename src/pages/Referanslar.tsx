@@ -1,144 +1,167 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight } from "lucide-react";
-import SEOHead, { organizationSchema } from "@/components/SEOHead";
-import Footer from "@/components/Footer";
+import React, { useState } from "react";
+import { ArrowRight, Building2, CheckCircle2, ChevronRight, Home, Factory } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card"; // shadcn/ui Card
+import { Button } from "@/components/ui/button"; // shadcn/ui Button
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; // shadcn/ui Tabs
+import { Badge } from "@/components/ui/badge"; // shadcn/ui Badge
 
-type TabType = "tamamlanan" | "devam";
+// --- MOCK DATA (Veritabanı gelene kadar placeholder) ---
+const BRANDS = [
+  { id: 1, name: "Ortadoğu Enerji", logo: "https://placehold.co/200x80/EEE/31343C?text=ORTADOGU" },
+  { id: 2, name: "İstaç", logo: "https://placehold.co/200x80/EEE/31343C?text=ISTAC" },
+  { id: 3, name: "İstanbul Enerji", logo: "https://placehold.co/200x80/EEE/31343C?text=IST+ENERJI" },
+  { id: 4, name: "Hotiç", logo: "https://placehold.co/200x80/EEE/31343C?text=HOTIC" },
+  { id: 5, name: "Lacoste", logo: "https://placehold.co/200x80/EEE/31343C?text=LACOSTE" },
+  { id: 6, name: "Vakko", logo: "https://placehold.co/200x80/EEE/31343C?text=VAKKO" },
+  { id: 7, name: "İBB", logo: "https://placehold.co/200x80/EEE/31343C?text=IBB" },
+  { id: 8, name: "Mavi", logo: "https://placehold.co/200x80/EEE/31343C?text=MAVI" },
+];
 
-const Referanslar = () => {
-  const [activeTab, setActiveTab] = useState<TabType>("tamamlanan");
+const PROJECTS = [
+  { id: 1, title: "Seymen Enerji Santrali", category: "Endüstriyel", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" },
+  { id: 2, title: "Vadi İstanbul Konutları", category: "Konut", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" },
+  { id: 3, title: "Merkez Plaza Yenileme", category: "Ticari", image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800" },
+  { id: 4, title: "Sosa Restoran Zinciri", category: "Ticari", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800" },
+  { id: 5, title: "Koi Tokyo Kozmetik", category: "Ticari", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800" },
+  { id: 6, title: "Gürsa Lojistik Merkezi", category: "Endüstriyel", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" },
+];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const projectCount = activeTab === "tamamlanan" ? 81 : 12;
+export default function ReferanslarPage() {
+  const [activeTab, setActiveTab] = useState("completed");
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Referanslar - Tamamlanan Projeler"
-        description="Kuzey Yapı'nın tamamladığı 81+ başarılı proje. Endüstriyel tesisler, ticari binalar, oteller ve konut projelerinde mekanik tesisat referanslarımız."
-        canonical="/referanslar"
-        jsonLd={organizationSchema}
-      />
-
-      {/* Hero Section - Compact */}
-      <section className="relative pt-28 pb-12 bg-slate-dark overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1486718448742-163732cd1544?w=1920&h=600&fit=crop&q=80')"
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-2xl md:text-4xl font-display font-bold text-primary-foreground mb-3">
-              Tamamlanan Projeler
-            </h1>
+    <div className="min-h-screen bg-white font-sans text-slate-800">
+      
+      {/* 1. HERO SECTION (Kuzey Yapı Style: Dark Navy & Gold) */}
+      <section className="relative w-full py-20 bg-[#0f172a]"> {/* Slate-900 / Deep Navy */}
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Link to="/" className="hover:text-accent transition-colors font-serif">
-                Anasayfa
-              </Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="hover:text-accent transition-colors font-serif">Referanslar</span>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-accent font-serif font-medium">Tamamlanan Projeler</span>
-            </nav>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Control Bar */}
-      <section className="bg-card border-b border-border sticky top-20 z-40">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between py-4 gap-4">
-            {/* Tab Buttons */}
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setActiveTab("tamamlanan")}
-                className={`px-5 py-2 font-display text-sm tracking-wide transition-all duration-300 border rounded ${
-                  activeTab === "tamamlanan"
-                    ? "bg-card border-accent text-accent"
-                    : "bg-transparent border-border text-muted-foreground hover:border-accent/50 hover:text-foreground"
-                }`}
-              >
-                Tamamlanan Projeler
-              </button>
-              <span className="hidden md:block w-6 h-px bg-border" />
-              <button
-                onClick={() => setActiveTab("devam")}
-                className={`px-5 py-2 font-display text-sm tracking-wide transition-all duration-300 border rounded ${
-                  activeTab === "devam"
-                    ? "bg-card border-accent text-accent"
-                    : "bg-transparent border-border text-muted-foreground hover:border-accent/50 hover:text-foreground"
-                }`}
-              >
-                Devam Eden Projeler
-              </button>
+            <div className="flex items-center gap-2 text-sm text-slate-400 mb-6">
+                <span className="hover:text-[#D4AF37] cursor-pointer transition-colors">Anasayfa</span>
+                <ChevronRight className="w-4 h-4" />
+                <span className="text-[#D4AF37]">Referanslar</span>
             </div>
 
-            {/* Project Count */}
-            <p className="text-muted-foreground font-serif text-sm">
-              Toplam <span className="font-semibold text-accent">{projectCount}</span>{" "}
-              Proje {activeTab === "tamamlanan" ? "Tamamlandı" : "Devam Ediyor"}
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Referanslarımız
+            </h1>
+            <p className="text-lg text-[#D4AF37] max-w-2xl font-light"> {/* Gold Accent */}
+              Güven inşa ediyoruz, kalite tasarlıyoruz. Sektörün öncü markalarıyla hayata geçirdiğimiz projeler.
             </p>
+        </div>
+        
+        {/* Decorative Background Pattern/Overlay */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+      </section>
+
+      {/* 2. FILTER & STATS BAR (Akterm Style: Clean & Functional) */}
+      <section className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          
+          {/* Tabs */}
+          <Tabs defaultValue="completed" onValueChange={setActiveTab} className="w-full md:w-auto">
+            <TabsList className="bg-transparent p-0 h-auto flex gap-4">
+              <TabsTrigger 
+                value="completed" 
+                className="rounded-none border-b-2 border-transparent px-4 py-2 text-slate-500 data-[state=active]:border-[#D4AF37] data-[state=active]:text-[#D4AF37] data-[state=active]:bg-transparent data-[state=active]:shadow-none transition-all"
+              >
+                Tamamlanan Projeler
+              </TabsTrigger>
+              <TabsTrigger 
+                value="ongoing" 
+                className="rounded-none border-b-2 border-transparent px-4 py-2 text-slate-500 data-[state=active]:border-[#D4AF37] data-[state=active]:text-[#D4AF37] data-[state=active]:bg-transparent data-[state=active]:shadow-none transition-all"
+              >
+                Devam Eden Projeler
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+
+          {/* Stats Counter */}
+          <div className="flex items-center gap-2 text-sm text-slate-500 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+             <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+             <span>Toplam <strong className="text-slate-800">81</strong> Proje Başarıyla Tamamlandı</span>
           </div>
+
         </div>
       </section>
 
-      {/* Empty State - Projects will be added later */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <p className="text-muted-foreground font-serif">
-              Projelerimiz yakında burada listelenecektir.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 3. CONTENT GRIDS */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 space-y-20">
 
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-dark">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-primary-foreground mb-4">
-              Projenizi Birlikte Hayata Geçirelim
-            </h2>
-            <p className="text-primary-foreground/70 font-serif max-w-xl mx-auto mb-8 text-sm">
-              Deneyimli ekibimiz ve kanıtlanmış çözümlerimizle projenize değer katalım.
-            </p>
+          {/* PART A: BRANDS (Logos) */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 mb-8">
+                <div className="h-px bg-gray-200 flex-1"></div>
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-widest">Çözüm Ortaklarımız</h3>
+                <div className="h-px bg-gray-200 flex-1"></div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {BRANDS.map((brand) => (
+                <Card key={brand.id} className="group border border-gray-100 hover:border-[#D4AF37]/30 transition-all duration-300 shadow-none hover:shadow-lg bg-white">
+                  <CardContent className="flex items-center justify-center p-8 h-32">
+                    {/* Logo: Grayscale to Color & Slightly Scale on Hover */}
+                    <img 
+                      src={brand.logo} 
+                      alt={brand.name} 
+                      className="max-h-12 w-auto opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* PART B: PROJECTS (Gallery) */}
+          <div>
+             <div className="flex justify-between items-end mb-8">
+                <h2 className="text-3xl font-bold text-[#0f172a]">Proje Galerisi</h2>
+                <Button variant="outline" className="text-[#D4AF37] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white">
+                    Tümünü Gör <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+             </div>
             
-            <Link
-              to="/iletisim"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-display font-semibold text-sm uppercase tracking-wide rounded hover:bg-accent/90 transition-colors"
-            >
-              İletişime Geçin
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {PROJECTS.map((project) => (
+                <div key={project.id} className="group relative overflow-hidden rounded-md cursor-pointer h-72">
+                  
+                  {/* Background Image */}
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  {/* Overlay Gradient (Akterm Style but Cleaner) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    
+                    {/* Badge */}
+                    <Badge className="w-fit bg-[#D4AF37] text-white hover:bg-[#b8952b] mb-2 border-none">
+                        {project.category}
+                    </Badge>
+                    
+                    <h3 className="text-xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                        {project.title}
+                    </h3>
+                    
+                    <div className="flex items-center text-sm text-gray-300 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                        <span>Detayları İncele</span>
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <Footer />
+      {/* Lite Footer for Context */}
+      <footer className="bg-[#0f172a] py-8 text-center text-slate-500 text-sm border-t border-slate-800">
+         Kuzey Yapı Mühendislik & Tasarım © 2024
+      </footer>
     </div>
   );
-};
-
-export default Referanslar;
+}
