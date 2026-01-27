@@ -17,6 +17,7 @@ import DogalgazSistemleri from "./pages/DogalgazSistemleri";
 import Iletisim from "./pages/Iletisim";
 import Referanslar from "./pages/Referanslar";
 import SubServiceDetail from "./pages/SubServiceDetail";
+import AdminProjects from "./pages/AdminProjects";
 
 // YENİ EKLENEN SAYFALAR
 // (Bu dosyaların src/pages klasöründe olduğundan emin ol)
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/isg-politikamiz" element={<ISGPolitikamiz />} />
             <Route path="/kalite-politikamiz" element={<KalitePolitikamiz />} />
             <Route path="/referanslar" element={<Referanslar />} />
+            <Route path="/admin/referanslar" element={<AdminProjects />} />
             <Route path="/iletisim" element={<Iletisim />} />
 
             {/* YASAL SAYFALAR (KVKK & ÇEREZ) - BURASI EKLENDİ */}
