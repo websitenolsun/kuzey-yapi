@@ -26,7 +26,7 @@ const Hakkimizda = () => {
       ease: "easeOut"
     }
   };
-  return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
+  return <div className="bg-white min-h-screen overflow-x-hidden text-gray-900 selection:bg-[#D4AF37]/30 selection:text-gray-900 font-sans">
       <SEOHead title="Hakkımızda" description="Kuzey Yapı, 2011 yılından bu yana mühendislik tecrübesini yapı sektöründeki estetik arayışıyla birleştiriyor. Mekanik Tesisat, Doğalgaz, Mimari Tasarım." canonical="/hakkimizda" jsonLd={organizationSchema} />
       
       {/* Spacer for fixed navbar */}

@@ -1,29 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  fallbackSubServicesBySlug,
+  findFallbackSubService,
+  type CatalogSubService,
+} from '@/data/contentFallback';
 
-export interface SubServiceDetail {
-  id: string;
-  service_id: string;
-  title: string;
-  description: string;
-  icon_name: string | null;
-  display_order: number;
-  slug: string | null;
-  long_description: string | null;
-  seo_title: string | null;
-  seo_description: string | null;
-  seo_keywords: string[] | null;
-  service_areas: string[] | null;
-  faqs: Array<{ question: string; answer: string }> | null;
-  service?: {
-    id: string;
-    title: string;
-    slug: string;
-  };
-}
+export type SubServiceDetail = CatalogSubService;
 
 export const useSubServiceDetail = (serviceSlug: string, subServiceSlug: string) => {
-  return useQuery({
+  const query = useQuery({
     queryKey: ['sub-service-detail', serviceSlug, subServiceSlug],
     queryFn: async () => {
       // First get the service by slug
@@ -53,11 +39,22 @@ export const useSubServiceDetail = (serviceSlug: string, subServiceSlug: string)
     },
     enabled: !!serviceSlug && !!subServiceSlug,
   });
+
+  const fallbackData = findFallbackSubService(serviceSlug, subServiceSlug);
+  const hasRemoteData = Boolean(query.data);
+
+  return {
+    ...query,
+    data: query.data ?? fallbackData,
+    error: fallbackData ? null : query.error,
+    isLoading: query.isLoading && !fallbackData,
+    isFallback: !hasRemoteData && Boolean(fallbackData),
+  };
 };
 
 // Get related sub-services (same parent service, excluding current)
 export const useRelatedSubServices = (serviceId: string, currentSubServiceId: string) => {
-  return useQuery({
+  const query = useQuery({
     queryKey: ['related-sub-services', serviceId, currentSubServiceId],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -73,6 +70,19 @@ export const useRelatedSubServices = (serviceId: string, currentSubServiceId: st
     },
     enabled: !!serviceId && !!currentSubServiceId,
   });
+
+  const fallbackGroup = Object.values(fallbackSubServicesBySlug).find(
+    (items) => items[0]?.service_id === serviceId,
+  );
+  const fallbackData = fallbackGroup
+    ?.filter((item) => item.id !== currentSubServiceId)
+    .slice(0, 3) ?? [];
+
+  return {
+    ...query,
+    data: query.data?.length ? query.data : fallbackData,
+    isFallback: !query.data?.length && fallbackData.length > 0,
+  };
 };
 
 export default useSubServiceDetail;

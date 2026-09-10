@@ -97,7 +97,7 @@ const DogalgazSistemleri = () => {
             </motion.div>
 
             <div className="space-y-32">
-              {subServices.slice(0, 1).map((service, i) => <motion.div key={service.id} className="flex flex-col lg:flex-row items-center gap-16" initial={{
+              {subServices.map((service, i) => <motion.div key={service.id} className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`} initial={{
             opacity: 0,
             y: 50
           }} whileInView={{
@@ -118,7 +118,7 @@ const DogalgazSistemleri = () => {
                           <div className="w-12 h-12 bg-[#EAB308] flex items-center justify-center rounded-sm">
                             <DynamicIcon name={service.icon_name} size={24} className="text-black" />
                           </div>
-                          <span className="text-white font-mono text-sm tracking-widest uppercase">01</span>
+                          <span className="text-white font-mono text-sm tracking-widest uppercase">{String(i + 1).padStart(2, '0')}</span>
                         </div>
                       </div>
                     </div>

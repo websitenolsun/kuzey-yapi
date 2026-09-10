@@ -1,7 +1,7 @@
 import { 
   Award, Clock, Users, ShieldCheck, Thermometer, Wind, AirVent, Droplets, 
   Flame, Factory, Pencil, Home, Layers, Lightbulb, Smartphone, Zap, 
-  Building2, Cog, Circle
+  Building2, Cog, Circle, Palette, LayoutGrid
 } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
@@ -26,6 +26,8 @@ const iconMap: Record<string, LucideIcon> = {
   Building2,
   Cog,
   Circle,
+  Palette,
+  LayoutGrid,
 };
 
 interface DynamicIconProps {

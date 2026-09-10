@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView, type Easing } from "framer-motion";
 import { ArrowRight, Palette, Shield, Clock, Leaf } from "lucide-react";
-import interiorLiving from "@/assets/interior-living-1.jpg";
-import interiorKitchen from "@/assets/interior-kitchen-1.jpg";
-import interiorBedroom from "@/assets/interior-bedroom-1.jpg";
+import interiorLiving from "@/assets/luxury-living.jpg";
+import interiorKitchen from "@/assets/hero-kitchen.jpg";
+import interiorBedroom from "@/assets/mimari-tasarim.jpg";
 import blueBuilding from "@/assets/blue-building.jpg";
 import Footer from "@/components/Footer";
 

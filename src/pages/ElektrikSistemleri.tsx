@@ -6,11 +6,11 @@ import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
 import DynamicIcon from "@/components/DynamicIcon";
 import elektrikTesisati from "@/assets/elektrik-tesisati.jpg";
-import aydinlatmaSistemleri from "@/assets/aydinlatma-sistemleri.png";
+import aydinlatmaSistemleri from "@/assets/aydinlatma-sistemleri.webp";
 import elektrikPanosu from "@/assets/elektrik-panosu.jpg";
 import topraklamaSistemleri from "@/assets/topraklama-sistemleri.png";
 import enerjiVerimliligiLed from "@/assets/enerji-verimliligi-led.jpg";
-import revizyonYenileme from "@/assets/revizyon-yenileme.png";
+import revizyonYenileme from "@/assets/revizyon-yenileme.webp";
 
 // Service-based image mapping for consistent image display
 const serviceImageMap: Record<string, string> = {

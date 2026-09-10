@@ -3,21 +3,18 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone } from 'lucide-react';
 import './IcMimari.css';
-import serviceConceptImg from '@/assets/service-concept.jpg';
-import serviceConstructionImg from '@/assets/service-construction.jpg';
-import serviceRenovationImg from '@/assets/service-renovation.jpg';
 import SEOHead, { createServiceSchema } from '@/components/SEOHead';
 import useSubServices from '@/hooks/useSubServices';
 import DynamicIcon from '@/components/DynamicIcon';
 import mimariTasarim from '@/assets/mimari-tasarim.jpg';
-import camAluminyum from '@/assets/cam-aluminyum.png';
+import camAluminyum from '@/assets/cam-aluminyum.webp';
 import mekansalPlanlama from '@/assets/mekansal-planlama.jpg';
-import santiyeYonetimi from '@/assets/santiye-yonetimi.png';
+import santiyeYonetimi from '@/assets/santiye-yonetimi.webp';
 import boyaYuzey from '@/assets/boya-yuzey.jpg';
-import marangozAhsap from '@/assets/marangoz-ahsap.jpg';
-import zeminKaplama from '@/assets/zemin-kaplama.png';
+import marangozAhsap from '@/assets/marangoz-ahsap.webp';
+import zeminKaplama from '@/assets/zemin-kaplama.webp';
 import anahtarTeslimDekorasyon from '@/assets/anahtar-teslim-dekorasyon.jpg';
-import donusumOncesi from '@/assets/donusum-oncesi.png';
+import donusumOncesi from '@/assets/donusum-oncesi.webp';
 const IcMimari = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

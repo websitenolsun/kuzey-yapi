@@ -1,18 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  fallbackSubServicesBySlug,
+  type CatalogSubService,
+} from '@/data/contentFallback';
 
-export interface SubService {
-  id: string;
-  service_id: string;
-  title: string;
-  description: string;
-  icon_name: string | null;
-  display_order: number;
-  slug: string | null;
-}
+export type SubService = CatalogSubService;
 
 export const useSubServices = (serviceSlug: string) => {
-  return useQuery({
+  const query = useQuery({
     queryKey: ['sub-services', serviceSlug],
     queryFn: async () => {
       // First get the service by slug
@@ -32,10 +28,20 @@ export const useSubServices = (serviceSlug: string) => {
         .order('display_order', { ascending: true });
       
       if (error) throw error;
-      return data as SubService[];
+      return data as unknown as SubService[];
     },
     enabled: !!serviceSlug,
   });
+
+  const fallbackData = fallbackSubServicesBySlug[serviceSlug] ?? [];
+  const hasRemoteData = Boolean(query.data?.length);
+
+  return {
+    ...query,
+    data: hasRemoteData ? query.data : fallbackData,
+    isLoading: query.isLoading && fallbackData.length === 0,
+    isFallback: !hasRemoteData,
+  };
 };
 
 export default useSubServices;

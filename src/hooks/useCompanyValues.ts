@@ -1,16 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  fallbackCompanyValues,
+  type CatalogCompanyValue,
+} from '@/data/contentFallback';
 
-export interface CompanyValue {
-  id: string;
-  title: string;
-  description: string;
-  icon_name: string | null;
-  display_order: number;
-}
+export type CompanyValue = CatalogCompanyValue;
 
 export const useCompanyValues = () => {
-  return useQuery({
+  const query = useQuery({
     queryKey: ['company-values'],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -22,6 +20,15 @@ export const useCompanyValues = () => {
       return data as CompanyValue[];
     },
   });
+
+  const hasRemoteData = Boolean(query.data?.length);
+
+  return {
+    ...query,
+    data: hasRemoteData ? query.data : fallbackCompanyValues,
+    isLoading: false,
+    isFallback: !hasRemoteData,
+  };
 };
 
 export default useCompanyValues;

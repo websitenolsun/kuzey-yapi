@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import tesisatArizaImg from "@/assets/tesisat-ariza.jpg";
-import luxuryInteriorImg from "@/assets/luxury-interior.png";
+import tesisatArizaImg from "@/assets/sihhi-tesisat.jpg";
+import luxuryInteriorImg from "@/assets/luxury-living.jpg";
 const blogPosts = [{
   title: "Enerji Tasarrufu ve Kombi Çözümleri",
   description: "Doğalgaz faturanızı nasıl %30 düşürebilirsiniz?",

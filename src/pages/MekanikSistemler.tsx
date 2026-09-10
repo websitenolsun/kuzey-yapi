@@ -1,19 +1,15 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Wind, Droplets, Flame, Cpu, ArrowRight, Phone } from "lucide-react";
-import yanginTesisati from "@/assets/yangin-tesisati.jpg";
-import mekanikIklimlendirme from "@/assets/mekanik-iklimlendirme.png";
+import yanginTesisati from "@/assets/yangin-tesisati.webp";
 import sihhiTesisatNew from "@/assets/sihhi-tesisat-new.jpg";
-import mekanikOtomasyon from "@/assets/mekanik-otomasyon.png";
 import isiPompasi from "@/assets/isi-pompasi.jpg";
-import sogutmaHvac from "@/assets/sogutma-hvac.png";
+import sogutmaHvac from "@/assets/sogutma-hvac.webp";
 import projeYonetimi from "@/assets/proje-yonetimi.jpg";
 import binaOtomasyon from "@/assets/bina-otomasyon.jpg";
-import projePlanlama from "@/assets/proje-planlama.jpg";
-import mekanikTesisat from "@/assets/mekanik-tesisat.jpg";
 import havalandirmaSistemleri from "@/assets/havalandirma-sistemleri.png";
 import kazanDairesi from "@/assets/kazan-dairesi.jpg";
-import projelendirmeMuhendislik from "@/assets/projelendirme-muhendislik.jpg";
+import projelendirmeMuhendislik from "@/assets/projelendirme-muhendislik.webp";
 import { motion } from "framer-motion";
 import SEOHead, { createServiceSchema } from "@/components/SEOHead";
 import useSubServices from "@/hooks/useSubServices";
@@ -66,7 +62,7 @@ const MekanikSistemler = () => {
 
   // Fallback image for services not in the map
   const getServiceImage = (title: string): string => {
-    return serviceImageMap[title] || projePlanlama;
+    return serviceImageMap[title] || projeYonetimi;
   };
   return <div className="bg-white min-h-screen text-gray-900 selection:bg-[#EAB308]/30 selection:text-gray-900 font-sans pb-0">
       <SEOHead title="Mekanik Tesisat Sistemleri" description="Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri. HVAC, sıhhi tesisat, yangın güvenliği ve otomasyon sistemleri." canonical="/uzmanliklar/mekanik" jsonLd={createServiceSchema("Mekanik Tesisat Sistemleri", "Endüstriyel ve konut tipi mekanik sistemlerde uçtan uca mühendislik çözümleri", "https://kuzey-yapi.lovable.app/uzmanliklar/mekanik")} />
